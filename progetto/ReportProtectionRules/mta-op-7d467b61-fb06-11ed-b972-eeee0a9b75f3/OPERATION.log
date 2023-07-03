@@ -1,0 +1,893 @@
+#2.0#2023 05 25 14:14:40.852#Z#INFO#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.startEvent#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########http-nio-0.0.0.0-8080-exec-8###
+[XS2StartProcessListener] Operation ID: 7d467b61-fb06-11ed-b972-eeee0a9b75f3#
+
+#2.0#2023 05 25 14:14:40.863#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.startEvent#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########http-nio-0.0.0.0-8080-exec-8###
+[XS2StartProcessListener] Process environment: {
+  "SKIP_SSL_VALIDATION" : "false",
+  "FLOWABLE_JOB_EXECUTOR_MAX_THREADS" : "128",
+  "VERSION" : "1.153.0",
+  "BASIC_AUTH_ENABLED" : "true",
+  "FLOWABLE_JOB_EXECUTOR_QUEUE_CAPACITY" : "4",
+  "FLOWABLE_JOB_EXECUTOR_CORE_THREADS" : "64"
+}#
+
+#2.0#2023 05 25 14:14:40.863#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.startEvent#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########http-nio-0.0.0.0-8080-exec-8###
+[XS2StartProcessListener] Current user: savagliano@innovatesapp.com#
+
+#2.0#2023 05 25 14:14:40.863#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.startEvent#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########http-nio-0.0.0.0-8080-exec-8###
+[XS2StartProcessListener] Client space: MODES DEV#
+
+#2.0#2023 05 25 14:14:40.863#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.startEvent#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########http-nio-0.0.0.0-8080-exec-8###
+[XS2StartProcessListener] Client organization: MODES S.P.A._modes-dev-6q05ihyl#
+
+#2.0#2023 05 25 14:14:40.863#Z#INFO#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.startEvent#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########http-nio-0.0.0.0-8080-exec-8###
+[XS2StartProcessListener] Process variables: {
+  "abortOnError" : false,
+  "mtaId" : "ReportProtectionRules",
+  "keepFiles" : false,
+  "verifyArchiveSignature" : false,
+  "noFailOnMissingPermissions" : false,
+  "deleteServiceBrokers" : false,
+  "appArchiveId" : "986bfa64-0548-48af-ad45-f3f25d2a42f7",
+  "gitUri" : "",
+  "deleteServiceKeys" : false,
+  "noRestartSubscribedApps" : false,
+  "noStart" : false,
+  "deleteServices" : false
+}#
+
+#2.0#2023 05 25 14:14:40.896#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.validateParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7041###
+[ValidateDeployParametersStep] Executing task "validateParametersTask" of process "7d467b81-fb06-11ed-b972-eeee0a9b75f3"...#
+
+#2.0#2023 05 25 14:14:40.896#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.validateParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7041###
+[ValidateDeployParametersStep] Validating parameters...#
+
+#2.0#2023 05 25 14:14:40.896#Z#INFO#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.validateParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7041###
+[ValidateDeployParametersStep] Deploying in org "MODES S.P.A._modes-dev-6q05ihyl" and space "MODES DEV"#
+
+#2.0#2023 05 25 14:14:40.899#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.validateParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7041###
+[ValidateDeployParametersStep] Parameters validated#
+
+#2.0#2023 05 25 14:14:40.899#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.validateParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7041###
+Step "Validate Parameters" finished#
+
+#2.0#2023 05 25 14:14:40.916#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.deleteRemainingFileParts#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7042###
+[DeleteRemainingFileParts] Executing task "deleteRemainingFileParts" of process "7d467b81-fb06-11ed-b972-eeee0a9b75f3"...#
+
+#2.0#2023 05 25 14:14:40.916#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.deleteRemainingFileParts#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7042###
+Step "Delete Remaining File Parts" finished#
+
+#2.0#2023 05 25 14:14:40.933#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.processArchiveTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7043###
+[XS2ProcessMtaArchiveStep] Executing task "processArchiveTask" of process "7d467b81-fb06-11ed-b972-eeee0a9b75f3"...#
+
+#2.0#2023 05 25 14:14:40.934#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.processArchiveTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7043###
+[XS2ProcessMtaArchiveStep] Processing MTA archive...#
+
+#2.0#2023 05 25 14:14:40.934#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.processArchiveTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7043###
+[XS2ProcessMtaArchiveStep] MTA Archive ID: 986bfa64-0548-48af-ad45-f3f25d2a42f7#
+
+#2.0#2023 05 25 14:14:41.172#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.processArchiveTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7043###
+[XS2ProcessMtaArchiveStep] MTA Archive Modules: [ReportProtectionRules-srv, ReportProtectionRules-db-deployer, ReportProtectionRules-app-content]#
+
+#2.0#2023 05 25 14:14:41.173#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.processArchiveTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7043###
+[XS2ProcessMtaArchiveStep] MTA Archive Requires: []#
+
+#2.0#2023 05 25 14:14:41.173#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.processArchiveTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7043###
+[XS2ProcessMtaArchiveStep] MTA Archive Resources: []#
+
+#2.0#2023 05 25 14:14:41.178#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.processArchiveTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7043###
+[XS2ProcessMtaArchiveStep] MTA archive processed#
+
+#2.0#2023 05 25 14:14:41.178#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.processArchiveTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7043###
+Step "Process Archive" finished#
+
+#2.0#2023 05 25 14:14:41.198#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.processExtensionDescriptorsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7044###
+[ProcessMtaExtensionDescriptorsStep] Executing task "processExtensionDescriptorsTask" of process "7d467b81-fb06-11ed-b972-eeee0a9b75f3"...#
+
+#2.0#2023 05 25 14:14:41.199#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.processExtensionDescriptorsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7044###
+[ProcessMtaExtensionDescriptorsStep] Processing MTA extension descriptors...#
+
+#2.0#2023 05 25 14:14:41.199#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.processExtensionDescriptorsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7044###
+[ProcessMtaExtensionDescriptorsStep] Extension descriptors: [ ]#
+
+#2.0#2023 05 25 14:14:41.199#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.processExtensionDescriptorsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7044###
+[ProcessMtaExtensionDescriptorsStep] MTA extension descriptors processed#
+
+#2.0#2023 05 25 14:14:41.199#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.processExtensionDescriptorsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7044###
+Step "Process Extension Descriptors" finished#
+
+#2.0#2023 05 25 14:14:41.218#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.detectSchemaVersionTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7045###
+[DetectMtaSchemaVersionStep] Executing task "detectSchemaVersionTask" of process "7d467b81-fb06-11ed-b972-eeee0a9b75f3"...#
+
+#2.0#2023 05 25 14:14:41.218#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.detectSchemaVersionTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7045###
+[DetectMtaSchemaVersionStep] Detecting MTA major schema version...#
+
+#2.0#2023 05 25 14:14:41.220#Z#INFO#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.detectSchemaVersionTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7045###
+[DetectMtaSchemaVersionStep] Detected MTA schema version: "3"#
+
+#2.0#2023 05 25 14:14:41.222#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.detectSchemaVersionTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7045###
+Step "Detect Schema Version" finished#
+
+#2.0#2023 05 25 14:14:41.240#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.mergeDescriptorsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7046###
+[MergeDescriptorsStep] Executing task "mergeDescriptorsTask" of process "7d467b81-fb06-11ed-b972-eeee0a9b75f3"...#
+
+#2.0#2023 05 25 14:14:41.241#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.mergeDescriptorsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7046###
+[MergeDescriptorsStep] Validating and merging descriptors...#
+
+#2.0#2023 05 25 14:14:41.243#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.mergeDescriptorsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7046###
+[MergeDescriptorsStep] Merged deployment descriptor: {
+  "majorSchemaVersion" : 3,
+  "schemaVersion" : "3.1.0",
+  "id" : "ReportProtectionRules",
+  "version" : "1.0.0",
+  "modules" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "ReportProtectionRules-srv",
+    "type" : "javascript.nodejs",
+    "path" : "ReportProtectionRules-srv",
+    "properties" : { },
+    "parameters" : {
+      "buildpack" : "nodejs_buildpack"
+    },
+    "requiredDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "ReportProtectionRules-db",
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "providedDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "srv-api",
+      "isPublic" : false,
+      "properties" : {
+        "srv-url" : "${default-url}"
+      },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    }, {
+      "majorSchemaVersion" : 3,
+      "name" : "ReportProtectionRules-srv",
+      "isPublic" : false,
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "hooks" : [ ]
+  }, {
+    "majorSchemaVersion" : 3,
+    "name" : "ReportProtectionRules-db-deployer",
+    "type" : "com.sap.xs.hdi",
+    "path" : "ReportProtectionRules-db-deployer",
+    "properties" : {
+      "EXIT" : 1
+    },
+    "parameters" : {
+      "memory" : "256M",
+      "no-route" : true,
+      "dependency-type" : "hard",
+      "buildpack" : "nodejs_buildpack",
+      "tasks" : [ {
+        "name" : "deploy",
+        "memory" : "256M",
+        "command" : "npm start"
+      } ],
+      "no-start" : true
+    },
+    "requiredDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "ReportProtectionRules-db",
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "providedDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "ReportProtectionRules-db-deployer",
+      "isPublic" : false,
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "hooks" : [ ]
+  }, {
+    "majorSchemaVersion" : 3,
+    "name" : "ReportProtectionRules-app-content",
+    "type" : "com.sap.application.content",
+    "path" : "ReportProtectionRules-app-content",
+    "properties" : { },
+    "parameters" : { },
+    "requiredDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "ReportProtectionRules-repo-host",
+      "properties" : { },
+      "parameters" : {
+        "content-target" : true
+      },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "providedDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "ReportProtectionRules-app-content",
+      "isPublic" : false,
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "hooks" : [ ]
+  } ],
+  "resources" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "ReportProtectionRules-db",
+    "type" : "com.sap.xs.hdi-container",
+    "properties" : { },
+    "parameters" : {
+      "service-plan" : "hdi-shared",
+      "type" : "managed-service",
+      "service" : "hana"
+    },
+    "isActive" : true,
+    "isOptional" : false,
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "requiredDependencies" : [ ]
+  }, {
+    "majorSchemaVersion" : 3,
+    "name" : "ReportProtectionRules-repo-host",
+    "type" : "org.cloudfoundry.managed-service",
+    "properties" : { },
+    "parameters" : {
+      "service-name" : "ReportProtectionRules-html5-srv",
+      "service-plan" : "app-host",
+      "type" : "managed-service",
+      "service" : "html5-apps-repo"
+    },
+    "isActive" : true,
+    "isOptional" : false,
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "requiredDependencies" : [ ]
+  }, {
+    "majorSchemaVersion" : 3,
+    "name" : "ReportProtectionRules-destination-service",
+    "type" : "org.cloudfoundry.managed-service",
+    "properties" : { },
+    "parameters" : {
+      "service-name" : "ReportProtectionRules-destination-service",
+      "service-plan" : "lite",
+      "type" : "managed-service",
+      "config" : {
+        "HTML5Runtime_enabled" : true,
+        "init_data" : {
+          "instance" : {
+            "destinations" : [ {
+              "Authentication" : "********",
+              "Name" : "ui5",
+              "ProxyType" : "Internet",
+              "Type" : "HTTP",
+              "URL" : "https://ui5.sap.com"
+            }, {
+              "Authentication" : "********",
+              "HTML5.DynamicDestination" : true,
+              "HTML5.ForwardAuthToken" : "********",
+              "HTML5.Timeout" : 300000,
+              "Name" : "srv-api",
+              "ProxyType" : "Internet",
+              "Type" : "HTTP",
+              "URL" : "~{srv-api/srv-url}"
+            } ],
+            "existing_destinations_policy" : "update"
+          }
+        },
+        "version" : "1.0.0"
+      },
+      "service" : "destination"
+    },
+    "isActive" : true,
+    "isOptional" : false,
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "requiredDependencies" : [ ]
+  } ],
+  "parameters" : {
+    "enable-parallel-deployments" : true,
+    "deploy_mode" : "html5-repo"
+  },
+  "parametersMetadata" : {
+    "metadata" : { }
+  }
+}#
+
+#2.0#2023 05 25 14:14:41.244#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.mergeDescriptorsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7046###
+[MergeDescriptorsStep] Descriptors validated and merged#
+
+#2.0#2023 05 25 14:14:41.244#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.mergeDescriptorsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7046###
+Step "Merge Descriptors" finished#
+
+#2.0#2023 05 25 14:14:41.263#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.detectDeployedMtaTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7047###
+[DetectDeployedMtaStep] Executing task "detectDeployedMtaTask" of process "7d467b81-fb06-11ed-b972-eeee0a9b75f3"...#
+
+#2.0#2023 05 25 14:14:41.263#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.detectDeployedMtaTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7047###
+[DetectDeployedMtaStep] Detecting deployed MTA...#
+
+#2.0#2023 05 25 14:14:41.341#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.detectDeployedMtaTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7047###
+[DetectDeployedMtaStep] Detecting MTA by id ReportProtectionRules and namespace null#
+
+#2.0#2023 05 25 14:14:41.342#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.detectDeployedMtaTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7047###
+[DetectDeployedMtaStep] Getting applications by metadata label selector "mta_id=18af51e97d26d291f56f3f455d4aa32a,!mta_namespace"...#
+
+#2.0#2023 05 25 14:14:41.399#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.detectDeployedMtaTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7047###
+[DetectDeployedMtaStep] Getting service instances by metadata label selector "mta_id=18af51e97d26d291f56f3f455d4aa32a,!mta_namespace"...#
+
+#2.0#2023 05 25 14:14:41.420#Z#INFO#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.detectDeployedMtaTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7047###
+[DetectDeployedMtaStep] No deployed MTA detected - this is initial deployment of MTA with ID "ReportProtectionRules"#
+
+#2.0#2023 05 25 14:14:41.451#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.detectDeployedMtaTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7047###
+[DetectDeployedMtaStep] Deployed MTA service keys: [ ]#
+
+#2.0#2023 05 25 14:14:41.451#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.detectDeployedMtaTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7047###
+Step "Detect Deployed MTA" finished#
+
+#2.0#2023 05 25 14:14:41.471#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7048###
+[CollectSystemParametersStep] Executing task "collectSystemParametersTask" of process "7d467b81-fb06-11ed-b972-eeee0a9b75f3"...#
+
+#2.0#2023 05 25 14:14:41.472#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7048###
+[CollectSystemParametersStep] Collecting system parameters...#
+
+#2.0#2023 05 25 14:14:41.472#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7048###
+[CollectSystemParametersStep] Getting default domain...#
+
+#2.0#2023 05 25 14:14:41.504#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7048###
+[CollectSystemParametersStep] Default domain: cfapps.eu10-004.hana.ondemand.com#
+
+#2.0#2023 05 25 14:14:41.505#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7048###
+[CollectSystemParametersStep] Checking for overwriting read-only parameters for mta with id: "ReportProtectionRules"#
+
+#2.0#2023 05 25 14:14:41.505#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7048###
+[CollectSystemParametersStep] No read-only parameters are overwritten#
+
+#2.0#2023 05 25 14:14:41.519#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7048###
+[CollectSystemParametersStep] Descriptor with system parameters: {
+  "majorSchemaVersion" : 3,
+  "schemaVersion" : "3.1.0",
+  "id" : "ReportProtectionRules",
+  "version" : "1.0.0",
+  "modules" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "ReportProtectionRules-srv",
+    "type" : "javascript.nodejs",
+    "path" : "ReportProtectionRules-srv",
+    "properties" : { },
+    "parameters" : {
+      "default-url" : "${protocol}://${default-uri}",
+      "default-app-name" : "ReportProtectionRules-srv",
+      "generated-password" : "********",
+      "default-uri" : "${host}.${domain}",
+      "default-instances" : 1,
+      "instances" : "${default-instances}",
+      "buildpack" : "nodejs_buildpack",
+      "default-host" : "modes-s-p-a--modes-dev-6q05ihyl-modes-dev-reportprotect296a601a",
+      "app-name" : "${default-app-name}",
+      "protocol" : "https",
+      "domain" : "${default-domain}",
+      "host" : "${default-host}",
+      "generated-user" : "********"
+    },
+    "requiredDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "ReportProtectionRules-db",
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "providedDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "srv-api",
+      "isPublic" : false,
+      "properties" : {
+        "srv-url" : "${default-url}"
+      },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    }, {
+      "majorSchemaVersion" : 3,
+      "name" : "ReportProtectionRules-srv",
+      "isPublic" : false,
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "hooks" : [ ]
+  }, {
+    "majorSchemaVersion" : 3,
+    "name" : "ReportProtectionRules-db-deployer",
+    "type" : "com.sap.xs.hdi",
+    "path" : "ReportProtectionRules-db-deployer",
+    "properties" : {
+      "EXIT" : 1
+    },
+    "parameters" : {
+      "default-url" : "${protocol}://${default-uri}",
+      "default-app-name" : "ReportProtectionRules-db-deployer",
+      "generated-password" : "********",
+      "default-uri" : "${host}.${domain}",
+      "memory" : "256M",
+      "default-instances" : 1,
+      "no-route" : true,
+      "instances" : "${default-instances}",
+      "buildpack" : "nodejs_buildpack",
+      "default-host" : "modes-s-p-a--modes-dev-6q05ihyl-modes-dev-reportprotect1a910732",
+      "app-name" : "${default-app-name}",
+      "protocol" : "https",
+      "dependency-type" : "hard",
+      "domain" : "${default-domain}",
+      "host" : "${default-host}",
+      "generated-user" : "********",
+      "tasks" : [ {
+        "name" : "deploy",
+        "memory" : "256M",
+        "command" : "npm start"
+      } ],
+      "no-start" : true
+    },
+    "requiredDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "ReportProtectionRules-db",
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "providedDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "ReportProtectionRules-db-deployer",
+      "isPublic" : false,
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "hooks" : [ ]
+  }, {
+    "majorSchemaVersion" : 3,
+    "name" : "ReportProtectionRules-app-content",
+    "type" : "com.sap.application.content",
+    "path" : "ReportProtectionRules-app-content",
+    "properties" : { },
+    "parameters" : {
+      "default-url" : "${protocol}://${default-uri}",
+      "default-app-name" : "ReportProtectionRules-app-content",
+      "generated-password" : "********",
+      "default-uri" : "${host}.${domain}",
+      "default-instances" : 1,
+      "instances" : "${default-instances}",
+      "default-host" : "modes-s-p-a--modes-dev-6q05ihyl-modes-dev-reportprotect36f39c44",
+      "app-name" : "${default-app-name}",
+      "protocol" : "https",
+      "domain" : "${default-domain}",
+      "host" : "${default-host}",
+      "generated-user" : "********"
+    },
+    "requiredDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "ReportProtectionRules-repo-host",
+      "properties" : { },
+      "parameters" : {
+        "content-target" : true
+      },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "providedDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "ReportProtectionRules-app-content",
+      "isPublic" : false,
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "hooks" : [ ]
+  } ],
+  "resources" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "ReportProtectionRules-db",
+    "type" : "com.sap.xs.hdi-container",
+    "properties" : { },
+    "parameters" : {
+      "generated-password" : "********",
+      "service-name" : "${default-service-name}",
+      "service-plan" : "hdi-shared",
+      "service" : "hana",
+      "generated-user" : "********",
+      "default-xsappname" : "ReportProtectionRules-db",
+      "type" : "managed-service",
+      "default-service-name" : "ReportProtectionRules-db",
+      "default-container-name" : "MODES_S_P_A__MODES_DEV_6Q05IHYL_MODES_DEV_REPORTPROTECTI34C75529"
+    },
+    "isActive" : true,
+    "isOptional" : false,
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "requiredDependencies" : [ ]
+  }, {
+    "majorSchemaVersion" : 3,
+    "name" : "ReportProtectionRules-repo-host",
+    "type" : "org.cloudfoundry.managed-service",
+    "properties" : { },
+    "parameters" : {
+      "generated-password" : "********",
+      "service-name" : "ReportProtectionRules-html5-srv",
+      "service-plan" : "app-host",
+      "service" : "html5-apps-repo",
+      "generated-user" : "********",
+      "default-xsappname" : "ReportProtectionRules-repo-host",
+      "type" : "managed-service",
+      "default-service-name" : "ReportProtectionRules-repo-host",
+      "default-container-name" : "MODES_S_P_A__MODES_DEV_6Q05IHYL_MODES_DEV_REPORTPROTECTIO43128B6"
+    },
+    "isActive" : true,
+    "isOptional" : false,
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "requiredDependencies" : [ ]
+  }, {
+    "majorSchemaVersion" : 3,
+    "name" : "ReportProtectionRules-destination-service",
+    "type" : "org.cloudfoundry.managed-service",
+    "properties" : { },
+    "parameters" : {
+      "generated-password" : "********",
+      "service-name" : "ReportProtectionRules-destination-service",
+      "service-plan" : "lite",
+      "service" : "destination",
+      "generated-user" : "********",
+      "default-xsappname" : "ReportProtectionRules-destination-service",
+      "type" : "managed-service",
+      "config" : {
+        "HTML5Runtime_enabled" : true,
+        "init_data" : {
+          "instance" : {
+            "destinations" : [ {
+              "Authentication" : "********",
+              "Name" : "ui5",
+              "ProxyType" : "Internet",
+              "Type" : "HTTP",
+              "URL" : "https://ui5.sap.com"
+            }, {
+              "Authentication" : "********",
+              "HTML5.DynamicDestination" : true,
+              "HTML5.ForwardAuthToken" : "********",
+              "HTML5.Timeout" : 300000,
+              "Name" : "srv-api",
+              "ProxyType" : "Internet",
+              "Type" : "HTTP",
+              "URL" : "~{srv-api/srv-url}"
+            } ],
+            "existing_destinations_policy" : "update"
+          }
+        },
+        "version" : "1.0.0"
+      },
+      "default-service-name" : "ReportProtectionRules-destination-service",
+      "default-container-name" : "MODES_S_P_A__MODES_DEV_6Q05IHYL_MODES_DEV_REPORTPROTECTI2F3D41F9"
+    },
+    "isActive" : true,
+    "isOptional" : false,
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "requiredDependencies" : [ ]
+  } ],
+  "parameters" : {
+    "deploy_mode" : "html5-repo",
+    "authorization-url" : "********",
+    "org-guid" : "40d53214-ff03-4670-adc3-4b1bff6b74eb",
+    "org" : "MODES S.P.A._modes-dev-6q05ihyl",
+    "deploy-target" : "MODES S.P.A._modes-dev-6q05ihyl MODES DEV",
+    "enable-parallel-deployments" : true,
+    "space" : "MODES DEV",
+    "xs-api-url" : "https://api.cf.eu10-004.hana.ondemand.com",
+    "deploy-url" : "deploy-service.cfapps.eu10-004.hana.ondemand.com",
+    "xs-type" : "CF",
+    "default-domain" : "cfapps.eu10-004.hana.ondemand.com",
+    "xs-auth-url" : "********",
+    "space-guid" : "8c05a951-0fc6-4544-bda6-05959937c73a",
+    "user" : "********",
+    "controller-url" : "https://api.cf.eu10-004.hana.ondemand.com",
+    "timestamp" : "20230525141441"
+  },
+  "parametersMetadata" : {
+    "metadata" : { }
+  }
+}#
+
+#2.0#2023 05 25 14:14:41.519#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7048###
+[CollectSystemParametersStep] Version rule: SAME_HIGHER#
+
+#2.0#2023 05 25 14:14:41.519#Z#INFO#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7048###
+[CollectSystemParametersStep] Detected new MTA version: "1.0.0"#
+
+#2.0#2023 05 25 14:14:41.522#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7048###
+[CollectSystemParametersStep] MTA accepted for deployment#
+
+#2.0#2023 05 25 14:14:41.522#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7048###
+[CollectSystemParametersStep] System parameters collected#
+
+#2.0#2023 05 25 14:14:41.522#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7048###
+Step "Collect System Parameters" finished#
+
+#2.0#2023 05 25 14:14:41.545#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.processDescriptorTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7049###
+[ProcessDescriptorStep] Executing task "processDescriptorTask" of process "7d467b81-fb06-11ed-b972-eeee0a9b75f3"...#
+
+#2.0#2023 05 25 14:14:41.545#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.processDescriptorTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7049###
+[ProcessDescriptorStep] Resolving properties and parameters in merged descriptor...#
+
+#2.0#2023 05 25 14:14:41.548#Z#ERROR#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.processDescriptorTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7049###
+Exception caught#
+
+org.cloudfoundry.multiapps.common.ContentException: Error resolving merged descriptor properties and parameters: Module "ReportProtectionRules-destination-service" does not contain a required dependency for "srv-api", but contains references to its properties 
+	at org.cloudfoundry.multiapps.controller.process.steps.SyncFlowableStep.processException(SyncFlowableStep.java:131) ~[multiapps-controller-process-1.153.0.jar:?]
+	at org.cloudfoundry.multiapps.controller.process.steps.SyncFlowableStep.onStepError(SyncFlowableStep.java:126) ~[multiapps-controller-process-1.153.0.jar:?]
+	at org.cloudfoundry.multiapps.controller.process.steps.SyncFlowableStep.handleException(SyncFlowableStep.java:102) ~[multiapps-controller-process-1.153.0.jar:?]
+	at org.cloudfoundry.multiapps.controller.process.steps.SyncFlowableStep.executeInternal(SyncFlowableStep.java:81) ~[multiapps-controller-process-1.153.0.jar:?]
+	at org.cloudfoundry.multiapps.controller.process.steps.SyncFlowableStep.lambda$execute$0(SyncFlowableStep.java:65) ~[multiapps-controller-process-1.153.0.jar:?]
+	at org.cloudfoundry.multiapps.controller.core.util.LoggingUtil.logWithCorrelationId(LoggingUtil.java:14) ~[multiapps-controller-core-1.153.0.jar:?]
+	at org.cloudfoundry.multiapps.controller.process.steps.SyncFlowableStep.execute(SyncFlowableStep.java:65) ~[multiapps-controller-process-1.153.0.jar:?]
+	at org.flowable.engine.impl.delegate.invocation.JavaDelegateInvocation.invoke(JavaDelegateInvocation.java:35) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.delegate.invocation.DelegateInvocation.proceed(DelegateInvocation.java:32) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.delegate.invocation.DefaultDelegateInterceptor.handleInvocation(DefaultDelegateInterceptor.java:26) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.bpmn.behavior.ServiceTaskDelegateExpressionActivityBehavior.execute(ServiceTaskDelegateExpressionActivityBehavior.java:157) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.agenda.ContinueProcessOperation.executeActivityBehavior(ContinueProcessOperation.java:313) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.agenda.ContinueProcessOperation.executeSynchronous(ContinueProcessOperation.java:170) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.agenda.ContinueProcessOperation.continueThroughFlowNode(ContinueProcessOperation.java:125) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.agenda.ContinueProcessOperation.run(ContinueProcessOperation.java:88) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.AbstractEngineConfiguration.lambda$new$0(AbstractEngineConfiguration.java:173) ~[flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.interceptor.CommandInvoker.executeOperation(CommandInvoker.java:97) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.interceptor.CommandInvoker.executeOperations(CommandInvoker.java:81) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.interceptor.CommandInvoker.execute(CommandInvoker.java:64) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.interceptor.BpmnOverrideContextInterceptor.execute(BpmnOverrideContextInterceptor.java:26) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.interceptor.TransactionContextInterceptor.execute(TransactionContextInterceptor.java:53) ~[flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.interceptor.CommandContextInterceptor.execute(CommandContextInterceptor.java:83) ~[flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.common.spring.SpringTransactionInterceptor.lambda$execute$0(SpringTransactionInterceptor.java:57) ~[flowable-spring-common-6.6.0.jar:6.6.0]
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140) [spring-tx-5.3.26.jar:5.3.26]
+	at org.flowable.common.spring.SpringTransactionInterceptor.execute(SpringTransactionInterceptor.java:57) [flowable-spring-common-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.interceptor.LogInterceptor.execute(LogInterceptor.java:30) [flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.cfg.CommandExecutorImpl.execute(CommandExecutorImpl.java:56) [flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.cfg.CommandExecutorImpl.execute(CommandExecutorImpl.java:51) [flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.job.service.impl.asyncexecutor.ExecuteAsyncRunnable.executeJob(ExecuteAsyncRunnable.java:127) [flowable-job-service-6.6.0.jar:6.6.0]
+	at org.flowable.job.service.impl.asyncexecutor.ExecuteAsyncRunnable.run(ExecuteAsyncRunnable.java:115) [flowable-job-service-6.6.0.jar:6.6.0]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:?]
+	at java.lang.Thread.run(Unknown Source) [?:?]
+Caused by: org.cloudfoundry.multiapps.common.ContentException: Module "ReportProtectionRules-destination-service" does not contain a required dependency for "srv-api", but contains references to its properties
+	at org.cloudfoundry.multiapps.mta.resolvers.ReferenceResolver.assertRequiredDependencyExists(ReferenceResolver.java:42) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.resolvers.ReferenceResolver.resolveProvidedValues(ReferenceResolver.java:30) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.resolvers.PropertiesResolver.resolveReference(PropertiesResolver.java:115) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.resolvers.PropertiesResolver.resolveReferenceInContext(PropertiesResolver.java:106) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.controller.core.resolvers.v2.PartialPropertiesResolver.resolveReferenceInContext(PartialPropertiesResolver.java:26) ~[multiapps-controller-core-1.153.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.resolvers.PropertiesResolver.resolveReferences(PropertiesResolver.java:72) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.resolvers.PropertiesResolver.visit(PropertiesResolver.java:66) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.helpers.VisitableObject.acceptInternal(VisitableObject.java:57) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.helpers.VisitableObject.accept(VisitableObject.java:34) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.helpers.VisitableObject.acceptInternal(VisitableObject.java:42) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.helpers.VisitableObject.accept(VisitableObject.java:32) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.helpers.VisitableObject.acceptInternal(VisitableObject.java:51) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.helpers.VisitableObject.accept(VisitableObject.java:30) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.helpers.VisitableObject.acceptInternal(VisitableObject.java:42) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.helpers.VisitableObject.accept(VisitableObject.java:32) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.helpers.VisitableObject.acceptInternal(VisitableObject.java:42) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.helpers.VisitableObject.accept(VisitableObject.java:32) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.helpers.VisitableObject.acceptInternal(VisitableObject.java:42) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.helpers.VisitableObject.accept(VisitableObject.java:32) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.helpers.VisitableObject.acceptInternal(VisitableObject.java:42) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.helpers.VisitableObject.accept(VisitableObject.java:32) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.helpers.VisitableObject.accept(VisitableObject.java:24) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.resolvers.PropertiesResolver.resolve(PropertiesResolver.java:54) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.resolvers.PropertiesResolver.resolve(PropertiesResolver.java:50) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.controller.core.resolvers.v3.PartialResourcePropertiesReferenceResolver.resolve(PartialResourcePropertiesReferenceResolver.java:24) ~[multiapps-controller-core-1.153.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.resolvers.v3.ResourceReferenceResolver.getResolvedParameters(ResourceReferenceResolver.java:69) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.resolvers.v3.ResourceReferenceResolver.resolve(ResourceReferenceResolver.java:38) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.resolvers.v3.DescriptorReferenceResolver.lambda$getResolvedResources$0(DescriptorReferenceResolver.java:32) ~[multiapps-mta-2.13.0.jar:?]
+	at java.util.stream.ReferencePipeline$3$1.accept(Unknown Source) ~[?:?]
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source) ~[?:?]
+	at java.util.stream.AbstractPipeline.copyInto(Unknown Source) ~[?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source) ~[?:?]
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source) ~[?:?]
+	at java.util.stream.AbstractPipeline.evaluate(Unknown Source) ~[?:?]
+	at java.util.stream.ReferencePipeline.collect(Unknown Source) ~[?:?]
+	at org.cloudfoundry.multiapps.mta.resolvers.v3.DescriptorReferenceResolver.getResolvedResources(DescriptorReferenceResolver.java:33) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.mta.resolvers.v3.DescriptorReferenceResolver.resolve(DescriptorReferenceResolver.java:25) ~[multiapps-mta-2.13.0.jar:?]
+	at org.cloudfoundry.multiapps.controller.core.helpers.v2.ConfigurationSubscriptionFactory.create(ConfigurationSubscriptionFactory.java:37) ~[multiapps-controller-core-1.153.0.jar:?]
+	at org.cloudfoundry.multiapps.controller.core.helpers.MtaDescriptorPropertiesResolver.createSubscriptions(MtaDescriptorPropertiesResolver.java:143) ~[multiapps-controller-core-1.153.0.jar:?]
+	at org.cloudfoundry.multiapps.controller.core.helpers.MtaDescriptorPropertiesResolver.resolve(MtaDescriptorPropertiesResolver.java:86) ~[multiapps-controller-core-1.153.0.jar:?]
+	at org.cloudfoundry.multiapps.controller.process.steps.ProcessDescriptorStep.executeStep(ProcessDescriptorStep.java:43) ~[multiapps-controller-process-1.153.0.jar:?]
+	at org.cloudfoundry.multiapps.controller.process.steps.SyncFlowableStep.executeInternal(SyncFlowableStep.java:75) ~[multiapps-controller-process-1.153.0.jar:?]
+	... 29 more
+#2.0#2023 05 25 14:14:41.553#Z#DEBUG#com.sap.cloud.lm.sl.xs2.7d467b61-fb06-11ed-b972-eeee0a9b75f3.OPERATION.processDescriptorTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-7049###
+Step "Process Descriptor Step" finished#
+

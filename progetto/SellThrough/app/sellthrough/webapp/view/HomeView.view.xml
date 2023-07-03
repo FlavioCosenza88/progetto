@@ -1,0 +1,1027 @@
+<mvc:View controllerName="SellThrough.sellthrough.controller.HomeView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+   	xmlns:core="sap.ui.core"
+   	xmlns:table="sap.ui.table"
+   	xmlns:f="sap.f"
+	xmlns:l="sap.ui.layout"
+   	xmlns:fb="sap.ui.comp.filterbar"
+xmlns:smartTable="sap.ui.comp.smarttable"
+xmlns:smartfilterbar="sap.ui.comp.smartfilterbar"
+xmlns="sap.m">
+    <Page id="page" title="Sell Through" enableScrolling="false">
+    <IconTabBar
+		id="idIconTabBarInlineMode"
+        select="handleIconTabBarSelect"
+		headerMode="Inline"
+		expanded="{device>/isNoPhone}"
+		class="sapUiResponsiveContentPadding">
+		<items>
+			<IconTabFilter id="idTabFilter1"
+				text="Dettaglio SKU"
+				key="DettaglioSKU" >
+                        <fb:FilterBar search="onSearch"  useToolbar="false" id="smartFilterBar"
+							showFilterConfiguration="true">
+                            <fb:filterGroupItems>
+                                <fb:FilterGroupItem  groupName="Filtri" groupTitle="Filtri" name="Brand" label="Brand"
+									labelTooltip="Brand" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox  id="multiBrand2" items="{path:'temp>/FilterBrandUniq'}"
+											showSecondaryValues="true">
+											<items>
+												<core:Item text="{temp>BRAND}" key="{temp>BRAND}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+                                <fb:FilterGroupItem groupName="Filtri" groupTitle="Filtri" name="Gender" label="Gender"
+									labelTooltip="Gender" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox  id="multiGender2" items="{path:'temp>/FilterGenderUniq'}"
+											showSecondaryValues="true">
+											<items>
+												<core:Item text="{temp>GENDER}" key="{temp>GENDER}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+                                <fb:FilterGroupItem groupName="Filtri" groupTitle="Filtri" name="SubGender" label="Sub Gender"
+									labelTooltip="SubGender" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox  id="multiSubGender2" items="{path:'temp>/FilterSubGenderUniq'}"
+											showSecondaryValues="true">
+											<items>
+												<core:Item text="{temp>SubGender}" key="{temp>SubGender}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+                                <fb:FilterGroupItem groupName="Filtri" groupTitle="Filtri" name="Family" label="Family"
+									labelTooltip="Family" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox  id="multiFamily2" items="{path:'temp>/FilterFamilyUniq'}"
+											showSecondaryValues="true">
+											<items>
+												<core:Item text="{temp>FAMILY_GROUP}" key="{temp>FAMILY_GROUP}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+                                <fb:FilterGroupItem groupName="Filtri" groupTitle="Filtri" name="PRODUCT GROUP" label="PRODUCT GROUP"
+									labelTooltip="PRODUCT GROUP" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox  id="multiPRODUCTGROUP2" items="{path:'temp>/FilterProductGroupUniq'}"
+											showSecondaryValues="true">
+											<items>
+												<core:Item text="{temp>PRODUCT_GROUP}" key="{temp>PRODUCT_GROUP}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+                                <fb:FilterGroupItem groupName="Filtri" groupTitle="Filtri" name="SKUS" label="SKUS"
+									labelTooltip="SKUS" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox  id="multiSKUS" items="{path:'temp>/FilterSkusUniq'}"
+											showSecondaryValues="true">
+											<items>
+												<core:Item text="{temp>SKUS}" key="{temp>SKUS}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+                                <fb:FilterGroupItem groupName="Filtri" groupTitle="Filtri" name="SKU DESCRIPTION" label="SKU DESCRIPTION"
+									labelTooltip="SKU DESCRIPTION" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox  id="multiSKUDESCRIPTION" items="{path:'temp>/FilterSkuDescriptionUniq'}"
+											showSecondaryValues="true">
+											<items>
+												<core:Item text="{temp>SKU_DESCRIPTION}" key="{temp>SKU_DESCRIPTION}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+                            </fb:filterGroupItems>
+							<Text id="SommaRETAIL_FULL_PRICE" text="RowItems" />
+                        </fb:FilterBar>
+					<!-- <l:VerticalLayout class="sapUiContentPadding" width="100%"> -->
+                    <table:Table id="TableRetails" enableBusyIndicator="true" visibleRowCountMode="Auto"  selectionMode="None" rows="{path:'temp>/REPORT_SELL_THROUGH'}">
+                        <table:columns>
+                            <table:Column id="seasonAcquisto" width="80px">
+                                <Label text="SEASON ACQUISTO"/>
+						        <table:template>
+							        <Text text="{temp>SEASON_ACQUISTO}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SEASON VENDITA UNO"  />
+						        <table:template>
+							        <Text text="{temp>SEASON_VENDITA_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SEASON VENDITA DUE"  />
+						        <table:template>
+							        <Text text="{temp>SEASON_VENDITA_S2}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="BRAND"  />
+						        <table:template>
+							        <Text text="{temp>BRAND}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="GENDER"  />
+						        <table:template>
+							        <Text text="{temp>GENDER}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SUBGENDER"  />
+						        <table:template>
+							        <Text text="{temp>SUBGENDER}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="FAMILY GROUP"  />
+						        <table:template>
+							        <Text text="{temp>FAMILY_GROUP}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="PRODUCT GROUP"  />
+						        <table:template>
+							        <Text text="{temp>PRODUCT_GROUP}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SKUS"  />
+						        <table:template>
+							        <Text text="{temp>SKUS}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="DESCRIPTION SKU"  />
+						        <table:template>
+							        <Text text="{temp>SKU_DESCRIPTION}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="100%">
+                                <Label text="PHOTO"  />
+						        <table:template>
+							         <Image src="{temp>IMAGE_URL}" width="100%" />
+						        </table:template>
+                             </table:Column>
+                             <table:Column width="80px">
+                                <Label text="VALUE ORDERED WHOLESALE UN"  />
+						        <table:template>
+							        <Text text="{temp>VALUE_ORDERED_WHOLESALE_UN} {temp>VALUTA_VALUE_ORDERED_WHOLESALE_UN}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="TOT QTY ORDERED "  />
+						        <table:template>
+							        <Text text="{temp>TOT_QTY_ORDERED} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY ORDERED WHOLESALE"  />
+						        <table:template>
+							        <Text text="{temp>QTY_ORDERED_WHOLESALE}" />
+						        </table:template>
+                            </table:Column>
+                             <table:Column width="80px">
+                                <Label text="VALUE ORDERED WHOLESALE"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_ORDERED_WHOLESALE}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="TOT VALUE ORDERED"  />
+						        <table:template>
+							        <Text text="{temp>CC_TOT_VALUE_ORDERED}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY ORDERED NO WHOLESALE"  />
+						        <table:template>
+							        <Text text="{temp>CC_QTY_ORDERED_NO_WHOLESALE}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE ORDERED NO WHOLESALE"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_ORDERED_NO_WHOLESALE}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="TOT QTY RECEIVED"  />
+						        <table:template>
+							        <Text text="{temp>TOT_QTY_RECEIVED} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="TOT VALUE RECEIVED"  />
+						        <table:template>
+							        <Text text="{temp>CC_TOT_VALUE_RECEIVED}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY RECEIVED WHOLESALE"  />
+						        <table:template>
+							        <Text text="{temp>QTY_RECEIVED_WHOLESALE} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE RECEIVED WHOLESALE"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_RECEIVED_WHOLESALE}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY RECEIVED NO WHOLESALE"  />
+						        <table:template>
+							        <Text text="{temp>CC_QTY_RECEIVED_NO_WHOLESALE} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE RECEIVED NO WHOLESALE"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_RECEIVED_NO_WHOLESALE}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM WHOLESALE"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_WHOLESALE} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE UM WHOLESALE"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_WHOLESALE}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM FARFETCH STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_FARFETCH_S1} PX" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE UM FARFETCH STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_FARFETCH_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM MODES COM STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_MODES_COM_S1} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE UM MODES COM STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_MODES_COM_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM CONCIERGE STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_CONCIERGE_S1} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE UM CONCIERGE STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_CONCIERGE_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM MARKETPLACE STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_MARKETPLACE_S1} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE UM MARKETPLACE STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_MARKETPLACE_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM LISTE STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_LISTE_S1} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE UM LISTE STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_LISTE_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM RETAIL STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_RETAIL_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE UM RETAIL STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_RETAIL_S1}" />
+						        </table:template>
+                            </table:Column>
+                             <table:Column width="80px">
+                                <Label text="QTY UM FARFETCH S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_FARFETCH_S2} PZ" />
+						        </table:template>
+                            </table:Column>
+                              <table:Column width="80px">
+                                <Label text="VALUE UM FARFETCH S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_FARFETCH_S2}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM MODES COM S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_MODES_COM_S2} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE UM MODES COM S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_MODES_COM_S2}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM CONCIERGE S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_CONCIERGE_S2} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE UM CONCIERGE S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_CONCIERGE_S2}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM MARKETPLACE S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_MARKETPLACE_S2} PZ" />
+						        </table:template>
+                            </table:Column>
+                             <table:Column width="80px">
+                                <Label text="VALUE UM MARKETPLACE S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_MARKETPLACE_S2}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM LISTE S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_LISTE_S2} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE UM LISTE S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_LISTE_S2}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM RETAIL S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_RETAIL_S2} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE UM RETAIL S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_RETAIL_S2}" />
+						        </table:template>
+                            </table:Column>
+                             <table:Column width="80px">
+                                <Label text="TOT QTY UM STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>CC_TOT_QTY_UM_S1} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="TOT QTY UM STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_TOT_QTY_UM_S2} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="TOT QTY UM"  />
+						        <table:template>
+							        <Text text="{temp>CC_TOT_QTY_UM} PZ" />
+						        </table:template>
+                            </table:Column>
+                             <table:Column width="80px">
+                                <Label text="TOT VALUE UM STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_TOT_VALUE_UM_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="TOT VALUE UM STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_TOT_VALUE_UM_S2}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="TOT VALUE UM"  />
+						        <table:template>
+							        <Text text="{temp>CC_TOT_VALUE_UM}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SELLTHROUGH QTY ORDERED WH"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_QTY_ORDERED_WH}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SELLTHROUGH QTY RECEIVED WH"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_QTY_RECEIVED_WH}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SELLTHROUGH VALUE ORDERED WH"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_VALUE_ORDERED_WH}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SELLTHROUGH VALUE RECEIVED WH"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_VALUE_RECEIVED_WH}" />
+						        </table:template>
+                            </table:Column>
+                             <table:Column width="80px">
+                                <Label text="SELLTHROUGH QTY ORDERED NO WH STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_QTY_ORDERED_NO_WH_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SELLTHROUGH QTY RECEIVED NO WH STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_QTY_RECEIVED_NO_WH_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SELLTHROUGH VALUE ORDERED NO WH STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_VALUE_ORDERED_NO_WH_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SELLTHROUGH VALUE RECEIVED NO WH STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_VALUE_RECEIVED_NO_WH_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SELLTHROUGH QTY ORDERED NO WH STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_QTY_ORDERED_NO_WH_S2}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SELLTHROUGH QTY RECEIVED NO WH STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_QTY_RECEIVED_NO_WH_S2}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SELLTHROUGH VALUE ORDERED NO WH STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_VALUE_ORDERED_NO_WH_S2}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SELLTHROUGH VALUE RECEIVED NO WH STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_VALUE_RECEIVED_NO_WH_S2}" />
+						        </table:template>
+                            </table:Column>
+                        </table:columns>
+                    </table:Table>    
+				<!-- </l:VerticalLayout> -->
+        	</IconTabFilter>
+        	<IconTabFilter id="iconTabFilter"
+				text="Aggregazione per Brand"
+				key="AggregazioneBrand"
+				>
+                        <fb:FilterBar reset="onReset" search="onSearchAggregazioneBrand" showRestoreButton="true" showClearButton="true" useToolbar="false" id="smartFilterBar2"
+							showFilterConfiguration="true">
+                            <fb:filterGroupItems>
+                                <fb:FilterGroupItem groupName="Filtri" groupTitle="Filtri" name="Brand" label="Brand"
+									labelTooltip="Brand" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox  id="multiBrand3" items="{path:'temp>/FilterBrandUniqREPORT_SELL_THROUGH_AGGR'}"
+											showSecondaryValues="true">
+											<items>
+												<core:Item text="{temp>BRAND}" key="{temp>BRAND}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+                                <fb:FilterGroupItem groupName="Filtri" groupTitle="Filtri" name="Gender" label="Gender"
+									labelTooltip="Gender" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox  id="multiGender3" items="{path:'temp>/FilterGenderUniqREPORT_SELL_THROUGH_AGGR'}"
+											showSecondaryValues="true">
+											<items>
+												<core:Item text="{temp>GENDER}" key="{temp>GENDER}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+                                <fb:FilterGroupItem groupName="Filtri" groupTitle="Filtri" name="Family" label="Family"
+									labelTooltip="Family" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox  id="multiFamily3" items="{path:'temp>/FilterFamilyUniqREPORT_SELL_THROUGH_AGGR'}"
+											showSecondaryValues="true">
+											<items>
+												<core:Item text="{temp>FAMILY_GROUP}" key="{temp>FAMILY_GROUP}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>  
+                            </fb:filterGroupItems>
+							<Text id="SommaAggregazioneBrand" text="RowItems" />
+                        </fb:FilterBar>
+						
+                    <table:Table id="TableAggregazioneBrand"  enableBusyIndicator="true" visibleRowCountMode="Auto" rowHeight="50"  minAutoRowCount="10" selectionMode="None" rows="{path:'temp>/REPORT_SELL_THROUGH_AGGR'}">
+                        <table:columns>
+                            <table:Column width="80px">
+                                <Label text="SEASON ACQUISTO" visible="true"  />
+						        <table:template>
+							        <Text text="{temp>SEASON_ACQUISTO}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SEASON VENDITA UNO"  />
+						        <table:template>
+							        <Text text="{temp>SEASON_VENDITA_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SEASON VENDITA DUE"  />
+						        <table:template>
+							        <Text text="{temp>SEASON_VENDITA_S2}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="BRAND"  />
+						        <table:template>
+							        <Text text="{temp>BRAND}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="GENDER"  />
+						        <table:template>
+							        <Text text="{temp>GENDER}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="FAMILY GROUP"  />
+						        <table:template>
+							        <Text text="{temp>FAMILY_GROUP}" />
+						        </table:template>
+                            </table:Column>
+                             <table:Column width="80px">
+                                <Label text="VALUTA"  />
+						        <table:template>
+							        <Text text="{temp>VALUTA_VALUE_ORDERED_WHOLESALE_UN}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="TOT QTY ORDERED "  />
+						        <table:template>
+							        <Text text="{temp>TOT_QTY_ORDERED} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="TOT VALUE ORDERED"  />
+						        <table:template>
+							        <Text text="{temp>CC_TOT_VALUE_ORDERED}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY ORDERED WHOLESALE"  />
+						        <table:template>
+							        <Text text="{temp>QTY_ORDERED_WHOLESALE}" />
+						        </table:template>
+                            </table:Column>
+                             <table:Column width="80px">
+                                <Label text="VALUE ORDERED WHOLESALE"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_ORDERED_WHOLESALE}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY ORDERED NO WHOLESALE"  />
+						        <table:template>
+							        <Text text="{temp>CC_QTY_ORDERED_NO_WHOLESALE}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE ORDERED NO WHOLESALE"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_ORDERED_NO_WHOLESALE}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="TOT QTY RECEIVED"  />
+						        <table:template>
+							        <Text text="{temp>TOT_QTY_RECEIVED} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="TOT VALUE RECEIVED"  />
+						        <table:template>
+							        <Text text="{temp>CC_TOT_VALUE_RECEIVED}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY RECEIVED WHOLESALE"  />
+						        <table:template>
+							        <Text text="{temp>QTY_RECEIVED_WHOLESALE} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE RECEIVED WHOLESALE"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_RECEIVED_WHOLESALE}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY RECEIVED NO WHOLESALE"  />
+						        <table:template>
+							        <Text text="{temp>CC_QTY_RECEIVED_NO_WHOLESALE} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE RECEIVED NO WHOLESALE"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_RECEIVED_NO_WHOLESALE}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM WHOLESALE"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_WHOLESALE} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE UM WHOLESALE"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_WHOLESALE}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM FARFETCH STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_FARFETCH_S1} PX" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE UM FARFETCH STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_FARFETCH_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE UM MODES COM STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_MODES_COM_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM CONCIERGE STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_CONCIERGE_S1} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE UM CONCIERGE STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_CONCIERGE_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM MARKETPLACE STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_MARKETPLACE_S1} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE UM MARKETPLACE STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_MARKETPLACE_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM LISTE STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_LISTE_S1} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE UM LISTE STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_LISTE_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM RETAIL STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_RETAIL_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE UM RETAIL STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_RETAIL_S1}" />
+						        </table:template>
+                            </table:Column>
+                             <table:Column width="80px">
+                                <Label text="QTY UM FARFETCH S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_FARFETCH_S2} PZ" />
+						        </table:template>
+                            </table:Column>
+                              <table:Column width="80px">
+                                <Label text="VALUE UM FARFETCH S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_FARFETCH_S2}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM MODES COM S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_MODES_COM_S2} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE UM MODES COM S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_MODES_COM_S2}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM CONCIERGE S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_CONCIERGE_S2} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE UM CONCIERGE S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_CONCIERGE_S2}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM MARKETPLACE S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_MARKETPLACE_S2} PZ" />
+						        </table:template>
+                            </table:Column>
+                             <table:Column width="80px">
+                                <Label text="VALUE UM MARKETPLACE S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_MARKETPLACE_S2}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM LISTE S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_LISTE_S2} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE UM LISTE S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_LISTE_S2}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="QTY UM RETAIL S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>QTY_UM_RETAIL_S2} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="VALUE UM RETAIL S2 STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_VALUE_UM_RETAIL_S2}" />
+						        </table:template>
+                            </table:Column>
+                             <table:Column width="80px">
+                                <Label text="TOT QTY UM STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>CC_TOT_QTY_UM_S1} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="TOT QTY UM STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_TOT_QTY_UM_S2} PZ" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="TOT QTY UM"  />
+						        <table:template>
+							        <Text text="{temp>CC_TOT_QTY_UM} PZ" />
+						        </table:template>
+                            </table:Column>
+                             <table:Column width="80px">
+                                <Label text="TOT VALUE UM STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_TOT_VALUE_UM_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="TOT VALUE UM STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_TOT_VALUE_UM_S2}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="TOT VALUE UM"  />
+						        <table:template>
+							        <Text text="{temp>CC_TOT_VALUE_UM}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SELLTHROUGH QTY ORDERED WH"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_QTY_ORDERED_WH}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SELLTHROUGH QTY RECEIVED WH"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_QTY_RECEIVED_WH}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SELLTHROUGH VALUE ORDERED WH"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_VALUE_ORDERED_WH}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SELLTHROUGH VALUE RECEIVED WH"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_VALUE_RECEIVED_WH}" />
+						        </table:template>
+                            </table:Column>
+                             <table:Column width="80px">
+                                <Label text="SELLTHROUGH QTY ORDERED NO WH STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_QTY_ORDERED_NO_WH_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SELLTHROUGH QTY RECEIVED NO WH STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_QTY_RECEIVED_NO_WH_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SELLTHROUGH VALUE ORDERED NO WH STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_VALUE_ORDERED_NO_WH_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SELLTHROUGH VALUE RECEIVED NO WH STAGIONE UNO"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_VALUE_RECEIVED_NO_WH_S1}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SELLTHROUGH QTY ORDERED NO WH STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_QTY_ORDERED_NO_WH_S2}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SELLTHROUGH QTY RECEIVED NO WH STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_QTY_RECEIVED_NO_WH_S2}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SELLTHROUGH VALUE ORDERED NO WH STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_VALUE_ORDERED_NO_WH_S2}" />
+						        </table:template>
+                            </table:Column>
+                            <table:Column width="80px">
+                                <Label text="SELLTHROUGH VALUE RECEIVED NO WH STAGIONE DUE"  />
+						        <table:template>
+							        <Text text="{temp>CC_SELLTHROUGH_VALUE_RECEIVED_NO_WH_S2}" />
+						        </table:template>
+                            </table:Column>
+                        </table:columns>
+                    </table:Table>         
+        </IconTabFilter>
+    </items>
+	</IconTabBar>
+        <footer floating="true">
+            <Toolbar>
+                <Button icon="sap-icon://excel-attachment" enabled="true" id="Esporta" press="onExportCurrent" text="Esporta Excel" visible="true" />
+				<Button icon="sap-icon://excel-attachment" enabled="true" id="EsportaAggregazioneBrand" press="onExportAggregazioneBrand" text="Esporta Excel" visible="false" />
+			   	<ToolbarSpacer />
+               	<Button text="Cambia Filtri Iniziali" press=".openDialogRange" />    
+            </Toolbar>
+        </footer>
+    </Page>
+     <Dialog id="helloDialog" title="Seleziona i filtri da inserire" contentWidth= "auto" contentHeight= "auto">
+            <l:VerticalLayout class="sapUiContentPadding" width="100%">
+                  <Label text="Stagione OdA e OdV "></Label>
+                
+                    <ComboBox selectionChange="selectionChangeUniqueSeason" id="multiUniqueSeason" items="{path:'/UNIQUE_SEASON'}" showSecondaryValues="true">
+                        <items>
+                            <core:Item text="{FSH_SEASON}" key="{FSH_SEASON}"/>
+                        </items>
+                    </ComboBox>
+                <Label text="Stagione Uscita Merci"></Label>
+                    <MultiComboBox enabled="false" selectionChange="onSelectionChangeUscitaMerci" id="multiStagioneUscitaMerci" items="{path:'/UNIQUE_SEASON'}" showSecondaryValues="true">
+                        <items>
+                            <core:ListItem text="{FSH_SEASON} {FSH_COLLECTION}" key="{FSH_SEASON}"/>
+                        </items>
+                    </MultiComboBox>
+                   <Label id="labelCollezione" text="Collezione" visible="false"></Label>
+                    <MultiComboBox  id="multiCollezioneOdAeOdV" items="{path:'/ANAG_COLLECTIONS'}" showSecondaryValues="true" visible="false">
+                        <items>
+                            <core:ListItem text="{FSH_COLLECTION} " key="{FSH_COLLECTION}"/>
+                        </items>
+                    </MultiComboBox>
+                <Label id="labelRangeOda" text="Range di Date di Creazione OdA e OdV" visible="false"></Label>
+                    <DateRangeSelection id="dateRangeOda" visible="false"/>
+                <Label id="labelRangeCassa" text="Range di Date di Registrazione Uscita Merci/Vendita in cassa" visible="false"></Label>
+                    <DateRangeSelection id="dateRangeCassa" visible="false" />
+              
+                <Label id="labelCompany" text="Company" visible="false"></Label>
+                
+                    <MultiComboBox  id="multiCompany" items="{path:'/ANAG_COMPANY'}" showSecondaryValues="true" visible="false">
+                        <items>
+                            <core:ListItem key="{BUKRS}" text="{BUTXT}"/>
+                        </items>
+                    </MultiComboBox>
+                
+                <Label id="labelBrand" text="Brand" visible="false"></Label>
+               
+                    <MultiComboBox  id="multiBrand" items="{path:'/ANAG_BRAND'}" showSecondaryValues="true" visible="false">
+                        <items>
+                            <core:ListItem text="{BRAND_DESCR}" key="{BRAND_ID}"/>
+                        </items>
+                    </MultiComboBox>
+                
+                <Label id="labelGender" text="Gender" visible="false"></Label>
+               
+                    <MultiComboBox  id="multiGender" items="{path:'/ANAG_GENDER'}" showSecondaryValues="true" visible="false">
+                        <items>
+                            <core:ListItem text="{VTEXT}" key="{PRODH}"/>
+                        </items>
+                    </MultiComboBox>
+               
+                <Label id="labelSubGender" text="Sub Gender" visible="false"></Label>
+                  
+                    <MultiComboBox  id="multiSubGender" items="{path:'/ANAG_SUBGENDER'}" showSecondaryValues="true" visible="false">
+                        <items>
+                            <core:ListItem text="{EWBEZ}" key="{EXTWG}"/>
+                        </items>
+                    </MultiComboBox>
+               
+                <Label id="labelFamilyGroup" text="Family Group" visible="false"></Label>
+                    <MultiComboBox  id="multiFamily" items="{path:'/ANAG_FAMILY'}" showSecondaryValues="true" visible="false">
+                        <items>
+                            <core:ListItem text="{LBTXT}" key="{LABOR}"/>
+                        </items>
+                    </MultiComboBox>
+                <Label id="labelProductGroup" text="Product Group" visible="false"></Label>
+                    <MultiComboBox  id="multiGroup" items="{path:'/ANAG_PRODUCT_GROUP'}" showSecondaryValues="true" visible="false">
+                        <items>
+                            <core:ListItem text="{WGBEZ}" key="{MATKL}"/>
+                        </items>
+                    </MultiComboBox>
+            </l:VerticalLayout>
+            <beginButton>
+                <Button text="Ok" press=".closeDialogListRegistrazione" />
+            </beginButton>
+        </Dialog>   
+</mvc:View>

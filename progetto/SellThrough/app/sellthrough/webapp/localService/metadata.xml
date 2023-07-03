@@ -1,0 +1,2240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Capabilities.V1.xml" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="VendutoPerCanaleServices" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityContainer Name="EntityContainer" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="VendutoPerCanale" EntityType="VendutoPerCanaleServices.VendutoPerCanale"/>
+                <EntitySet Name="UNIQUE_COMPANY" EntityType="VendutoPerCanaleServices.UNIQUE_COMPANY"/>
+                <EntitySet Name="UNIQUE_PROFIT_CENTER" EntityType="VendutoPerCanaleServices.UNIQUE_PROFIT_CENTER"/>
+                <EntitySet Name="UNIQUE_SAP_ORDER_NUMBER" EntityType="VendutoPerCanaleServices.UNIQUE_SAP_ORDER_NUMBER"/>
+                <EntitySet Name="UNIQUE_SALE_ORDER_TYPE" EntityType="VendutoPerCanaleServices.UNIQUE_SALE_ORDER_TYPE"/>
+                <EntitySet Name="UNIQUE_OUTBOUND_DELIVERY_NUMBER" EntityType="VendutoPerCanaleServices.UNIQUE_OUTBOUND_DELIVERY_NUMBER"/>
+                <EntitySet Name="UNIQUE_ORIGINAL_ORDER_NUMBER" EntityType="VendutoPerCanaleServices.UNIQUE_ORIGINAL_ORDER_NUMBER"/>
+                <EntitySet Name="UNIQUE_PLANT" EntityType="VendutoPerCanaleServices.UNIQUE_PLANT"/>
+                <EntitySet Name="UNIQUE_COMMITTENTE" EntityType="VendutoPerCanaleServices.UNIQUE_COMMITTENTE"/>
+                <EntitySet Name="UNIQUE_AGENTE" EntityType="VendutoPerCanaleServices.UNIQUE_AGENTE"/>
+                <EntitySet Name="UNIQUE_DESTINATARIO" EntityType="VendutoPerCanaleServices.UNIQUE_DESTINATARIO"/>
+                <EntitySet Name="UNIQUE_PAESE_DESTINAZIONE" EntityType="VendutoPerCanaleServices.UNIQUE_PAESE_DESTINAZIONE"/>
+                <EntitySet Name="UNIQUE_REFERENCE_MATERIAL" EntityType="VendutoPerCanaleServices.UNIQUE_REFERENCE_MATERIAL"/>
+                <EntitySet Name="UNIQUE_MATERIAL" EntityType="VendutoPerCanaleServices.UNIQUE_MATERIAL"/>
+                <EntitySet Name="UNIQUE_SEASON" EntityType="VendutoPerCanaleServices.UNIQUE_SEASON"/>
+                <EntitySet Name="UNIQUE_BRAND" EntityType="VendutoPerCanaleServices.UNIQUE_BRAND"/>
+                <EntitySet Name="UNIQUE_FAMILY" EntityType="VendutoPerCanaleServices.UNIQUE_FAMILY"/>
+                <EntitySet Name="UNIQUE_GENDER" EntityType="VendutoPerCanaleServices.UNIQUE_GENDER"/>
+                <EntitySet Name="UNIQUE_PRODUCT_GROUP" EntityType="VendutoPerCanaleServices.UNIQUE_PRODUCT_GROUP"/>
+                <EntitySet Name="UNIQUE_COLOR" EntityType="VendutoPerCanaleServices.UNIQUE_COLOR"/>
+                <EntitySet Name="UNIQUE_SIZE" EntityType="VendutoPerCanaleServices.UNIQUE_SIZE"/>
+                <EntitySet Name="UNIQUE_COLLECTION" EntityType="VendutoPerCanaleServices.UNIQUE_COLLECTION"/>
+            </EntityContainer>
+            <EntityType Name="VendutoPerCanale">
+                <Key>
+                    <PropertyRef Name="SISTEMA_SORGENTE"/>
+                    <PropertyRef Name="COMPANYID"/>
+                    <PropertyRef Name="COMPANY"/>
+                    <PropertyRef Name="PROFIT_CENTER_CODE"/>
+                    <PropertyRef Name="PROFIT_CENTER"/>
+                    <PropertyRef Name="SAP_ORDER_NUMBER"/>
+                    <PropertyRef Name="SAP_ORDER_ITEM"/>
+                    <PropertyRef Name="SALE_ORDER_TYPE_CODE"/>
+                    <PropertyRef Name="SALE_ORDER_TYPE"/>
+                    <PropertyRef Name="OUTBOUND_DELIVERY_NUMBER"/>
+                    <PropertyRef Name="OUTBOUND_DELIVERY_ITEM"/>
+                    <PropertyRef Name="ORIGINAL_ORDER_NUMBER"/>
+                    <PropertyRef Name="ORIGINAL_ORDER_ITEM"/>
+                    <PropertyRef Name="ORIGINAL_ORDER_TYPE"/>
+                    <PropertyRef Name="PLANT_CODE"/>
+                    <PropertyRef Name="STORE"/>
+                    <PropertyRef Name="COMMITTENTE_CODE"/>
+                    <PropertyRef Name="COMMITTENTE"/>
+                    <PropertyRef Name="AGENTE_CODE"/>
+                    <PropertyRef Name="AGENTE"/>
+                    <PropertyRef Name="DESTINATARIO_CODE"/>
+                    <PropertyRef Name="DESTINATARIO"/>
+                    <PropertyRef Name="PAESE_DESTINAZIONE_CODE"/>
+                    <PropertyRef Name="PAESE_DESTINAZIONE"/>
+                    <PropertyRef Name="REFERENCE_MATERIAL"/>
+                    <PropertyRef Name="MATERIAL"/>
+                    <PropertyRef Name="MATERIAL_DESCRIPTION"/>
+                    <PropertyRef Name="SEASON"/>
+                    <PropertyRef Name="BRAND"/>
+                    <PropertyRef Name="FAMILY"/>
+                    <PropertyRef Name="GENDER"/>
+                    <PropertyRef Name="SUBGENDER"/>
+                    <PropertyRef Name="PRODUCT_GROUP"/>
+                    <PropertyRef Name="DESCRIZIONE_COLOR"/>
+                    <PropertyRef Name="SIZE"/>
+                    <PropertyRef Name="COLLECTION"/>
+                    <PropertyRef Name="VALUTA"/>
+                    <PropertyRef Name="CASHDESKID"/>
+                    <PropertyRef Name="DOCUMENTENTRY"/>
+                    <PropertyRef Name="DOCUMENTPOSNR"/>
+                    <PropertyRef Name="VALUTA_RETAIL_NET_PRICE"/>
+                    <PropertyRef Name="VALUTA_WHOLESALE_PRICE_DA_ORDINE"/>
+                    <PropertyRef Name="VALUTA_SELL_OUT_PRICE_UNITARIO"/>
+                    <PropertyRef Name="UM_WHOLESALE_PRICE_LISTINO"/>
+                    <PropertyRef Name="VALUTA_RETAIL_FULL_PRICE"/>
+                    <PropertyRef Name="CC_VALUTA_MARK"/>
+                </Key>
+                <Property Name="SISTEMA_SORGENTE" Type="Edm.String" MaxLength="5" Nullable="false"/>
+                <Property Name="POSTING_DATE" Type="Edm.String" MaxLength="10"/>
+                <Property Name="COMPANYID" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+                <Property Name="COMPANY" Type="Edm.String" MaxLength="25" Nullable="false"/>
+                <Property Name="PROFIT_CENTER_CODE" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+                <Property Name="PROFIT_CENTER" Type="Edm.String" MaxLength="40" Nullable="false"/>
+                <Property Name="SAP_ORDER_NUMBER" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="SAP_ORDER_ITEM" Type="Edm.String" MaxLength="6" Nullable="false"/>
+                <Property Name="SALE_ORDER_TYPE_CODE" Type="Edm.String" MaxLength="4" Nullable="false"/>
+                <Property Name="SALE_ORDER_TYPE" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+                <Property Name="OUTBOUND_DELIVERY_NUMBER" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="OUTBOUND_DELIVERY_ITEM" Type="Edm.String" MaxLength="6" Nullable="false"/>
+                <Property Name="ORIGINAL_ORDER_NUMBER" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="ORIGINAL_ORDER_ITEM" Type="Edm.String" MaxLength="6" Nullable="false"/>
+                <Property Name="ORIGINAL_ORDER_TYPE" Type="Edm.String" MaxLength="20" Nullable="false"/>
+                <Property Name="PLANT_CODE" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+                <Property Name="STORE" Type="Edm.String" MaxLength="35" Nullable="false"/>
+                <Property Name="COMMITTENTE_CODE" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+                <Property Name="COMMITTENTE" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+                <Property Name="AGENTE_CODE" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="AGENTE" Type="Edm.String" MaxLength="35" Nullable="false"/>
+                <Property Name="DESTINATARIO_CODE" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+                <Property Name="DESTINATARIO" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+                <Property Name="PAESE_DESTINAZIONE_CODE" Type="Edm.String" MaxLength="3" Nullable="false"/>
+                <Property Name="PAESE_DESTINAZIONE" Type="Edm.String" MaxLength="50" Nullable="false"/>
+                <Property Name="REFERENCE_MATERIAL" Type="Edm.String" MaxLength="40" Nullable="false"/>
+                <Property Name="MATERIAL" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+                <Property Name="MATERIAL_DESCRIPTION" Type="Edm.String" MaxLength="40" Nullable="false"/>
+                <Property Name="SEASON" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+                <Property Name="BRAND" Type="Edm.String" MaxLength="30" Nullable="false"/>
+                <Property Name="FAMILY" Type="Edm.String" MaxLength="18" Nullable="false"/>
+                <Property Name="GENDER" Type="Edm.String" MaxLength="18" Nullable="false"/>
+                <Property Name="SUBGENDER" Type="Edm.String" MaxLength="18" Nullable="false"/>
+                <Property Name="PRODUCT_GROUP" Type="Edm.String" MaxLength="20" Nullable="false"/>
+                <Property Name="DESCRIZIONE_COLOR" Type="Edm.String" MaxLength="32" Nullable="false"/>
+                <Property Name="SIZE" Type="Edm.String" MaxLength="18" Nullable="false"/>
+                <Property Name="COLLECTION" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="PIECES_SOLD" Type="Edm.Int32"/>
+                <Property Name="WHOLESALE_PRICE_DA_ORDINE" Type="Edm.Decimal" Scale="2" Precision="13"/>
+                <Property Name="WHOLESALE_PRICE_LISTINO" Type="Edm.Decimal" Scale="2" Precision="11"/>
+                <Property Name="RETAIL_NET_PRICE_UN" Type="Edm.Decimal" Scale="2" Precision="13"/>
+                <Property Name="RETAIL_FULL_PRICE_UN" Type="Edm.Decimal" Scale="2" Precision="11"/>
+                <Property Name="VALUTA" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+                <Property Name="MARK_APPLIED" Type="Edm.Decimal" Scale="2" Precision="15"/>
+                <Property Name="MARK_PERCENTAGE_APPLIED" Type="Edm.Decimal" Scale="2" Precision="13"/>
+                <Property Name="SELL_OUT_PRICE_UN" Type="Edm.Decimal" Scale="2" Precision="13"/>
+                <Property Name="TASSO_DI_CAMBIO" Type="Edm.Decimal" Scale="5" Precision="9"/>
+                <Property Name="TOTAL_SELL_OUT_PRICE_EUR" Type="Edm.Decimal" Scale="2" Precision="13"/>
+                <Property Name="TOT_COGS" Type="Edm.Decimal" Scale="2" Precision="13"/>
+                <Property Name="TOT_GROSS_MARGIN_PERCENT" Type="Edm.Decimal" Scale="2" Precision="13"/>
+                <Property Name="TOT_GROSS_MARGIN_EUR" Type="Edm.Decimal" Scale="2" Precision="13"/>
+                <Property Name="CASHDESKID" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+                <Property Name="DOCUMENTENTRY" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+                <Property Name="DOCUMENTPOSNR" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+                <Property Name="VALUTA_RETAIL_NET_PRICE" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+                <Property Name="VALUTA_WHOLESALE_PRICE_DA_ORDINE" Type="Edm.String" MaxLength="5" Nullable="false"/>
+                <Property Name="VALUTA_SELL_OUT_PRICE_UNITARIO" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+                <Property Name="UM_WHOLESALE_PRICE_LISTINO" Type="Edm.String" MaxLength="5" Nullable="false"/>
+                <Property Name="VALUTA_RETAIL_FULL_PRICE" Type="Edm.String" MaxLength="5" Nullable="false"/>
+                <Property Name="CC_VALUTA_MARK" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="UNIQUE_COMPANY">
+                <Key>
+                    <PropertyRef Name="COMPANYID"/>
+                </Key>
+                <Property Name="COMPANYID" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+                <Property Name="COMPANY" Type="Edm.String" MaxLength="25"/>
+            </EntityType>
+            <EntityType Name="UNIQUE_PROFIT_CENTER">
+                <Key>
+                    <PropertyRef Name="PROFIT_CENTER_CODE"/>
+                </Key>
+                <Property Name="PROFIT_CENTER_CODE" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+                <Property Name="PROFIT_CENTER" Type="Edm.String" MaxLength="40"/>
+            </EntityType>
+            <EntityType Name="UNIQUE_SAP_ORDER_NUMBER">
+                <Key>
+                    <PropertyRef Name="SAP_ORDER_NUMBER"/>
+                </Key>
+                <Property Name="SAP_ORDER_NUMBER" Type="Edm.String" MaxLength="10" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="UNIQUE_SALE_ORDER_TYPE">
+                <Key>
+                    <PropertyRef Name="SALE_ORDER_TYPE_CODE"/>
+                </Key>
+                <Property Name="SALE_ORDER_TYPE_CODE" Type="Edm.String" MaxLength="4" Nullable="false"/>
+                <Property Name="SALE_ORDER_TYPE" Type="Edm.String" MaxLength="5000"/>
+            </EntityType>
+            <EntityType Name="UNIQUE_OUTBOUND_DELIVERY_NUMBER">
+                <Key>
+                    <PropertyRef Name="OUTBOUND_DELIVERY_NUMBER"/>
+                </Key>
+                <Property Name="OUTBOUND_DELIVERY_NUMBER" Type="Edm.String" MaxLength="10" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="UNIQUE_ORIGINAL_ORDER_NUMBER">
+                <Key>
+                    <PropertyRef Name="ORIGINAL_ORDER_NUMBER"/>
+                </Key>
+                <Property Name="ORIGINAL_ORDER_NUMBER" Type="Edm.String" MaxLength="10" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="UNIQUE_PLANT">
+                <Key>
+                    <PropertyRef Name="PLANT_CODE"/>
+                </Key>
+                <Property Name="PLANT_CODE" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+                <Property Name="STORE" Type="Edm.String" MaxLength="35"/>
+            </EntityType>
+            <EntityType Name="UNIQUE_COMMITTENTE">
+                <Key>
+                    <PropertyRef Name="COMMITTENTE_CODE"/>
+                </Key>
+                <Property Name="COMMITTENTE_CODE" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+                <Property Name="COMMITTENTE" Type="Edm.String" MaxLength="5000"/>
+            </EntityType>
+            <EntityType Name="UNIQUE_AGENTE">
+                <Key>
+                    <PropertyRef Name="AGENTE_CODE"/>
+                </Key>
+                <Property Name="AGENTE_CODE" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="AGENTE" Type="Edm.String" MaxLength="35"/>
+            </EntityType>
+            <EntityType Name="UNIQUE_DESTINATARIO">
+                <Key>
+                    <PropertyRef Name="DESTINATARIO_CODE"/>
+                </Key>
+                <Property Name="DESTINATARIO_CODE" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+                <Property Name="DESTINATARIO" Type="Edm.String" MaxLength="5000"/>
+            </EntityType>
+            <EntityType Name="UNIQUE_PAESE_DESTINAZIONE">
+                <Key>
+                    <PropertyRef Name="PAESE_DESTINAZIONE_CODE"/>
+                </Key>
+                <Property Name="PAESE_DESTINAZIONE_CODE" Type="Edm.String" MaxLength="3" Nullable="false"/>
+                <Property Name="PAESE_DESTINAZIONE" Type="Edm.String" MaxLength="50"/>
+            </EntityType>
+            <EntityType Name="UNIQUE_REFERENCE_MATERIAL">
+                <Key>
+                    <PropertyRef Name="REFERENCE_MATERIAL"/>
+                </Key>
+                <Property Name="REFERENCE_MATERIAL" Type="Edm.String" MaxLength="40" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="UNIQUE_MATERIAL">
+                <Key>
+                    <PropertyRef Name="MATERIAL"/>
+                </Key>
+                <Property Name="MATERIAL" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+                <Property Name="MATERIAL_DESCRIPTION" Type="Edm.String" MaxLength="40"/>
+            </EntityType>
+            <EntityType Name="UNIQUE_SEASON">
+                <Key>
+                    <PropertyRef Name="SEASON"/>
+                </Key>
+                <Property Name="SEASON" Type="Edm.String" MaxLength="5000" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="UNIQUE_BRAND">
+                <Key>
+                    <PropertyRef Name="BRAND"/>
+                </Key>
+                <Property Name="BRAND" Type="Edm.String" MaxLength="30" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="UNIQUE_FAMILY">
+                <Key>
+                    <PropertyRef Name="FAMILY"/>
+                </Key>
+                <Property Name="FAMILY" Type="Edm.String" MaxLength="18" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="UNIQUE_GENDER">
+                <Key>
+                    <PropertyRef Name="GENDER"/>
+                </Key>
+                <Property Name="GENDER" Type="Edm.String" MaxLength="18" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="UNIQUE_PRODUCT_GROUP">
+                <Key>
+                    <PropertyRef Name="PRODUCT_GROUP"/>
+                </Key>
+                <Property Name="PRODUCT_GROUP" Type="Edm.String" MaxLength="20" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="UNIQUE_COLOR">
+                <Key>
+                    <PropertyRef Name="DESCRIZIONE_COLOR"/>
+                </Key>
+                <Property Name="DESCRIZIONE_COLOR" Type="Edm.String" MaxLength="32" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="UNIQUE_SIZE">
+                <Key>
+                    <PropertyRef Name="SIZE"/>
+                </Key>
+                <Property Name="SIZE" Type="Edm.String" MaxLength="18" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="UNIQUE_COLLECTION">
+                <Key>
+                    <PropertyRef Name="COLLECTION"/>
+                </Key>
+                <Property Name="COLLECTION" Type="Edm.String" MaxLength="10" Nullable="false"/>
+            </EntityType>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>COMPANY</PropertyPath>
+                        <PropertyPath>PROFIT_CENTER</PropertyPath>
+                        <PropertyPath>SAP_ORDER_NUMBER</PropertyPath>
+                        <PropertyPath>SALE_ORDER_TYPE</PropertyPath>
+                        <PropertyPath>OUTBOUND_DELIVERY_NUMBER</PropertyPath>
+                        <PropertyPath>ORIGINAL_ORDER_NUMBER</PropertyPath>
+                        <PropertyPath>STORE</PropertyPath>
+                        <PropertyPath>COMMITTENTE</PropertyPath>
+                        <PropertyPath>AGENTE</PropertyPath>
+                        <PropertyPath>DESTINATARIO</PropertyPath>
+                        <PropertyPath>PAESE_DESTINAZIONE</PropertyPath>
+                        <PropertyPath>REFERENCE_MATERIAL</PropertyPath>
+                        <PropertyPath>MATERIAL_DESCRIPTION</PropertyPath>
+                        <PropertyPath>SEASON</PropertyPath>
+                        <PropertyPath>BRAND</PropertyPath>
+                        <PropertyPath>FAMILY</PropertyPath>
+                        <PropertyPath>GENDER</PropertyPath>
+                        <PropertyPath>PRODUCT_GROUP</PropertyPath>
+                        <PropertyPath>SIZE</PropertyPath>
+                        <PropertyPath>COLLECTION</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SISTEMA_SORGENTE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+                            <PropertyValue Property="Label" String="SISTEMA SORGENTE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="POSTING_DATE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="POSTING DATE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="COMPANYID"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="COMPANY ID"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="COMPANY"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="COMPANY"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PROFIT_CENTER_CODE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="PROFIT CENTER CODE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PROFIT_CENTER"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="PROFIT CENTER"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SAP_ORDER_NUMBER"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="SAP ORDER NUMBER"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SAP_ORDER_ITEM"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="SAP ORDER ITEM"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SALE_ORDER_TYPE_CODE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="SALE ORDER TYPE CODE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SALE_ORDER_TYPE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="SALE ORDER TYPE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="OUTBOUND_DELIVERY_NUMBER"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="OUTBOUND DELIVERY NUMBER"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="OUTBOUND_DELIVERY_ITEM"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="OUTBOUND DELIVERY ITEM"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ORIGINAL_ORDER_NUMBER"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="ORIGINAL ORDER NUMBER"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ORIGINAL_ORDER_ITEM"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="ORIGINAL ORDER ITEM"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ORIGINAL_ORDER_TYPE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="ORIGINAL ORDER TYPE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PLANT_CODE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="PLANT CODE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="STORE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="PLANT"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="COMMITTENTE_CODE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+                            <PropertyValue Property="Label" String="COMMITTENTE CODE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="COMMITTENTE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+                            <PropertyValue Property="Label" String="COMMITTENTE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="AGENTE_CODE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+                            <PropertyValue Property="Label" String="AGENTE CODE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="AGENTE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+                            <PropertyValue Property="Label" String="AGENTE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="DESTINATARIO_CODE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+                            <PropertyValue Property="Label" String="DESTINATARIO CODE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="DESTINATARIO"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+                            <PropertyValue Property="Label" String="DESTINATARIO"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PAESE_DESTINAZIONE_CODE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+                            <PropertyValue Property="Label" String="PAESE DESTINAZIONE CODE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PAESE_DESTINAZIONE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+                            <PropertyValue Property="Label" String="PAESE DESTINAZIONE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="REFERENCE_MATERIAL"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="REFERENCE MATERIAL"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MATERIAL"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="MATERIAL"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MATERIAL_DESCRIPTION"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="MATERIAL DESCRIPTION"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SEASON"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+                            <PropertyValue Property="Label" String="SEASON"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BRAND"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+                            <PropertyValue Property="Label" String="BRAND"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="FAMILY"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+                            <PropertyValue Property="Label" String="FAMILY"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="GENDER"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+                            <PropertyValue Property="Label" String="GENDER"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SUBGENDER"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+                            <PropertyValue Property="Label" String="SUBGENDER"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PRODUCT_GROUP"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+                            <PropertyValue Property="Label" String="PRODUCT GROUP"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="DESCRIZIONE_COLOR"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+                            <PropertyValue Property="Label" String="DESCRIZIONE COLOR"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SIZE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+                            <PropertyValue Property="Label" String="SIZE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="COLLECTION"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+                            <PropertyValue Property="Label" String="COLLECTION"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PIECES_SOLD"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="PIECES SOLD"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="WHOLESALE_PRICE_DA_ORDINE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="WHOLESALE PRICE DA ORDINE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="WHOLESALE_PRICE_LISTINO"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="WHOLESALE PRICE LISTINO"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="RETAIL_NET_PRICE_UN"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="RETAIL NET PRICE UN"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="VALUTA"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+                            <PropertyValue Property="Label" String="VALUTA"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MARK_APPLIED"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="MARK-DOWN/MARK-UP APPLIED"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MARK_PERCENTAGE_APPLIED"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="MARK-UP/MARK-DOWN PERCENTAGE APPLIED"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SELL_OUT_PRICE_UN"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="SELL OUT PRICE UN"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="TASSO_DI_CAMBIO"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="TASSO DI CAMBIO"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="TOTAL_SELL_OUT_PRICE_EUR"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="TOTAL SELL OUT PRICE EUR"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="TOT_COGS"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="TOT COGS EUR"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="TOT_GROSS_MARGIN_EUR"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="TOT GROSS MARGIN EUR"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="TOT_GROSS_MARGIN_PERCENT"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="TOT GROSS MARGIN PERCENT"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/SISTEMA_SORGENTE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="SISTEMA SORGENTE"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/POSTING_DATE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="POSTING DATE"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/COMPANYID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="COMPANY ID"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/COMPANY" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="COMPANY"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_COMPANY"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="COMPANYID"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="COMPANY"/>
+                                    <PropertyValue Property="ValueListProperty" String="COMPANY"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/PROFIT_CENTER_CODE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="PROFIT CENTER CODE"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/PROFIT_CENTER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="PROFIT CENTER"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_PROFIT_CENTER"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PROFIT_CENTER_CODE"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="PROFIT_CENTER"/>
+                                    <PropertyValue Property="ValueListProperty" String="PROFIT_CENTER"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/SAP_ORDER_NUMBER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="SAP ORDER NUMBER"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_SAP_ORDER_NUMBER"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="SAP_ORDER_NUMBER"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SAP_ORDER_NUMBER"/>
+                                    <PropertyValue Property="ValueListProperty" String="SAP_ORDER_NUMBER"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/SAP_ORDER_ITEM" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="SAP ORDER ITEM"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/SALE_ORDER_TYPE_CODE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="SALE ORDER TYPE CODE"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/SALE_ORDER_TYPE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="SALE ORDER TYPE"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_SALE_ORDER_TYPE"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="SALE_ORDER_TYPE_CODE"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SALE_ORDER_TYPE"/>
+                                    <PropertyValue Property="ValueListProperty" String="SALE_ORDER_TYPE"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/OUTBOUND_DELIVERY_NUMBER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="OUTBOUND DELIVERY NUMBER"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_OUTBOUND_DELIVERY_NUMBER"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="OUTBOUND_DELIVERY_NUMBER"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="OUTBOUND_DELIVERY_NUMBER"/>
+                                    <PropertyValue Property="ValueListProperty" String="OUTBOUND_DELIVERY_NUMBER"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/OUTBOUND_DELIVERY_ITEM" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="OUTBOUND DELIVERY ITEM"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/ORIGINAL_ORDER_NUMBER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="ORIGINAL ORDER NUMBER"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_ORIGINAL_ORDER_NUMBER"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="ORIGINAL_ORDER_NUMBER"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ORIGINAL_ORDER_NUMBER"/>
+                                    <PropertyValue Property="ValueListProperty" String="ORIGINAL_ORDER_NUMBER"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/ORIGINAL_ORDER_ITEM" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="ORIGINAL ORDER ITEM"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/ORIGINAL_ORDER_TYPE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="ORIGINAL ORDER TYPE"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/PLANT_CODE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="PLANT CODE"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/STORE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="PLANT"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_PLANT"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PLANT_CODE"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="STORE"/>
+                                    <PropertyValue Property="ValueListProperty" String="STORE"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/COMMITTENTE_CODE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="COMMITTENTE CODE"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/COMMITTENTE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="COMMITTENTE"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_COMMITTENTE"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="COMMITTENTE_CODE"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="COMMITTENTE"/>
+                                    <PropertyValue Property="ValueListProperty" String="COMMITTENTE"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/AGENTE_CODE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="AGENTE CODE"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/AGENTE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="AGENTE"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_AGENTE"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="AGENTE_CODE"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="AGENTE"/>
+                                    <PropertyValue Property="ValueListProperty" String="AGENTE"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/DESTINATARIO_CODE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="DESTINATARIO CODE"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/DESTINATARIO" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="DESTINATARIO"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_DESTINATARIO"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="DESTINATARIO_CODE"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="DESTINATARIO"/>
+                                    <PropertyValue Property="ValueListProperty" String="DESTINATARIO"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/PAESE_DESTINAZIONE_CODE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="PAESE DESTINAZIONE CODE"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/PAESE_DESTINAZIONE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="PAESE DESTINAZIONE"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_PAESE_DESTINAZIONE"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PAESE_DESTINAZIONE_CODE"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="PAESE_DESTINAZIONE"/>
+                                    <PropertyValue Property="ValueListProperty" String="PAESE_DESTINAZIONE"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/REFERENCE_MATERIAL" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="REFERENCE MATERIAL"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_REFERENCE_MATERIAL"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="REFERENCE_MATERIAL"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="REFERENCE_MATERIAL"/>
+                                    <PropertyValue Property="ValueListProperty" String="REFERENCE_MATERIAL"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/MATERIAL" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="MATERIAL"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/MATERIAL_DESCRIPTION" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="MATERIAL"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_MATERIAL"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="MATERIAL"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="MATERIAL_DESCRIPTION"/>
+                                    <PropertyValue Property="ValueListProperty" String="MATERIAL_DESCRIPTION"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/SEASON" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="SEASON"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_SEASON"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="SEASON"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SEASON"/>
+                                    <PropertyValue Property="ValueListProperty" String="SEASON"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/BRAND" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="BRAND"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_BRAND"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BRAND"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="BRAND"/>
+                                    <PropertyValue Property="ValueListProperty" String="BRAND"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/FAMILY" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="FAMILY"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_FAMILY"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="FAMILY"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="FAMILY"/>
+                                    <PropertyValue Property="ValueListProperty" String="FAMILY"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/GENDER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="GENDER"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_GENDER"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="GENDER"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="GENDER"/>
+                                    <PropertyValue Property="ValueListProperty" String="GENDER"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/SUBGENDER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="SUBGENDER"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/PRODUCT_GROUP" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="PRODUCT GROUP"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_PRODUCT_GROUP"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PRODUCT_GROUP"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="PRODUCT_GROUP"/>
+                                    <PropertyValue Property="ValueListProperty" String="PRODUCT_GROUP"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/DESCRIZIONE_COLOR" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="COLOR"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_COLOR"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="DESCRIZIONE_COLOR"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="DESCRIZIONE_COLOR"/>
+                                    <PropertyValue Property="ValueListProperty" String="DESCRIZIONE_COLOR"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/SIZE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="SIZE"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_SIZE"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="SIZE"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SIZE"/>
+                                    <PropertyValue Property="ValueListProperty" String="SIZE"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/COLLECTION" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="COLLECTION"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_COLLECTION"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="COLLECTION"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="COLLECTION"/>
+                                    <PropertyValue Property="ValueListProperty" String="COLLECTION"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/PIECES_SOLD" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="PIECES SOLD"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/WHOLESALE_PRICE_DA_ORDINE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="WHOLESALE PRICE DA ORDINE"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/WHOLESALE_PRICE_LISTINO" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="WHOLESALE PRICE LISTINO"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/RETAIL_NET_PRICE_UN" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="RETAIL NET PRICE UN"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/RETAIL_FULL_PRICE_UN" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="RETAIL FULL PRICE UN"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/VALUTA" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="VALUTA"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/MARK_APPLIED" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="MARK-DOWN/MARK-UP APPLIED"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/MARK_PERCENTAGE_APPLIED" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="MARK-UP/MARK-DOWN PERCENTAGE APPLIED"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/SELL_OUT_PRICE_UN" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="SELL OUT PRICE UN"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/TASSO_DI_CAMBIO" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="TASSO DI CAMBIO"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/TOTAL_SELL_OUT_PRICE_EUR" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="TOTAL SELL OUT PRICE EUR"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/TOT_COGS" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="TOT COGS EUR"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/TOT_GROSS_MARGIN_PERCENT" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="TOT GROSS MARGIN PERCENT"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/TOT_GROSS_MARGIN_EUR" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="TOT GROSS MARGIN EUR"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/CASHDESKID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="CASHDESKID"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/DOCUMENTENTRY" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="DOCUMENTENTRY"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/DOCUMENTPOSNR" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="DOCUMENTPOSNR"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/VALUTA_RETAIL_NET_PRICE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="VALUTA RETAIL NET PRICE"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/VALUTA_WHOLESALE_PRICE_DA_ORDINE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="VALUTA WHOLESALE PRICE DA ORDINE"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/VALUTA_SELL_OUT_PRICE_UNITARIO" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="VALUTA SELL OUT PRICE UNITARIO"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/UM_WHOLESALE_PRICE_LISTINO" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="UM WHOLESALE PRICE LISTINO"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/VALUTA_RETAIL_FULL_PRICE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="VALUTA RETAIL FULL PRICE"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.VendutoPerCanale/CC_VALUTA_MARK" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="VALUTA MARK"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_COMPANY" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>COMPANYID</PropertyPath>
+                        <PropertyPath>COMPANY</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="COMPANYID"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="BRAND"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="COMPANY"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="BRAND ID"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.EntityContainer/UNIQUE_COMPANY" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_COMPANY/COMPANYID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="COMPANY ID"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_COMPANY/COMPANY" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="COMPANY"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_COMPANY"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="COMPANYID"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="COMPANY"/>
+                                    <PropertyValue Property="ValueListProperty" String="COMPANY"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_PROFIT_CENTER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>PROFIT_CENTER_CODE</PropertyPath>
+                        <PropertyPath>PROFIT_CENTER</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PROFIT_CENTER_CODE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="PROFIT CENTER CODE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PROFIT_CENTER"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="PROFIT CENTER"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.EntityContainer/UNIQUE_PROFIT_CENTER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_PROFIT_CENTER/PROFIT_CENTER_CODE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="PROFIT CENTER CODE"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_PROFIT_CENTER/PROFIT_CENTER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="PROFIT CENTER"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_PROFIT_CENTER"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PROFIT_CENTER_CODE"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="PROFIT_CENTER"/>
+                                    <PropertyValue Property="ValueListProperty" String="PROFIT_CENTER"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_SAP_ORDER_NUMBER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>SAP_ORDER_NUMBER</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SAP_ORDER_NUMBER"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="SAP ORDER NUMBER"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.EntityContainer/UNIQUE_SAP_ORDER_NUMBER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_SAP_ORDER_NUMBER/SAP_ORDER_NUMBER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="SAP ORDER NUMBER"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_SAP_ORDER_NUMBER"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="SAP_ORDER_NUMBER"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SAP_ORDER_NUMBER"/>
+                                    <PropertyValue Property="ValueListProperty" String="SAP_ORDER_NUMBER"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_SALE_ORDER_TYPE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>SALE_ORDER_TYPE_CODE</PropertyPath>
+                        <PropertyPath>SALE_ORDER_TYPE</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SALE_ORDER_TYPE_CODE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="SALE ORDER TYPE CODE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SALE_ORDER_TYPE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="SALE ORDER TYPE"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.EntityContainer/UNIQUE_SALE_ORDER_TYPE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_SALE_ORDER_TYPE/SALE_ORDER_TYPE_CODE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="SALE ORDER TYPE CODE"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_SALE_ORDER_TYPE/SALE_ORDER_TYPE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="SALE ORDER TYPE"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_SALE_ORDER_TYPE"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="SALE_ORDER_TYPE_CODE"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SALE_ORDER_TYPE"/>
+                                    <PropertyValue Property="ValueListProperty" String="SALE_ORDER_TYPE"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_OUTBOUND_DELIVERY_NUMBER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>OUTBOUND_DELIVERY_NUMBER</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="OUTBOUND_DELIVERY_NUMBER"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="OUTBOUND DELIVERY NUMBER"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.EntityContainer/UNIQUE_OUTBOUND_DELIVERY_NUMBER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_OUTBOUND_DELIVERY_NUMBER/OUTBOUND_DELIVERY_NUMBER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="OUTBOUND DELIVERY NUMBER"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_OUTBOUND_DELIVERY_NUMBER"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="OUTBOUND_DELIVERY_NUMBER"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="OUTBOUND_DELIVERY_NUMBER"/>
+                                    <PropertyValue Property="ValueListProperty" String="OUTBOUND_DELIVERY_NUMBER"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_ORIGINAL_ORDER_NUMBER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>ORIGINAL_ORDER_NUMBER</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ORIGINAL_ORDER_NUMBER"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="ORIGINAL ORDER NUMBER"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.EntityContainer/UNIQUE_ORIGINAL_ORDER_NUMBER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_ORIGINAL_ORDER_NUMBER/ORIGINAL_ORDER_NUMBER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="ORIGINAL ORDER NUMBER"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_ORIGINAL_ORDER_NUMBER"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="ORIGINAL_ORDER_NUMBER"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ORIGINAL_ORDER_NUMBER"/>
+                                    <PropertyValue Property="ValueListProperty" String="ORIGINAL_ORDER_NUMBER"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_PLANT" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>PLANT_CODE</PropertyPath>
+                        <PropertyPath>STORE</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PLANT_CODE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="PLANT CODE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="STORE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="PLANT"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.EntityContainer/UNIQUE_PLANT" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_PLANT/PLANT_CODE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="PLANT CODE"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_PLANT/STORE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="PLANT"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_PLANT"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PLANT_CODE"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="STORE"/>
+                                    <PropertyValue Property="ValueListProperty" String="STORE"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_COMMITTENTE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>COMMITTENTE_CODE</PropertyPath>
+                        <PropertyPath>COMMITTENTE</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="COMMITTENTE_CODE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="COMMITTENTE CODE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="COMMITTENTE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="COMMITTENTE"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.EntityContainer/UNIQUE_COMMITTENTE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_COMMITTENTE/COMMITTENTE_CODE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="COMMITTENTE CODE"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_COMMITTENTE/COMMITTENTE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="COMMITTENTE"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_COMMITTENTE"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="COMMITTENTE_CODE"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="COMMITTENTE"/>
+                                    <PropertyValue Property="ValueListProperty" String="COMMITTENTE"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_AGENTE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>AGENTE_CODE</PropertyPath>
+                        <PropertyPath>AGENTE</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="AGENTE_CODE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="AGENTE CODE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="AGENTE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="AGENTE"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.EntityContainer/UNIQUE_AGENTE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_AGENTE/AGENTE_CODE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="AGENTE CODE"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_AGENTE/AGENTE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="AGENTE"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_AGENTE"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="AGENTE_CODE"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="AGENTE"/>
+                                    <PropertyValue Property="ValueListProperty" String="AGENTE"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_DESTINATARIO" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>DESTINATARIO_CODE</PropertyPath>
+                        <PropertyPath>DESTINATARIO</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="DESTINATARIO_CODE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="DESTINATARIO CODE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="DESTINATARIO"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="DESTINATARIO"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.EntityContainer/UNIQUE_DESTINATARIO" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_DESTINATARIO/DESTINATARIO_CODE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="DESTINATARIO CODE"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_DESTINATARIO/DESTINATARIO" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="DESTINATARIO"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_DESTINATARIO"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="DESTINATARIO_CODE"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="DESTINATARIO"/>
+                                    <PropertyValue Property="ValueListProperty" String="DESTINATARIO"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_PAESE_DESTINAZIONE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>PAESE_DESTINAZIONE_CODE</PropertyPath>
+                        <PropertyPath>PAESE_DESTINAZIONE</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PAESE_DESTINAZIONE_CODE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="PAESE DESTINAZIONE CODE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PAESE_DESTINAZIONE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="PAESE DESTINAZIONE"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.EntityContainer/UNIQUE_PAESE_DESTINAZIONE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_PAESE_DESTINAZIONE/PAESE_DESTINAZIONE_CODE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="PAESE DESTINAZIONE CODE"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_PAESE_DESTINAZIONE/PAESE_DESTINAZIONE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="PAESE DESTINAZIONE"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_PAESE_DESTINAZIONE"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PAESE_DESTINAZIONE_CODE"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="PAESE_DESTINAZIONE"/>
+                                    <PropertyValue Property="ValueListProperty" String="PAESE_DESTINAZIONE"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_REFERENCE_MATERIAL" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>REFERENCE_MATERIAL</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="REFERENCE_MATERIAL"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="REFERENCE MATERIAL"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.EntityContainer/UNIQUE_REFERENCE_MATERIAL" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_REFERENCE_MATERIAL/REFERENCE_MATERIAL" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="REFERENCE MATERIAL"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_REFERENCE_MATERIAL"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="REFERENCE_MATERIAL"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="REFERENCE_MATERIAL"/>
+                                    <PropertyValue Property="ValueListProperty" String="REFERENCE_MATERIAL"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_MATERIAL" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>MATERIAL</PropertyPath>
+                        <PropertyPath>MATERIAL_DESCRIPTION</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MATERIAL"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="MATERIAL"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MATERIAL_DESCRIPTION"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="MATERIAL DESCRIPTION"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.EntityContainer/UNIQUE_MATERIAL" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_MATERIAL/MATERIAL" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="MATERIAL"/>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_MATERIAL/MATERIAL_DESCRIPTION" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="MATERIAL"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_MATERIAL"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="MATERIAL"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="MATERIAL_DESCRIPTION"/>
+                                    <PropertyValue Property="ValueListProperty" String="MATERIAL_DESCRIPTION"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_SEASON" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>SEASON</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SEASON"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="SEASON"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.EntityContainer/UNIQUE_SEASON" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_SEASON/SEASON" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="SEASON"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_SEASON"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="SEASON"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SEASON"/>
+                                    <PropertyValue Property="ValueListProperty" String="SEASON"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_BRAND" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>BRAND</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BRAND"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="BRAND"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_BRAND/BRAND" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="BRAND"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_BRAND"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BRAND"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="BRAND"/>
+                                    <PropertyValue Property="ValueListProperty" String="BRAND"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_FAMILY" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>FAMILY</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="FAMILY"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="FAMILY"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.EntityContainer/UNIQUE_FAMILY" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_FAMILY/FAMILY" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="FAMILY"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_FAMILY"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="FAMILY"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="FAMILY"/>
+                                    <PropertyValue Property="ValueListProperty" String="FAMILY"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_GENDER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>GENDER</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="GENDER"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="GENDER"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.EntityContainer/UNIQUE_GENDER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_GENDER/GENDER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="GENDER"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_GENDER"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="GENDER"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="GENDER"/>
+                                    <PropertyValue Property="ValueListProperty" String="GENDER"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_PRODUCT_GROUP" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>PRODUCT_GROUP</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PRODUCT_GROUP"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="PRODUCT GROUP"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.EntityContainer/UNIQUE_PRODUCT_GROUP" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_PRODUCT_GROUP/PRODUCT_GROUP" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="PRODUCT GROUP"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_PRODUCT_GROUP"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PRODUCT_GROUP"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="PRODUCT_GROUP"/>
+                                    <PropertyValue Property="ValueListProperty" String="PRODUCT_GROUP"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_COLOR" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>DESCRIZIONE_COLOR</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="DESCRIZIONE_COLOR"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="COLOR"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.EntityContainer/UNIQUE_COLOR" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_COLOR/DESCRIZIONE_COLOR" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="COLOR"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_COLOR"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="DESCRIZIONE_COLOR"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="DESCRIZIONE_COLOR"/>
+                                    <PropertyValue Property="ValueListProperty" String="DESCRIZIONE_COLOR"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_SIZE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>SIZE</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SIZE"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="SIZE"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.EntityContainer/UNIQUE_SIZE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_SIZE/SIZE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="SIZE"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_SIZE"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="SIZE"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SIZE"/>
+                                    <PropertyValue Property="ValueListProperty" String="SIZE"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_COLLECTION" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>COLLECTION</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="COLLECTION"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="COLLECTION"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.EntityContainer/UNIQUE_COLLECTION" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="VendutoPerCanaleServices.UNIQUE_COLLECTION/COLLECTION" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="COLLECTION"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="UNIQUE_COLLECTION"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="COLLECTION"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="COLLECTION"/>
+                                    <PropertyValue Property="ValueListProperty" String="COLLECTION"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,318 @@
+<mvc:View xmlns:cards="sap.f.cards" xmlns:table="sap.ui.table" xmlns="sap.m" xmlns:f="sap.f" xmlns:core="sap.ui.core" xmlns:fb="sap.ui.comp.filterbar" xmlns:mvc="sap.ui.core.mvc" controllerName="modes.com.retailsales.controller.Home">
+   <Page id="page" title="Modes">
+      <content>
+	   <Label id="labelData" ></Label>
+			<f:DynamicPage headerExpanded="true" toggleHeaderOnTitleClick="true">
+				<f:header>
+					<f:DynamicPageHeader pinnable="true">
+						<fb:FilterBar reset="onReset" search="onSearch" showRestoreButton="true" showClearButton="true" useToolbar="false" id="smartFilterBar"
+							showFilterConfiguration="true">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem groupName="Filtri" groupTitle="Filtri" name="ffm" label="Company" labelTooltip="Company"
+									visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox  id="multiCompany" items="{path:'temp>/FilterCompanyUniq'}" 
+                              				showSecondaryValues="true">
+											<items>
+												<core:ListItem text="{temp>COMPANY}" key="{temp>COMPANY}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem groupName="Filtri" groupTitle="Filtri" name="Sale Type" label="Sale Type"
+									labelTooltip="Sale Type" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox id="multiDocumenttype" items="{path:'temp>/FilterDocumentTypeUniq'}" showSecondaryValues="true">
+											<items>
+												<core:ListItem text="{temp>DOCUMENTTYPE}" key="{temp>DOCUMENTTYPE}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem groupName="Filtri" groupTitle="Filtri" name="Store" label="Store"
+									labelTooltip="Store" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox id="multiRetailSales" items="{temp>/FilterStoreidUniq}" showSecondaryValues="true">
+											<items>
+												<core:ListItem text="{temp>STOREID} - {temp>STORE}" key="{temp>STOREID}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem groupName="Filtri" groupTitle="Filtri" name="Receipt Number" label="Receipt Number"
+									labelTooltip="Receipt Number" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox id="multiReceiptNumber" items="{temp>/FilterReceiptNumberUniq}" showSecondaryValues="true">
+											<items>
+												<core:ListItem text="{temp>DOCUMENTENTRY}" key="{temp>DOCUMENTENTRY}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								 <fb:FilterGroupItem groupName="Filtri" groupTitle="Filtri" name="Client" label="Client Advisor"
+									labelTooltip="Client Advisor" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox  id="multiClient" items="{path:'temp>/FilterClientlUniq'}"
+											showSecondaryValues="true">
+											<items>
+												<core:Item text="{temp>DOCUMENTPOSSALESPERSONID} - {temp>DOCUMENTPOSSALESPERSON}" key="{temp>DOCUMENTPOSSALESPERSONID}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem groupName="Filtri" groupTitle="Filtri" name="Season" label="Season"
+									labelTooltip="Season" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox  id="multiSeason" items="{path:'temp>/FilterSeasonUniq'}"
+											showSecondaryValues="true">
+											<items>
+												<core:Item text="{temp>SKU_SEASON}" key="{temp>SKU_SEASON}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem groupName="Filtri" groupTitle="Filtri" name="Brand" label="Brand"
+									labelTooltip="Brand" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox  id="multiBrand" items="{path:'temp>/FilterBrandUniq'}"
+											showSecondaryValues="true">
+											<items>
+												<core:Item text="{temp>BRAND}" key="{temp>BRAND}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem groupName="Filtri" groupTitle="Filtri" name="Family" label="Family"
+									labelTooltip="Family" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox  id="multiFamily" items="{path:'temp>/FilterFamilyUniq'}"
+											showSecondaryValues="true">
+											<items>
+												<core:Item text="{temp>FAMILY}" key="{temp>FAMILY}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem groupName="Filtri" groupTitle="Filtri" name="Gender" label="Gender"
+									labelTooltip="Gender" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox  id="multiGender" items="{path:'temp>/FilterGenderUniq'}"
+											showSecondaryValues="true">
+											<items>
+												<core:Item text="{temp>GENDER}" key="{temp>GENDER}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem groupName="Filtri" groupTitle="Filtri" name="SKU Parent" label="SKU Parent"
+									labelTooltip="SKU Parent" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox  id="multiReferenceMaterial" items="{path:'temp>/FilterReferenceMaterialUniq'}"
+											showSecondaryValues="true">
+											<items>
+												<core:Item text="{temp>REFERENCE_MATERIAL_ID} - {temp>REFERENCE_MATERIAL}" key="{temp>REFERENCE_MATERIAL_ID}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+                        		<fb:FilterGroupItem groupName="Filtri" groupTitle="Filtri" name="SKU Children" label="SKU Children"
+									labelTooltip="SKU Children" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox  id="multiMaterial" items="{path:'temp>/FilterMaterialUniq'}"
+											showSecondaryValues="true">
+											<items>
+												<core:Item text="{temp>MATERIAL_ID} - {temp>MATERIAL}" key="{temp>MATERIAL_ID}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								 <fb:FilterGroupItem groupName="Filtri" groupTitle="Filtri" name="Customer" label="Customer"
+									labelTooltip="Customer" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox  id="multiPartner" items="{path:'temp>/FilterPartnerlUniq'}"
+											showSecondaryValues="true">
+											<items>
+												<core:Item text="{temp>BUSINESSPARTNERID} - {temp>BUSINESSPARTNER}" key="{temp>BUSINESSPARTNERID}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+							</fb:filterGroupItems>
+						</fb:FilterBar>
+						<VBox >
+						<Label id="labelSommaPIECES_SOLD" ></Label>
+						<Label id="labelSommaRETAIL_FULL_PRICE" ></Label>
+						<Label id="labelSommaSELL_OUT_PRICE" ></Label>
+						</VBox>
+					</f:DynamicPageHeader>
+				</f:header>
+				<f:content>
+               <table:Table id="TableRetails"  enableBusyIndicator="true" selectionMode="None" rows="{path:'temp>/RetailSales'}">
+                     <table:columns>
+                        <table:Column width="130px">
+                           <Label text="Company"  />
+						         <table:template>
+							         <Text text="{temp>COMPANY}" wrapping="false" />
+						         </table:template>
+                        </table:Column>
+						 <table:Column width="130px">
+                           <Label text="Order Date"  />
+						         <table:template>
+							         <Text text="{path:'temp>DOCUMENTDATE' ,formatter : '.formatter.formatDateToString'}" wrapping="false" />
+						         </table:template>
+                        </table:Column>
+						  <table:Column width="130px">
+                           <Label text="Sale Type"/>
+						         <table:template>
+							         <Text text="{temp>DOCUMENTTYPE}"  />
+						         </table:template>
+                        </table:Column>
+						 <table:Column width="130px">
+                           <Label text="Store" />
+						         <table:template>
+							          <Text text="{temp>STOREID} - {temp>STORE}"/>
+						         </table:template>
+                        </table:Column>
+						<table:Column width="130px">
+                           <Label text="Receipt Number" />
+                           <table:template>
+                                 <Text text="{temp>DOCUMENTENTRY}" />
+                           </table:template>
+                        </table:Column>
+						<table:Column width="130px">
+                           <Label text="Client Advisor ID"/>
+						         <table:template>
+							         <Text text="{temp>DOCUMENTPOSSALESPERSONID}" wrapping="false" />
+						         </table:template>
+                        </table:Column>
+						<table:Column width="130px">
+                           <Label text="Client Advisor Description"/>
+						         <table:template>
+							         <Text text="{temp>DOCUMENTPOSSALESPERSON}" wrapping="false" />
+						         </table:template>
+                        </table:Column>
+						<table:Column width="130px">
+                           <Label text="Season"  />
+						         <table:template>
+							         <Text text="{temp>SKU_SEASON}" />
+						         </table:template>
+                        </table:Column>
+						 <table:Column width="130px">
+                           <Label text="Brand"   />
+						         <table:template>
+							         <Text text="{temp>BRAND}" />
+						         </table:template>
+                        </table:Column>
+						 <table:Column width="130px">
+                           <Label text="Family"  />
+						         <table:template>
+							         <Text text="{temp>FAMILY}" />
+						         </table:template>
+                        </table:Column>
+                         <table:Column width="130px">
+                           <Label text="Gender" />
+						         <table:template>
+							           <Text text="{temp>GENDER}"/>
+						         </table:template>
+                        </table:Column>
+						<table:Column width="130px">
+                           <Label text="Image"  />
+						         <table:template>
+							         <Image src="{temp>IMAGE_URL}" width="30%" />
+						         </table:template>
+                        </table:Column>
+                        <table:Column width="130px">
+                           <Label text="SKU Parent"  />
+						         <table:template>
+							          <Text text="{temp>REFERENCE_MATERIAL_ID}" />
+						         </table:template>
+                        </table:Column>
+						 <table:Column width="130px">
+                           <Label text="SKU Children"  />
+						         <table:template>
+							          <Text text="{temp>MATERIAL_ID}"/>
+						         </table:template>
+                        </table:Column>
+						<table:Column width="130px" hAlign="End">
+                           <Label text="Pieces Sold/Return" />
+						         <table:template>
+							         <Text text="{path:'temp>PIECES_SOLD' ,formatter : '.formatter.formatNumberToString'} PZ" />
+                             
+						         </table:template>
+                        </table:Column>
+                        <table:Column width="130px" hAlign="End">
+                           <Label text="Wholesale Price" />
+						         <table:template>
+							         <Text text="{path:'temp>WHOLESALE_PRICE' ,formatter : '.formatter.formatpointToComma'} {temp>UM_WHOLESALE_PRICE}" />
+						         </table:template>
+                        </table:Column>
+                         <table:Column width="130px" hAlign="End">
+                           <Label text="Retail Full Price" />
+						         <table:template>
+							         <Text text="{path:'temp>RETAIL_FULL_PRICE' ,formatter : '.formatter.formatpointToComma'} {temp>CURRENCY}" />
+						         </table:template>
+                        </table:Column>
+                         <table:Column width="130px" hAlign="End">
+                           <Label text="Sell Out Price"  />
+						         <table:template>
+							        <Text text="{path:'temp>SELL_OUT_PRICE' ,formatter : '.formatter.formatpointToComma'} {temp>CURRENCY}" />
+						         </table:template>
+                        </table:Column>
+                          <table:Column width="130px" hAlign="End">
+                           <Label text="Discount Applied"  />
+						         <table:template>
+							        <Text text="{temp>DISCOUNT_APPLIED} {temp>CURRENCY}" />
+						         </table:template>
+                        </table:Column>
+                          <table:Column width="130px"  hAlign="End">
+                           <Label text="Discount Percentage Applied" />
+						         <table:template >
+							         <Text text="{temp>DISCOUNT_PERCENTAGE} %"  />
+						         </table:template>
+                        </table:Column>
+						<table:Column width="130px">
+                           <Label text="Customer ID"  />
+						         <table:template>
+							         <Text text="{temp>BUSINESSPARTNERID}" wrapping="false" />
+						         </table:template>
+                        </table:Column>
+						<table:Column width="130px">
+                           <Label text="Customer"  />
+						         <table:template>
+							         <Text text="{temp>BUSINESSPARTNER}" wrapping="false" />
+						         </table:template>
+                        </table:Column>
+						<table:Column width="130px">
+                           <Label text="Customer Email"/>
+						         <table:template>
+							         <Text text="{temp>BUSINESSPARTNEREMAIL}" wrapping="false" />
+						         </table:template>
+                        </table:Column>
+                      <!--   <table:Column width="130px">
+                           <Label text="SKU Children"  />
+						         <table:template>
+							          <Text text="{temp>MATERIAL}" />
+						         </table:template>
+                        </table:Column>
+                        -->
+                      </table:columns>
+                  </table:Table>      
+				</f:content>
+			</f:DynamicPage>
+		</content>  
+      <footer>
+            <OverflowToolbar>
+               <Button icon="sap-icon://excel-attachment" enabled="true" id="Esporta" press="onExportCurrent" text="Esporta Excel" visible="true" />
+			   <Button icon="sap-icon://excel-attachment" enabled="true" id="EsportaPDF" press="onExportPDF" text="Esporta PDF" visible="true" />
+               <ToolbarSpacer />
+               <Button text="Cambia Range Date" press=".openDialogRange" />    
+            </OverflowToolbar>
+        </footer>
+      <Dialog id="helloDialog" title="Seleziona il periodo d'analisi" contentWidth= "500px" contentHeight= "70px">
+         <DateRangeSelection id="dateRange" />
+         <beginButton>
+            <Button text="Ok" press=".closeDialogListRegistrazione" />
+         </beginButton>
+      </Dialog>
+   </Page>
+</mvc:View>

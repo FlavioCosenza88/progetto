@@ -1,0 +1,152 @@
+_schema-version: "3.1"
+ID: RetailSales
+description: A simple CAP project.
+version: 1.0.0
+modules:
+- name: RetailSales-srv
+  type: nodejs
+  path: gen/srv
+  requires:
+  - name: RetailSales-db
+  - name: uaa_RetailSales
+  provides:
+  - name: srv-api
+    properties:
+      srv-url: ${default-url}
+  parameters:
+    buildpack: nodejs_buildpack
+  build-parameters:
+    builder: npm-ci
+    ignore:
+        - default-env.json
+- name: RetailSales-db-deployer
+  type: hdb
+  path: gen/db
+  requires:
+  - name: RetailSales-db
+    properties:
+      TARGET_CONTAINER: ~{hdi-container-name}
+  - name: cross-container-service-1
+    group: SERVICE_REPLACEMENTS
+    properties:
+      key: cross-container-service-1
+      service: ~{the-service-name}
+  parameters:
+    buildpack: nodejs_buildpack
+- name: RetailSales-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: RetailSales-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - modescomretailsales.zip
+      name: modescomretailsales
+      target-path: resources/
+- name: modescomretailsales
+  type: html5
+  path: app/retailsales
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: RetailSales-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: RetailSales-destination-service
+    parameters:
+      content-target: true
+  - name: RetailSales-repo-host
+    parameters:
+      service-key:
+        name: RetailSales-repo-host-key
+  - name: uaa_RetailSales
+    parameters:
+      service-key:
+        name: uaa_RetailSales-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: RetailSales_RetailSales_repo_host
+          ServiceInstanceName: RetailSales-html5-srv
+          ServiceKeyName: RetailSales-repo-host-key
+          sap.cloud.service: RetailSales
+        - Authentication: OAuth2UserTokenExchange
+          Name: RetailSales_uaa_RetailSales
+          ServiceInstanceName: RetailSales-xsuaa-service
+          ServiceKeyName: uaa_RetailSales-key
+          sap.cloud.service: RetailSales
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+resources:
+- name: RetailSales-db
+  type: com.sap.xs.hdi-container
+  parameters:
+    service: hana
+    service-plan: hdi-shared
+  properties:
+    hdi-container-name: ${service-name}
+- name: RetailSales-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: RetailSales-html5-srv
+    service-plan: app-host
+- name: RetailSales-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      version: 1.0.0
+      init_data:
+          instance:
+            destinations:
+              - Authentication: NoAuthentication
+                Name: ui5
+                ProxyType: Internet
+                Type: HTTP
+                URL: https://ui5.sap.com
+              - Authentication: NoAuthentication
+                Name: srv-api
+                ProxyType: Internet
+                Type: HTTP
+                URL: ~{srv-api/srv-url}
+                HTML5.DynamicDestination: true
+                HTML5.ForwardAuthToken: true
+                HTML5.Timeout: 300000
+            existing_destinations_policy: update
+    service: destination
+    service-name: RetailSales-destination-service
+    service-plan: lite
+  requires:
+    - name: srv-api
+- name: cross-container-service-1
+  type: org.cloudfoundry.existing-service
+  parameters:
+    service-name: DB_ACCESS
+  properties:
+    the-service-name: ${service-name}
+- name: uaa_RetailSales
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: RetailSales-xsuaa-service
+    service-plan: application
+parameters:
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+  - builder: custom
+    commands:
+    - npx -p @sap/cds-dk cds build --production

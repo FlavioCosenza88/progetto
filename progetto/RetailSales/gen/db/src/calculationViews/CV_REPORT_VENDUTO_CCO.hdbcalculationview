@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_REPORT_VENDUTO_CCO" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_REPORT_VENDUTO_CCO"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="TF_REPORT_VENDUTO_CCO" type="TABLE_FUNCTION">
+    <resourceUri>TF_REPORT_VENDUTO_CCO</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="COMPANYID"/>
+      <viewAttribute id="COMPANY"/>
+      <viewAttribute id="CASHDESKID"/>
+      <viewAttribute id="DOCUMENTENTRY"/>
+      <viewAttribute id="DOCUMENTPOSNR"/>
+      <viewAttribute id="PLANT_CODE"/>
+      <viewAttribute id="STORE"/>
+      <viewAttribute id="SALE_ORDER_TYPE"/>
+      <viewAttribute id="POSTING_DATE"/>
+      <viewAttribute id="SEASON"/>
+      <viewAttribute id="MATERIAL"/>
+      <viewAttribute id="MATERIAL_DESCRIPTION"/>
+      <viewAttribute id="BRAND"/>
+      <viewAttribute id="FAMILY"/>
+      <viewAttribute id="GENDER"/>
+      <viewAttribute id="SUBGENDER"/>
+      <viewAttribute id="DESCRIZIONE_COLOR"/>
+      <viewAttribute id="SIZE"/>
+      <viewAttribute id="REFERENCE_MATERIAL"/>
+      <viewAttribute id="PRODUCT_GROUP"/>
+      <viewAttribute id="WHOLESALE_PRICE_DA_ORDINE"/>
+      <viewAttribute id="WHOLESALE_PRICE_LISTINO"/>
+      <viewAttribute id="UM_WHOLESALE_PRICE_LISTINO"/>
+      <viewAttribute id="RETAIL_FULL_PRICE_LISTINO"/>
+      <viewAttribute id="UM_RETAIL_PRICE_LISTINO"/>
+      <viewAttribute id="PIECES_SOLD"/>
+      <viewAttribute id="RETAIL_FULL_PRICE_CCO"/>
+      <viewAttribute id="SELL_OUT_PRICE"/>
+      <viewAttribute id="IMPORTO_VBAP"/>
+      <viewAttribute id="MARK_APPLIED"/>
+      <viewAttribute id="MARK_PERCENTAGE_APPLIED"/>
+      <viewAttribute id="RETAIL_FULL_PRICE_CCO_UN"/>
+      <viewAttribute id="SELL_OUT_PRICE_UN"/>
+      <viewAttribute id="MARK_APPLIED_UN"/>
+      <viewAttribute id="VALUTA"/>
+      <viewAttribute id="TOTAL_SELL_OUT_PRICE_EUR"/>
+      <viewAttribute id="TOT_COGS"/>
+      <viewAttribute id="TOT_GROSS_MARGIN_EUR"/>
+      <viewAttribute id="TOT_GROSS_MARGIN_PERCENT"/>
+      <viewAttribute id="SAP_ORDER_NUMBER"/>
+      <viewAttribute id="SAP_ORDER_ITEM"/>
+      <viewAttribute id="SALE_ORDER_TYPE_CODE"/>
+      <viewAttribute id="ORIGINAL_ORDER_NUMBER"/>
+      <viewAttribute id="ORIGINAL_ORDER_ITEM"/>
+      <viewAttribute id="ORIGINAL_ORDER_TYPE"/>
+      <viewAttribute id="COLLECTION"/>
+      <viewAttribute id="OUTBOUND_DELIVERY_NUMBER"/>
+      <viewAttribute id="OUTBOUND_DELIVERY_ITEM"/>
+      <viewAttribute id="COMMITTENTE_CODE"/>
+      <viewAttribute id="COMMITTENTE"/>
+      <viewAttribute id="AGENTE_CODE"/>
+      <viewAttribute id="AGENTE"/>
+      <viewAttribute id="DESTINATARIO_CODE"/>
+      <viewAttribute id="DESTINATARIO"/>
+      <viewAttribute id="PAESE_DESTINAZIONE_CODE"/>
+      <viewAttribute id="PAESE_DESTINAZIONE"/>
+    
+      <viewAttribute id="TASSO_DI_CAMBIO"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TF_REPORT_VENDUTO_CCO"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="COMPANYID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMPANYID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="COMPANYID"/>
+    </attribute>
+    <attribute id="COMPANY" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMPANY"/>
+      <keyMapping columnObjectName="Projection_1" columnName="COMPANY"/>
+    </attribute>
+    <attribute id="CASHDESKID" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CASHDESKID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CASHDESKID"/>
+    </attribute>
+    <attribute id="DOCUMENTENTRY" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DOCUMENTENTRY"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DOCUMENTENTRY"/>
+    </attribute>
+    <attribute id="DOCUMENTPOSNR" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DOCUMENTPOSNR"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DOCUMENTPOSNR"/>
+    </attribute>
+    <attribute id="PLANT_CODE" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PLANT_CODE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PLANT_CODE"/>
+    </attribute>
+    <attribute id="STORE" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STORE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="STORE"/>
+    </attribute>
+    <attribute id="SALE_ORDER_TYPE" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SALE_ORDER_TYPE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SALE_ORDER_TYPE"/>
+    </attribute>
+    <attribute id="POSTING_DATE" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="POSTING_DATE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="POSTING_DATE"/>
+    </attribute>
+    <attribute id="SEASON" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SEASON"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SEASON"/>
+    </attribute>
+    <attribute id="MATERIAL" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATERIAL"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MATERIAL"/>
+    </attribute>
+    <attribute id="MATERIAL_DESCRIPTION" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATERIAL_DESCRIPTION"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MATERIAL_DESCRIPTION"/>
+    </attribute>
+    <attribute id="BRAND" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BRAND"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BRAND"/>
+    </attribute>
+    <attribute id="FAMILY" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FAMILY"/>
+      <keyMapping columnObjectName="Projection_1" columnName="FAMILY"/>
+    </attribute>
+    <attribute id="GENDER" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GENDER"/>
+      <keyMapping columnObjectName="Projection_1" columnName="GENDER"/>
+    </attribute>
+    <attribute id="SUBGENDER" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SUBGENDER"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SUBGENDER"/>
+    </attribute>
+    <attribute id="DESCRIZIONE_COLOR" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DESCRIZIONE_COLOR"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DESCRIZIONE_COLOR"/>
+    </attribute>
+    <attribute id="SIZE" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SIZE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SIZE"/>
+    </attribute>
+    <attribute id="REFERENCE_MATERIAL" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="REFERENCE_MATERIAL"/>
+      <keyMapping columnObjectName="Projection_1" columnName="REFERENCE_MATERIAL"/>
+    </attribute>
+    <attribute id="PRODUCT_GROUP" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRODUCT_GROUP"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PRODUCT_GROUP"/>
+    </attribute>
+    <attribute id="WHOLESALE_PRICE_DA_ORDINE" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WHOLESALE_PRICE_DA_ORDINE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="WHOLESALE_PRICE_DA_ORDINE"/>
+    </attribute>
+    <attribute id="UM_WHOLESALE_PRICE_LISTINO" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="UM_WHOLESALE_PRICE_LISTINO"/>
+      <keyMapping columnObjectName="Projection_1" columnName="UM_WHOLESALE_PRICE_LISTINO"/>
+    </attribute>
+    <attribute id="UM_RETAIL_PRICE_LISTINO" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="UM_RETAIL_PRICE_LISTINO"/>
+      <keyMapping columnObjectName="Projection_1" columnName="UM_RETAIL_PRICE_LISTINO"/>
+    </attribute>
+    <attribute id="PIECES_SOLD" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PIECES_SOLD"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PIECES_SOLD"/>
+    </attribute>
+    <attribute id="VALUTA" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VALUTA"/>
+      <keyMapping columnObjectName="Projection_1" columnName="VALUTA"/>
+    </attribute>
+    <attribute id="SAP_ORDER_NUMBER" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SAP_ORDER_NUMBER"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SAP_ORDER_NUMBER"/>
+    </attribute>
+    <attribute id="SAP_ORDER_ITEM" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SAP_ORDER_ITEM"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SAP_ORDER_ITEM"/>
+    </attribute>
+    <attribute id="SALE_ORDER_TYPE_CODE" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SALE_ORDER_TYPE_CODE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SALE_ORDER_TYPE_CODE"/>
+    </attribute>
+    <attribute id="ORIGINAL_ORDER_NUMBER" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ORIGINAL_ORDER_NUMBER"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ORIGINAL_ORDER_NUMBER"/>
+    </attribute>
+    <attribute id="ORIGINAL_ORDER_ITEM" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ORIGINAL_ORDER_ITEM"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ORIGINAL_ORDER_ITEM"/>
+    </attribute>
+    <attribute id="ORIGINAL_ORDER_TYPE" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ORIGINAL_ORDER_TYPE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ORIGINAL_ORDER_TYPE"/>
+    </attribute>
+    <attribute id="COLLECTION" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COLLECTION"/>
+      <keyMapping columnObjectName="Projection_1" columnName="COLLECTION"/>
+    </attribute>
+    <attribute id="OUTBOUND_DELIVERY_NUMBER" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="OUTBOUND_DELIVERY_NUMBER"/>
+      <keyMapping columnObjectName="Projection_1" columnName="OUTBOUND_DELIVERY_NUMBER"/>
+    </attribute>
+    <attribute id="OUTBOUND_DELIVERY_ITEM" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="OUTBOUND_DELIVERY_ITEM"/>
+      <keyMapping columnObjectName="Projection_1" columnName="OUTBOUND_DELIVERY_ITEM"/>
+    </attribute>
+    <attribute id="COMMITTENTE_CODE" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMMITTENTE_CODE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="COMMITTENTE_CODE"/>
+    </attribute>
+    <attribute id="COMMITTENTE" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMMITTENTE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="COMMITTENTE"/>
+    </attribute>
+    <attribute id="AGENTE_CODE" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AGENTE_CODE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="AGENTE_CODE"/>
+    </attribute>
+    <attribute id="AGENTE" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AGENTE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="AGENTE"/>
+    </attribute>
+    <attribute id="DESTINATARIO_CODE" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DESTINATARIO_CODE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DESTINATARIO_CODE"/>
+    </attribute>
+    <attribute id="DESTINATARIO" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DESTINATARIO"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DESTINATARIO"/>
+    </attribute>
+    <attribute id="PAESE_DESTINAZIONE_CODE" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PAESE_DESTINAZIONE_CODE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PAESE_DESTINAZIONE_CODE"/>
+    </attribute>
+    <attribute id="PAESE_DESTINAZIONE" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PAESE_DESTINAZIONE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PAESE_DESTINAZIONE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="WHOLESALE_PRICE_LISTINO" order="22" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="WHOLESALE_PRICE_LISTINO"/>
+      <measureMapping columnObjectName="Projection_1" columnName="WHOLESALE_PRICE_LISTINO"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="RETAIL_FULL_PRICE_LISTINO" order="24" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="RETAIL_FULL_PRICE_LISTINO"/>
+      <measureMapping columnObjectName="Projection_1" columnName="RETAIL_FULL_PRICE_LISTINO"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="RETAIL_FULL_PRICE_CCO" order="27" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="RETAIL_FULL_PRICE_CCO"/>
+      <measureMapping columnObjectName="Projection_1" columnName="RETAIL_FULL_PRICE_CCO"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="SELL_OUT_PRICE" order="28" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="SELL_OUT_PRICE"/>
+      <measureMapping columnObjectName="Projection_1" columnName="SELL_OUT_PRICE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="IMPORTO_VBAP" order="29" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="IMPORTO_VBAP"/>
+      <measureMapping columnObjectName="Projection_1" columnName="IMPORTO_VBAP"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="MARK_APPLIED" order="30" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="MARK_APPLIED"/>
+      <measureMapping columnObjectName="Projection_1" columnName="MARK_APPLIED"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="MARK_PERCENTAGE_APPLIED" order="31" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="MARK_PERCENTAGE_APPLIED"/>
+      <measureMapping columnObjectName="Projection_1" columnName="MARK_PERCENTAGE_APPLIED"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="RETAIL_FULL_PRICE_CCO_UN" order="32" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="RETAIL_FULL_PRICE_CCO_UN"/>
+      <measureMapping columnObjectName="Projection_1" columnName="RETAIL_FULL_PRICE_CCO_UN"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="SELL_OUT_PRICE_UN" order="33" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="SELL_OUT_PRICE_UN"/>
+      <measureMapping columnObjectName="Projection_1" columnName="SELL_OUT_PRICE_UN"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="MARK_APPLIED_UN" order="34" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="MARK_APPLIED_UN"/>
+      <measureMapping columnObjectName="Projection_1" columnName="MARK_APPLIED_UN"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="TOTAL_SELL_OUT_PRICE_EUR" order="36" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="TOTAL_SELL_OUT_PRICE_EUR"/>
+      <measureMapping columnObjectName="Projection_1" columnName="TOTAL_SELL_OUT_PRICE_EUR"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="TOT_COGS" order="37" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="TOT_COGS"/>
+      <measureMapping columnObjectName="Projection_1" columnName="TOT_COGS"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="TOT_GROSS_MARGIN_EUR" order="38" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="TOT_GROSS_MARGIN_EUR"/>
+      <measureMapping columnObjectName="Projection_1" columnName="TOT_GROSS_MARGIN_EUR"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="TOT_GROSS_MARGIN_PERCENT" order="39" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="TOT_GROSS_MARGIN_PERCENT"/>
+      <measureMapping columnObjectName="Projection_1" columnName="TOT_GROSS_MARGIN_PERCENT"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  
+    <measure id="TASSO_DI_CAMBIO" order="57" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="TASSO_DI_CAMBIO"/>
+      <measureMapping columnObjectName="Projection_1" columnName="TASSO_DI_CAMBIO"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="212"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

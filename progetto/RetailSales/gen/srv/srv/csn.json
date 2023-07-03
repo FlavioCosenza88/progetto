@@ -1,0 +1,2341 @@
+{
+  "definitions": {
+    "T_RECEIPTS_INVOICES_CCO": {
+      "kind": "entity",
+      "includes": [
+        "managed"
+      ],
+      "elements": {
+        "createdAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@UI.HiddenFilter": true,
+          "@Core.Immutable": true,
+          "@title": "{i18n>CreatedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
+        "createdBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@UI.HiddenFilter": true,
+          "@Core.Immutable": true,
+          "@title": "{i18n>CreatedBy}",
+          "@readonly": true,
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "modifiedAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@cds.on.update": {
+            "=": "$now"
+          },
+          "@UI.HiddenFilter": true,
+          "@title": "{i18n>ChangedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
+        "modifiedBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@cds.on.update": {
+            "=": "$user"
+          },
+          "@UI.HiddenFilter": true,
+          "@title": "{i18n>ChangedBy}",
+          "@readonly": true,
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "CashDeskID": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "CompanyID": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "StoreID": {
+          "type": "cds.String"
+        },
+        "BusinessPartnerID": {
+          "type": "cds.String"
+        },
+        "BusinessPartnerFirstName": {
+          "type": "cds.String"
+        },
+        "BusinessPartnerLastName": {
+          "type": "cds.String"
+        },
+        "BusinessPartnerCategory": {
+          "type": "cds.String"
+        },
+        "BusinessPartnerFidelity": {
+          "type": "cds.String"
+        },
+        "BusinessPartnerEMail": {
+          "type": "cds.String"
+        },
+        "DocumentEntry": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "DocumentType": {
+          "type": "cds.String"
+        },
+        "DocumentDate": {
+          "type": "cds.Date"
+        },
+        "DocumentSalesPersonId": {
+          "type": "cds.String"
+        },
+        "DocumentPosNr": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "DocumentPosSkuSeason": {
+          "type": "cds.String"
+        },
+        "DocumentPosItemCode": {
+          "type": "cds.String"
+        },
+        "DocumentPosBarcode": {
+          "type": "cds.String"
+        },
+        "DocumentPosVatCode": {
+          "type": "cds.String"
+        },
+        "DocumentPosQuantity": {
+          "type": "cds.String"
+        },
+        "DocumentPosPaymentGrossAfterHeaderDiscount": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 2
+        },
+        "DocumentPosPaymentGrossAmount": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 2
+        },
+        "DocumentPosSalesPersonId": {
+          "type": "cds.String"
+        },
+        "DocumentPosDiscounts": {
+          "type": "cds.String"
+        },
+        "PaymentsCurrency": {
+          "type": "cds.String"
+        },
+        "PaymentsTypesCode": {
+          "type": "cds.String"
+        },
+        "PaymentsTypesValue": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 2
+        }
+      }
+    },
+    "T_SALES_AGENT": {
+      "kind": "entity",
+      "includes": [
+        "managed"
+      ],
+      "elements": {
+        "createdAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@UI.HiddenFilter": true,
+          "@Core.Immutable": true,
+          "@title": "{i18n>CreatedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
+        "createdBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@UI.HiddenFilter": true,
+          "@Core.Immutable": true,
+          "@title": "{i18n>CreatedBy}",
+          "@readonly": true,
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "modifiedAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@cds.on.update": {
+            "=": "$now"
+          },
+          "@UI.HiddenFilter": true,
+          "@title": "{i18n>ChangedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
+        "modifiedBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@cds.on.update": {
+            "=": "$user"
+          },
+          "@UI.HiddenFilter": true,
+          "@title": "{i18n>ChangedBy}",
+          "@readonly": true,
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "ID_CCO": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "NOME": {
+          "type": "cds.String"
+        },
+        "COGNOME": {
+          "type": "cds.String"
+        },
+        "SALES_AGENT_ID": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "T_SYSTEM_VARIABLE": {
+      "kind": "entity",
+      "elements": {
+        "ID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 50
+        },
+        "SYS_VARIABLE": {
+          "type": "cds.String",
+          "length": 50
+        }
+      }
+    },
+    "T_STORE_EMAIL": {
+      "kind": "entity",
+      "includes": [
+        "managed"
+      ],
+      "elements": {
+        "createdAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@UI.HiddenFilter": true,
+          "@Core.Immutable": true,
+          "@title": "{i18n>CreatedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
+        "createdBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@UI.HiddenFilter": true,
+          "@Core.Immutable": true,
+          "@title": "{i18n>CreatedBy}",
+          "@readonly": true,
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "modifiedAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@cds.on.update": {
+            "=": "$now"
+          },
+          "@UI.HiddenFilter": true,
+          "@title": "{i18n>ChangedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
+        "modifiedBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@cds.on.update": {
+            "=": "$user"
+          },
+          "@UI.HiddenFilter": true,
+          "@title": "{i18n>ChangedBy}",
+          "@readonly": true,
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "STORE_ID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 5
+        },
+        "STORE": {
+          "type": "cds.String",
+          "length": 35
+        },
+        "STORE_EMAIL": {
+          "type": "cds.String",
+          "length": 100
+        },
+        "IS_JOB_SCHEDULED": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "DATE_FROM": {
+          "type": "cds.Date"
+        },
+        "DATE_TO": {
+          "type": "cds.Date"
+        }
+      }
+    },
+    "CV_RETAIL_SALES": {
+      "kind": "entity",
+      "@cds.persistence.exists": true,
+      "@cds.persistence.calcview": true,
+      "@cds.query.limit.default": 50000,
+      "@cds.query.limit.max": 50000,
+      "params": {
+        "IP_DATE_FROM": {
+          "type": "cds.Date"
+        },
+        "IP_DATE_TO": {
+          "type": "cds.Date"
+        }
+      },
+      "elements": {
+        "COMPANYID": {
+          "@title": "COMPANYID: COMPANY ID",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "COMPANY": {
+          "@title": "COMPANY: COMPANY",
+          "key": true,
+          "type": "cds.String",
+          "length": 25
+        },
+        "DOCUMENTDATE": {
+          "@title": "DOCUMENTDATE: DOCUMENT DATE",
+          "key": true,
+          "type": "cds.Date"
+        },
+        "DOCUMENTTYPE": {
+          "@title": "DOCUMENTTYPE: DOCUMENT TYPE",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DOCUMENTENTRY": {
+          "@title": "DOCUMENTENTRY: DOCUMENT ENTRY",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "STOREID": {
+          "@title": "STOREID: STORE ID",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "STORE": {
+          "@title": "STORE: STORE",
+          "key": true,
+          "type": "cds.String",
+          "length": 25
+        },
+        "REFERENCE_MATERIAL_ID": {
+          "@title": "REFERENCE_MATERIAL_ID: REFERENCE MATERIAL_ID",
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "REFERENCE_MATERIAL": {
+          "@title": "REFERENCE_MATERIAL: REFERENCE MATERIAL",
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "MATERIAL_ID": {
+          "@title": "MATERIAL_ID: MATERIAL ID",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "MATERIAL": {
+          "@title": "MATERIAL: MATERIAL",
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "SKU_SEASON": {
+          "@title": "SKU_SEASON: SEASON",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "BRAND_ID": {
+          "@title": "BRAND_ID: BRAND ID",
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "BRAND": {
+          "@title": "BRAND: BRAND",
+          "key": true,
+          "type": "cds.String",
+          "length": 30
+        },
+        "FAMILY_ID": {
+          "@title": "FAMILY_ID: FAMILY ID",
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "FAMILY": {
+          "@title": "FAMILY: FAMILY",
+          "key": true,
+          "type": "cds.String",
+          "length": 30
+        },
+        "GENDER": {
+          "@title": "GENDER: GENDER",
+          "key": true,
+          "type": "cds.String",
+          "length": 18
+        },
+        "IMAGE_URL": {
+          "@title": "IMAGE_URL: IMAGE URL",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "BUSINESSPARTNERID": {
+          "@title": "BUSINESSPARTNERID: BUSINESS PARTNER ID",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "BUSINESSPARTNER": {
+          "@title": "BUSINESSPARTNER: BUSINESS PARTNER",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "BUSINESSPARTNEREMAIL": {
+          "@title": "BUSINESSPARTNEREMAIL: BUSINESS PARTNER EMAIL",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DOCUMENTPOSSALESPERSONID": {
+          "@title": "DOCUMENTPOSSALESPERSONID: DOCUMENT SALES PERSON ID",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "PIECES_SOLD": {
+          "@title": "PIECES_SOLD: PIECES SOLD",
+          "type": "cds.Integer64"
+        },
+        "WHOLESALE_PRICE": {
+          "@title": "WHOLESALE_PRICE: WHOLESALE PRICE",
+          "type": "cds.Decimal",
+          "precision": 11
+        },
+        "UM_WHOLESALE_PRICE": {
+          "@title": "UM_WHOLESALE_PRICE: UM WHOLESALE PRICE",
+          "key": true,
+          "type": "cds.String",
+          "length": 5
+        },
+        "RETAIL_FULL_PRICE": {
+          "@title": "RETAIL_FULL_PRICE: RETAIL FULL PRICE",
+          "type": "cds.Decimal",
+          "precision": 13
+        },
+        "SELL_OUT_PRICE": {
+          "@title": "SELL_OUT_PRICE: SELL OUT PRICE",
+          "type": "cds.Decimal",
+          "precision": 13
+        },
+        "DISCOUNT_APPLIED": {
+          "@title": "DISCOUNT_APPLIED: DISCOUNT_APPLIED",
+          "type": "cds.Decimal",
+          "precision": 11
+        },
+        "DISCOUNT_PERCENTAGE": {
+          "@title": "DISCOUNT_PERCENTAGE: DISCOUNT PERCENTAGE",
+          "type": "cds.Decimal",
+          "precision": 11
+        },
+        "CURRENCY": {
+          "@title": "CURRENCY: CURRENCY",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DOCUMENTPOSSALESPERSON": {
+          "@title": "DOCUMENTPOSSALESPERSON: DOCUMENT SALES PERSON",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DOCUMENTDATESTRING": {
+          "@title": "DOCUMENTDATESTRING: DOCUMENT DATE STRING",
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        }
+      }
+    },
+    "CV_REPORT_VENDUTO_PER_CANALE": {
+      "kind": "entity",
+      "@cds.persistence.exists": true,
+      "@cds.persistence.calcview": true,
+      "elements": {
+        "SISTEMA_SORGENTE": {
+          "@title": "SISTEMA SORGENTE",
+          "key": true,
+          "type": "cds.String",
+          "length": 5
+        },
+        "POSTING_DATE": {
+          "@title": "POSTING DATE",
+          "type": "cds.Date"
+        },
+        "COMPANYID": {
+          "@title": "COMPANYID",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "COMPANY": {
+          "@title": "COMPANY",
+          "key": true,
+          "type": "cds.String",
+          "length": 25
+        },
+        "PROFIT_CENTER_CODE": {
+          "@title": "PROFIT CENTER CODE",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "PROFIT_CENTER": {
+          "@title": "PROFIT CENTER",
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "SAP_ORDER_NUMBER": {
+          "@title": "SAP ORDER NUMBER",
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "SAP_ORDER_ITEM": {
+          "@title": "SAP ORDER ITEM",
+          "key": true,
+          "type": "cds.String",
+          "length": 6
+        },
+        "SALE_ORDER_TYPE_CODE": {
+          "@title": "SALE ORDER TYPE CODE",
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "SALE_ORDER_TYPE": {
+          "@title": "SALE ORDER TYPE",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "OUTBOUND_DELIVERY_NUMBER": {
+          "@title": "OUTBOUND DELIVERY NUMBER",
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "OUTBOUND_DELIVERY_ITEM": {
+          "@title": "OUTBOUND DELIVERY ITEM",
+          "key": true,
+          "type": "cds.String",
+          "length": 6
+        },
+        "ORIGINAL_ORDER_NUMBER": {
+          "@title": "ORIGINAL ORDER NUMBER",
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "ORIGINAL_ORDER_ITEM": {
+          "@title": "ORIGINAL ORDER ITEM",
+          "key": true,
+          "type": "cds.String",
+          "length": 6
+        },
+        "ORIGINAL_ORDER_TYPE": {
+          "@title": "ORIGINAL ORDER TYPE",
+          "key": true,
+          "type": "cds.String",
+          "length": 20
+        },
+        "PLANT_CODE": {
+          "@title": "PLANT CODE",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "STORE": {
+          "@title": "STORE",
+          "key": true,
+          "type": "cds.String",
+          "length": 35
+        },
+        "COMMITTENTE_CODE": {
+          "@title": "COMMITTENTE CODE",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "COMMITTENTE": {
+          "@title": "COMMITTENTE",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "AGENTE_CODE": {
+          "@title": "AGENTE CODE",
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "AGENTE": {
+          "@title": "AGENTE",
+          "key": true,
+          "type": "cds.String",
+          "length": 35
+        },
+        "DESTINATARIO_CODE": {
+          "@title": "DESTINATARIO CODE",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DESTINATARIO": {
+          "@title": "DESTINATARIO",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "PAESE_DESTINAZIONE_CODE": {
+          "@title": "PAESE DESTINAZIONE CODE",
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "PAESE_DESTINAZIONE": {
+          "@title": "PAESE DESTINAZIONE",
+          "key": true,
+          "type": "cds.String",
+          "length": 50
+        },
+        "REFERENCE_MATERIAL": {
+          "@title": "REFERENCE MATERIAL",
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "MATERIAL": {
+          "@title": "MATERIAL",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "MATERIAL_DESCRIPTION": {
+          "@title": "MATERIAL DESCRIPTION",
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "SEASON": {
+          "@title": "SEASON",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "BRAND": {
+          "@title": "BRAND",
+          "key": true,
+          "type": "cds.String",
+          "length": 30
+        },
+        "FAMILY": {
+          "@title": "FAMILY",
+          "key": true,
+          "type": "cds.String",
+          "length": 18
+        },
+        "GENDER": {
+          "@title": "GENDER",
+          "key": true,
+          "type": "cds.String",
+          "length": 18
+        },
+        "SUBGENDER": {
+          "@title": "SUBGENDER",
+          "key": true,
+          "type": "cds.String",
+          "length": 18
+        },
+        "PRODUCT_GROUP": {
+          "@title": "PRODUCT GROUP",
+          "key": true,
+          "type": "cds.String",
+          "length": 20
+        },
+        "DESCRIZIONE_COLOR": {
+          "@title": "DESCRIZIONE COLOR",
+          "key": true,
+          "type": "cds.String",
+          "length": 32
+        },
+        "SIZE": {
+          "@title": "SIZE",
+          "key": true,
+          "type": "cds.String",
+          "length": 18
+        },
+        "COLLECTION": {
+          "@title": "COLLECTION",
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "PIECES_SOLD": {
+          "@title": "PIECES SOLD",
+          "type": "cds.Integer"
+        },
+        "WHOLESALE_PRICE_DA_ORDINE": {
+          "@title": "WHOLESALE PRICE DA ORDINE",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 2
+        },
+        "WHOLESALE_PRICE_LISTINO": {
+          "@title": "WHOLESALE PRICE LISTINO",
+          "type": "cds.Decimal",
+          "precision": 11,
+          "scale": 2
+        },
+        "RETAIL_NET_PRICE_UN": {
+          "@title": "RETAIL NET PRICE UN",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 2
+        },
+        "RETAIL_FULL_PRICE_UN": {
+          "@title": "RETAIL FULL PRICE UN",
+          "type": "cds.Decimal",
+          "precision": 11,
+          "scale": 2
+        },
+        "VALUTA": {
+          "@title": "VALUTA",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "MARK_APPLIED": {
+          "@title": "MARK-DOWN/MARK-UP APPLIED",
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "MARK_PERCENTAGE_APPLIED": {
+          "@title": "MARK-UP/MARK-DOWN PERCENTAGE APPLIED",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 2
+        },
+        "SELL_OUT_PRICE_UN": {
+          "@title": "SELL OUT PRICE UN",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 2
+        },
+        "TASSO_DI_CAMBIO": {
+          "@title": "TASSO DI CAMBIO",
+          "type": "cds.Decimal",
+          "precision": 16,
+          "scale": 2
+        },
+        "TOTAL_SELL_OUT_PRICE_EUR": {
+          "@title": "TOTAL SELL OUT PRICE EUR",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 2
+        },
+        "TOT_COGS": {
+          "@title": "TOT COGS EUR",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 2
+        },
+        "TOT_GROSS_MARGIN_PERCENT": {
+          "@title": "TOT GROSS MARGIN PERCENT",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 2
+        },
+        "TOT_GROSS_MARGIN_EUR": {
+          "@title": "TOT GROSS MARGIN EUR",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 2
+        },
+        "CASHDESKID": {
+          "@title": "CASHDESKID",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DOCUMENTENTRY": {
+          "@title": "DOCUMENTENTRY",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DOCUMENTPOSNR": {
+          "@title": "DOCUMENTPOSNR",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        }
+      }
+    },
+    "RetailSalesService": {
+      "@source": "srv/RetailSales-srv.cds",
+      "kind": "service"
+    },
+    "RetailSalesService.ReceiptsInvoicesCCO": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "T_RECEIPTS_INVOICES_CCO"
+          ]
+        }
+      },
+      "elements": {
+        "createdAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@UI.HiddenFilter": true,
+          "@Core.Immutable": true,
+          "@title": "{i18n>CreatedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
+        "createdBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@UI.HiddenFilter": true,
+          "@Core.Immutable": true,
+          "@title": "{i18n>CreatedBy}",
+          "@readonly": true,
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "modifiedAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@cds.on.update": {
+            "=": "$now"
+          },
+          "@UI.HiddenFilter": true,
+          "@title": "{i18n>ChangedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
+        "modifiedBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@cds.on.update": {
+            "=": "$user"
+          },
+          "@UI.HiddenFilter": true,
+          "@title": "{i18n>ChangedBy}",
+          "@readonly": true,
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "CashDeskID": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "CompanyID": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "StoreID": {
+          "type": "cds.String"
+        },
+        "BusinessPartnerID": {
+          "type": "cds.String"
+        },
+        "BusinessPartnerFirstName": {
+          "type": "cds.String"
+        },
+        "BusinessPartnerLastName": {
+          "type": "cds.String"
+        },
+        "BusinessPartnerCategory": {
+          "type": "cds.String"
+        },
+        "BusinessPartnerFidelity": {
+          "type": "cds.String"
+        },
+        "BusinessPartnerEMail": {
+          "type": "cds.String"
+        },
+        "DocumentEntry": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "DocumentType": {
+          "type": "cds.String"
+        },
+        "DocumentDate": {
+          "type": "cds.Date"
+        },
+        "DocumentSalesPersonId": {
+          "type": "cds.String"
+        },
+        "DocumentPosNr": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "DocumentPosSkuSeason": {
+          "type": "cds.String"
+        },
+        "DocumentPosItemCode": {
+          "type": "cds.String"
+        },
+        "DocumentPosBarcode": {
+          "type": "cds.String"
+        },
+        "DocumentPosVatCode": {
+          "type": "cds.String"
+        },
+        "DocumentPosQuantity": {
+          "type": "cds.String"
+        },
+        "DocumentPosPaymentGrossAfterHeaderDiscount": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 2
+        },
+        "DocumentPosPaymentGrossAmount": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 2
+        },
+        "DocumentPosSalesPersonId": {
+          "type": "cds.String"
+        },
+        "DocumentPosDiscounts": {
+          "type": "cds.String"
+        },
+        "PaymentsCurrency": {
+          "type": "cds.String"
+        },
+        "PaymentsTypesCode": {
+          "type": "cds.String"
+        },
+        "PaymentsTypesValue": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 2
+        }
+      }
+    },
+    "RetailSalesService.StoreEmail": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "T_STORE_EMAIL"
+          ]
+        }
+      },
+      "elements": {
+        "createdAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@UI.HiddenFilter": true,
+          "@Core.Immutable": true,
+          "@title": "{i18n>CreatedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
+        "createdBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@UI.HiddenFilter": true,
+          "@Core.Immutable": true,
+          "@title": "{i18n>CreatedBy}",
+          "@readonly": true,
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "modifiedAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@cds.on.update": {
+            "=": "$now"
+          },
+          "@UI.HiddenFilter": true,
+          "@title": "{i18n>ChangedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
+        "modifiedBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@cds.on.update": {
+            "=": "$user"
+          },
+          "@UI.HiddenFilter": true,
+          "@title": "{i18n>ChangedBy}",
+          "@readonly": true,
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "STORE_ID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 5
+        },
+        "STORE": {
+          "type": "cds.String",
+          "length": 35
+        },
+        "STORE_EMAIL": {
+          "type": "cds.String",
+          "length": 100
+        },
+        "IS_JOB_SCHEDULED": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "DATE_FROM": {
+          "type": "cds.Date"
+        },
+        "DATE_TO": {
+          "type": "cds.Date"
+        }
+      }
+    },
+    "RetailSalesService.RetailSales": {
+      "kind": "entity",
+      "@cds.query.limit.default": 50000,
+      "@cds.query.limit.max": 50000,
+      "params": {
+        "InDateFrom": {
+          "type": "cds.Date"
+        },
+        "InDateTo": {
+          "type": "cds.Date"
+        }
+      },
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              {
+                "id": "CV_RETAIL_SALES",
+                "args": {
+                  "IP_DATE_FROM": {
+                    "ref": [
+                      "InDateFrom"
+                    ],
+                    "param": true
+                  },
+                  "IP_DATE_TO": {
+                    "ref": [
+                      "InDateTo"
+                    ],
+                    "param": true
+                  }
+                }
+              }
+            ]
+          },
+          "columns": [
+            "*"
+          ]
+        }
+      },
+      "elements": {
+        "COMPANYID": {
+          "@title": "COMPANYID: COMPANY ID",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "COMPANY": {
+          "@title": "COMPANY: COMPANY",
+          "key": true,
+          "type": "cds.String",
+          "length": 25
+        },
+        "DOCUMENTDATE": {
+          "@title": "DOCUMENTDATE: DOCUMENT DATE",
+          "key": true,
+          "type": "cds.Date"
+        },
+        "DOCUMENTTYPE": {
+          "@title": "DOCUMENTTYPE: DOCUMENT TYPE",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DOCUMENTENTRY": {
+          "@title": "DOCUMENTENTRY: DOCUMENT ENTRY",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "STOREID": {
+          "@title": "STOREID: STORE ID",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "STORE": {
+          "@title": "STORE: STORE",
+          "key": true,
+          "type": "cds.String",
+          "length": 25
+        },
+        "REFERENCE_MATERIAL_ID": {
+          "@title": "REFERENCE_MATERIAL_ID: REFERENCE MATERIAL_ID",
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "REFERENCE_MATERIAL": {
+          "@title": "REFERENCE_MATERIAL: REFERENCE MATERIAL",
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "MATERIAL_ID": {
+          "@title": "MATERIAL_ID: MATERIAL ID",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "MATERIAL": {
+          "@title": "MATERIAL: MATERIAL",
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "SKU_SEASON": {
+          "@title": "SKU_SEASON: SEASON",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "BRAND_ID": {
+          "@title": "BRAND_ID: BRAND ID",
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "BRAND": {
+          "@title": "BRAND: BRAND",
+          "key": true,
+          "type": "cds.String",
+          "length": 30
+        },
+        "FAMILY_ID": {
+          "@title": "FAMILY_ID: FAMILY ID",
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "FAMILY": {
+          "@title": "FAMILY: FAMILY",
+          "key": true,
+          "type": "cds.String",
+          "length": 30
+        },
+        "GENDER": {
+          "@title": "GENDER: GENDER",
+          "key": true,
+          "type": "cds.String",
+          "length": 18
+        },
+        "IMAGE_URL": {
+          "@title": "IMAGE_URL: IMAGE URL",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "BUSINESSPARTNERID": {
+          "@title": "BUSINESSPARTNERID: BUSINESS PARTNER ID",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "BUSINESSPARTNER": {
+          "@title": "BUSINESSPARTNER: BUSINESS PARTNER",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "BUSINESSPARTNEREMAIL": {
+          "@title": "BUSINESSPARTNEREMAIL: BUSINESS PARTNER EMAIL",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DOCUMENTPOSSALESPERSONID": {
+          "@title": "DOCUMENTPOSSALESPERSONID: DOCUMENT SALES PERSON ID",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "PIECES_SOLD": {
+          "@title": "PIECES_SOLD: PIECES SOLD",
+          "type": "cds.Integer64"
+        },
+        "WHOLESALE_PRICE": {
+          "@title": "WHOLESALE_PRICE: WHOLESALE PRICE",
+          "type": "cds.Decimal",
+          "precision": 11
+        },
+        "UM_WHOLESALE_PRICE": {
+          "@title": "UM_WHOLESALE_PRICE: UM WHOLESALE PRICE",
+          "key": true,
+          "type": "cds.String",
+          "length": 5
+        },
+        "RETAIL_FULL_PRICE": {
+          "@title": "RETAIL_FULL_PRICE: RETAIL FULL PRICE",
+          "type": "cds.Decimal",
+          "precision": 13
+        },
+        "SELL_OUT_PRICE": {
+          "@title": "SELL_OUT_PRICE: SELL OUT PRICE",
+          "type": "cds.Decimal",
+          "precision": 13
+        },
+        "DISCOUNT_APPLIED": {
+          "@title": "DISCOUNT_APPLIED: DISCOUNT_APPLIED",
+          "type": "cds.Decimal",
+          "precision": 11
+        },
+        "DISCOUNT_PERCENTAGE": {
+          "@title": "DISCOUNT_PERCENTAGE: DISCOUNT PERCENTAGE",
+          "type": "cds.Decimal",
+          "precision": 11
+        },
+        "CURRENCY": {
+          "@title": "CURRENCY: CURRENCY",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DOCUMENTPOSSALESPERSON": {
+          "@title": "DOCUMENTPOSSALESPERSON: DOCUMENT SALES PERSON",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DOCUMENTDATESTRING": {
+          "@title": "DOCUMENTDATESTRING: DOCUMENT DATE STRING",
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        }
+      }
+    },
+    "ExportOdaService": {
+      "@source": "srv/export-oda-srv.cds",
+      "kind": "service"
+    },
+    "ExportOdaService.format_excel": {
+      "kind": "action",
+      "params": {
+        "lineItems": {
+          "items": {
+            "type": "ExportOdaService.LineItem"
+          }
+        }
+      },
+      "returns": {
+        "type": "cds.String"
+      }
+    },
+    "ExportOdaService.getCSRFToken": {
+      "kind": "function",
+      "returns": {
+        "type": "cds.String"
+      }
+    },
+    "ExportOdaService.LineItem": {
+      "kind": "type",
+      "elements": {
+        "BRAND": {
+          "type": "cds.String"
+        },
+        "BRAND_ID": {
+          "type": "cds.String"
+        },
+        "BUSINESSPARTNER": {
+          "type": "cds.String"
+        },
+        "BUSINESSPARTNEREMAIL": {
+          "type": "cds.String"
+        },
+        "BUSINESSPARTNERID": {
+          "type": "cds.String"
+        },
+        "DOCUMENTPOSSALESPERSONID": {
+          "type": "cds.String"
+        },
+        "DOCUMENTPOSSALESPERSON": {
+          "type": "cds.String"
+        },
+        "DOCUMENTDATESTRING": {
+          "type": "cds.String"
+        },
+        "COMPANY": {
+          "type": "cds.String"
+        },
+        "COMPANYID": {
+          "type": "cds.String"
+        },
+        "CURRENCY": {
+          "type": "cds.String"
+        },
+        "DISCOUNT_APPLIED": {
+          "type": "cds.String"
+        },
+        "DISCOUNT_PERCENTAGE": {
+          "type": "cds.String"
+        },
+        "DOCUMENTDATE": {
+          "type": "cds.String"
+        },
+        "DOCUMENTENTRY": {
+          "type": "cds.String"
+        },
+        "DOCUMENTTYPE": {
+          "type": "cds.String"
+        },
+        "FAMILY": {
+          "type": "cds.String"
+        },
+        "FAMILY_ID": {
+          "type": "cds.String"
+        },
+        "GENDER": {
+          "type": "cds.String"
+        },
+        "IMAGE_URL": {
+          "type": "cds.String"
+        },
+        "MATERIAL": {
+          "type": "cds.String"
+        },
+        "MATERIAL_ID": {
+          "type": "cds.String"
+        },
+        "PIECES_SOLD": {
+          "type": "cds.String"
+        },
+        "REFERENCE_MATERIAL": {
+          "type": "cds.String"
+        },
+        "REFERENCE_MATERIAL_ID": {
+          "type": "cds.String"
+        },
+        "RETAIL_FULL_PRICE": {
+          "type": "cds.String"
+        },
+        "SELL_OUT_PRICE": {
+          "type": "cds.String"
+        },
+        "SKU_SEASON": {
+          "type": "cds.String"
+        },
+        "STORE": {
+          "type": "cds.String"
+        },
+        "STOREID": {
+          "type": "cds.String"
+        },
+        "UM_WHOLESALE_PRICE": {
+          "type": "cds.String"
+        },
+        "WHOLESALE_PRICE": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "VendutoPerCanaleServices": {
+      "@source": "srv/reportVenduto-srv.cds",
+      "kind": "service"
+    },
+    "VendutoPerCanaleServices.VendutoPerCanale": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "CV_REPORT_VENDUTO_PER_CANALE"
+          ]
+        }
+      },
+      "elements": {
+        "SISTEMA_SORGENTE": {
+          "@title": "SISTEMA SORGENTE",
+          "key": true,
+          "type": "cds.String",
+          "length": 5
+        },
+        "POSTING_DATE": {
+          "@title": "POSTING DATE",
+          "type": "cds.Date"
+        },
+        "COMPANYID": {
+          "@title": "COMPANYID",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "COMPANY": {
+          "@title": "COMPANY",
+          "key": true,
+          "type": "cds.String",
+          "length": 25
+        },
+        "PROFIT_CENTER_CODE": {
+          "@title": "PROFIT CENTER CODE",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "PROFIT_CENTER": {
+          "@title": "PROFIT CENTER",
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "SAP_ORDER_NUMBER": {
+          "@title": "SAP ORDER NUMBER",
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "SAP_ORDER_ITEM": {
+          "@title": "SAP ORDER ITEM",
+          "key": true,
+          "type": "cds.String",
+          "length": 6
+        },
+        "SALE_ORDER_TYPE_CODE": {
+          "@title": "SALE ORDER TYPE CODE",
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "SALE_ORDER_TYPE": {
+          "@title": "SALE ORDER TYPE",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "OUTBOUND_DELIVERY_NUMBER": {
+          "@title": "OUTBOUND DELIVERY NUMBER",
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "OUTBOUND_DELIVERY_ITEM": {
+          "@title": "OUTBOUND DELIVERY ITEM",
+          "key": true,
+          "type": "cds.String",
+          "length": 6
+        },
+        "ORIGINAL_ORDER_NUMBER": {
+          "@title": "ORIGINAL ORDER NUMBER",
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "ORIGINAL_ORDER_ITEM": {
+          "@title": "ORIGINAL ORDER ITEM",
+          "key": true,
+          "type": "cds.String",
+          "length": 6
+        },
+        "ORIGINAL_ORDER_TYPE": {
+          "@title": "ORIGINAL ORDER TYPE",
+          "key": true,
+          "type": "cds.String",
+          "length": 20
+        },
+        "PLANT_CODE": {
+          "@title": "PLANT CODE",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "STORE": {
+          "@title": "STORE",
+          "key": true,
+          "type": "cds.String",
+          "length": 35
+        },
+        "COMMITTENTE_CODE": {
+          "@title": "COMMITTENTE CODE",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "COMMITTENTE": {
+          "@title": "COMMITTENTE",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "AGENTE_CODE": {
+          "@title": "AGENTE CODE",
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "AGENTE": {
+          "@title": "AGENTE",
+          "key": true,
+          "type": "cds.String",
+          "length": 35
+        },
+        "DESTINATARIO_CODE": {
+          "@title": "DESTINATARIO CODE",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DESTINATARIO": {
+          "@title": "DESTINATARIO",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "PAESE_DESTINAZIONE_CODE": {
+          "@title": "PAESE DESTINAZIONE CODE",
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "PAESE_DESTINAZIONE": {
+          "@title": "PAESE DESTINAZIONE",
+          "key": true,
+          "type": "cds.String",
+          "length": 50
+        },
+        "REFERENCE_MATERIAL": {
+          "@title": "REFERENCE MATERIAL",
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "MATERIAL": {
+          "@title": "MATERIAL",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "MATERIAL_DESCRIPTION": {
+          "@title": "MATERIAL DESCRIPTION",
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "SEASON": {
+          "@title": "SEASON",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "BRAND": {
+          "@title": "BRAND",
+          "key": true,
+          "type": "cds.String",
+          "length": 30
+        },
+        "FAMILY": {
+          "@title": "FAMILY",
+          "key": true,
+          "type": "cds.String",
+          "length": 18
+        },
+        "GENDER": {
+          "@title": "GENDER",
+          "key": true,
+          "type": "cds.String",
+          "length": 18
+        },
+        "SUBGENDER": {
+          "@title": "SUBGENDER",
+          "key": true,
+          "type": "cds.String",
+          "length": 18
+        },
+        "PRODUCT_GROUP": {
+          "@title": "PRODUCT GROUP",
+          "key": true,
+          "type": "cds.String",
+          "length": 20
+        },
+        "DESCRIZIONE_COLOR": {
+          "@title": "DESCRIZIONE COLOR",
+          "key": true,
+          "type": "cds.String",
+          "length": 32
+        },
+        "SIZE": {
+          "@title": "SIZE",
+          "key": true,
+          "type": "cds.String",
+          "length": 18
+        },
+        "COLLECTION": {
+          "@title": "COLLECTION",
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "PIECES_SOLD": {
+          "@title": "PIECES SOLD",
+          "type": "cds.Integer"
+        },
+        "WHOLESALE_PRICE_DA_ORDINE": {
+          "@title": "WHOLESALE PRICE DA ORDINE",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 2
+        },
+        "WHOLESALE_PRICE_LISTINO": {
+          "@title": "WHOLESALE PRICE LISTINO",
+          "type": "cds.Decimal",
+          "precision": 11,
+          "scale": 2
+        },
+        "RETAIL_NET_PRICE_UN": {
+          "@title": "RETAIL NET PRICE UN",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 2
+        },
+        "RETAIL_FULL_PRICE_UN": {
+          "@title": "RETAIL FULL PRICE UN",
+          "type": "cds.Decimal",
+          "precision": 11,
+          "scale": 2
+        },
+        "VALUTA": {
+          "@title": "VALUTA",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "MARK_APPLIED": {
+          "@title": "MARK-DOWN/MARK-UP APPLIED",
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "MARK_PERCENTAGE_APPLIED": {
+          "@title": "MARK-UP/MARK-DOWN PERCENTAGE APPLIED",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 2
+        },
+        "SELL_OUT_PRICE_UN": {
+          "@title": "SELL OUT PRICE UN",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 2
+        },
+        "TASSO_DI_CAMBIO": {
+          "@title": "TASSO DI CAMBIO",
+          "type": "cds.Decimal",
+          "precision": 16,
+          "scale": 2
+        },
+        "TOTAL_SELL_OUT_PRICE_EUR": {
+          "@title": "TOTAL SELL OUT PRICE EUR",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 2
+        },
+        "TOT_COGS": {
+          "@title": "TOT COGS EUR",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 2
+        },
+        "TOT_GROSS_MARGIN_PERCENT": {
+          "@title": "TOT GROSS MARGIN PERCENT",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 2
+        },
+        "TOT_GROSS_MARGIN_EUR": {
+          "@title": "TOT GROSS MARGIN EUR",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 2
+        },
+        "CASHDESKID": {
+          "@title": "CASHDESKID",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DOCUMENTENTRY": {
+          "@title": "DOCUMENTENTRY",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DOCUMENTPOSNR": {
+          "@title": "DOCUMENTPOSNR",
+          "key": true,
+          "type": "cds.String",
+          "length": 5000
+        }
+      }
+    },
+    "Language": {
+      "kind": "type",
+      "@title": "{i18n>Language}",
+      "@description": "{i18n>LanguageCode.Description}",
+      "type": "cds.Association",
+      "target": "sap.common.Languages",
+      "keys": [
+        {
+          "ref": [
+            "code"
+          ]
+        }
+      ]
+    },
+    "Currency": {
+      "kind": "type",
+      "@title": "{i18n>Currency}",
+      "@description": "{i18n>CurrencyCode.Description}",
+      "type": "cds.Association",
+      "target": "sap.common.Currencies",
+      "keys": [
+        {
+          "ref": [
+            "code"
+          ]
+        }
+      ]
+    },
+    "Country": {
+      "kind": "type",
+      "@title": "{i18n>Country}",
+      "@description": "{i18n>CountryCode.Description}",
+      "type": "cds.Association",
+      "target": "sap.common.Countries",
+      "keys": [
+        {
+          "ref": [
+            "code"
+          ]
+        }
+      ]
+    },
+    "sap.common": {
+      "kind": "context"
+    },
+    "sap.common.Locale": {
+      "kind": "type",
+      "@title": "{i18n>LanguageCode}",
+      "type": "cds.String",
+      "length": 14
+    },
+    "sap.common.Languages": {
+      "kind": "entity",
+      "@cds.autoexpose": true,
+      "@cds.persistence.skip": "if-unused",
+      "@UI.Identification": [
+        {
+          "Value": {
+            "=": "name"
+          }
+        }
+      ],
+      "@cds.odata.valuelist": true,
+      "includes": [
+        "sap.common.CodeList"
+      ],
+      "elements": {
+        "name": {
+          "@title": "{i18n>Name}",
+          "localized": true,
+          "type": "cds.String",
+          "length": 255
+        },
+        "descr": {
+          "@title": "{i18n>Description}",
+          "localized": true,
+          "type": "cds.String",
+          "length": 1000
+        },
+        "code": {
+          "@Common.Text": {
+            "=": "name"
+          },
+          "@title": "{i18n>LanguageCode}",
+          "key": true,
+          "type": "sap.common.Locale",
+          "length": 14
+        },
+        "texts": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "sap.common.Languages.texts",
+          "on": [
+            {
+              "ref": [
+                "texts",
+                "code"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "code"
+              ]
+            }
+          ]
+        },
+        "localized": {
+          "type": "cds.Association",
+          "target": "sap.common.Languages.texts",
+          "on": [
+            {
+              "ref": [
+                "localized",
+                "code"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "code"
+              ]
+            },
+            "and",
+            {
+              "ref": [
+                "localized",
+                "locale"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$user",
+                "locale"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "sap.common.Countries": {
+      "kind": "entity",
+      "@cds.autoexpose": true,
+      "@cds.persistence.skip": "if-unused",
+      "@UI.Identification": [
+        {
+          "Value": {
+            "=": "name"
+          }
+        }
+      ],
+      "@cds.odata.valuelist": true,
+      "includes": [
+        "sap.common.CodeList"
+      ],
+      "elements": {
+        "name": {
+          "@title": "{i18n>Name}",
+          "localized": true,
+          "type": "cds.String",
+          "length": 255
+        },
+        "descr": {
+          "@title": "{i18n>Description}",
+          "localized": true,
+          "type": "cds.String",
+          "length": 1000
+        },
+        "code": {
+          "@title": "{i18n>CountryCode}",
+          "@Common.Text": {
+            "=": "name"
+          },
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "texts": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "sap.common.Countries.texts",
+          "on": [
+            {
+              "ref": [
+                "texts",
+                "code"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "code"
+              ]
+            }
+          ]
+        },
+        "localized": {
+          "type": "cds.Association",
+          "target": "sap.common.Countries.texts",
+          "on": [
+            {
+              "ref": [
+                "localized",
+                "code"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "code"
+              ]
+            },
+            "and",
+            {
+              "ref": [
+                "localized",
+                "locale"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$user",
+                "locale"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "sap.common.Currencies": {
+      "kind": "entity",
+      "@cds.autoexpose": true,
+      "@cds.persistence.skip": "if-unused",
+      "@UI.Identification": [
+        {
+          "Value": {
+            "=": "name"
+          }
+        }
+      ],
+      "@cds.odata.valuelist": true,
+      "includes": [
+        "sap.common.CodeList"
+      ],
+      "elements": {
+        "name": {
+          "@title": "{i18n>Name}",
+          "localized": true,
+          "type": "cds.String",
+          "length": 255
+        },
+        "descr": {
+          "@title": "{i18n>Description}",
+          "localized": true,
+          "type": "cds.String",
+          "length": 1000
+        },
+        "code": {
+          "@title": "{i18n>CurrencyCode}",
+          "@Common.Text": {
+            "=": "name"
+          },
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "symbol": {
+          "@title": "{i18n>CurrencySymbol}",
+          "type": "cds.String",
+          "length": 5
+        },
+        "minorUnit": {
+          "@title": "{i18n>CurrencyMinorUnit}",
+          "type": "cds.Int16"
+        },
+        "texts": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "sap.common.Currencies.texts",
+          "on": [
+            {
+              "ref": [
+                "texts",
+                "code"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "code"
+              ]
+            }
+          ]
+        },
+        "localized": {
+          "type": "cds.Association",
+          "target": "sap.common.Currencies.texts",
+          "on": [
+            {
+              "ref": [
+                "localized",
+                "code"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "code"
+              ]
+            },
+            "and",
+            {
+              "ref": [
+                "localized",
+                "locale"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$user",
+                "locale"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "sap.common.CodeList": {
+      "kind": "aspect",
+      "@cds.autoexpose": true,
+      "@cds.persistence.skip": "if-unused",
+      "@UI.Identification": [
+        {
+          "Value": {
+            "=": "name"
+          }
+        }
+      ],
+      "@cds.odata.valuelist": true,
+      "elements": {
+        "name": {
+          "@title": "{i18n>Name}",
+          "localized": true,
+          "type": "cds.String",
+          "length": 255
+        },
+        "descr": {
+          "@title": "{i18n>Description}",
+          "localized": true,
+          "type": "cds.String",
+          "length": 1000
+        }
+      }
+    },
+    "sap.common.TextsAspect": {
+      "kind": "aspect",
+      "elements": {
+        "locale": {
+          "@title": "{i18n>LanguageCode}",
+          "key": true,
+          "type": "sap.common.Locale",
+          "length": 14
+        }
+      }
+    },
+    "cuid": {
+      "kind": "aspect",
+      "elements": {
+        "ID": {
+          "key": true,
+          "type": "cds.UUID"
+        }
+      }
+    },
+    "managed": {
+      "kind": "aspect",
+      "elements": {
+        "createdAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@UI.HiddenFilter": true,
+          "@Core.Immutable": true,
+          "@title": "{i18n>CreatedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
+        "createdBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@UI.HiddenFilter": true,
+          "@Core.Immutable": true,
+          "@title": "{i18n>CreatedBy}",
+          "@readonly": true,
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "modifiedAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@cds.on.update": {
+            "=": "$now"
+          },
+          "@UI.HiddenFilter": true,
+          "@title": "{i18n>ChangedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
+        "modifiedBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@cds.on.update": {
+            "=": "$user"
+          },
+          "@UI.HiddenFilter": true,
+          "@title": "{i18n>ChangedBy}",
+          "@readonly": true,
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        }
+      }
+    },
+    "temporal": {
+      "kind": "aspect",
+      "elements": {
+        "validFrom": {
+          "@cds.valid.from": true,
+          "type": "cds.Timestamp"
+        },
+        "validTo": {
+          "@cds.valid.to": true,
+          "type": "cds.Timestamp"
+        }
+      }
+    },
+    "User": {
+      "kind": "type",
+      "@title": "{i18n>UserID}",
+      "@description": "{i18n>UserID.Description}",
+      "type": "cds.String",
+      "length": 255
+    },
+    "extensible": {
+      "kind": "aspect",
+      "elements": {
+        "extensions__": {
+          "@cds.api.ignore": true,
+          "type": "cds.String"
+        }
+      }
+    },
+    "sap.common.Languages.texts": {
+      "kind": "entity",
+      "@odata.draft.enabled": false,
+      "includes": [
+        "sap.common.TextsAspect"
+      ],
+      "elements": {
+        "locale": {
+          "@title": "{i18n>LanguageCode}",
+          "key": true,
+          "type": "sap.common.Locale",
+          "length": 14
+        },
+        "name": {
+          "@title": "{i18n>Name}",
+          "localized": null,
+          "type": "cds.String",
+          "length": 255
+        },
+        "descr": {
+          "@title": "{i18n>Description}",
+          "localized": null,
+          "type": "cds.String",
+          "length": 1000
+        },
+        "code": {
+          "@odata.containment.ignore": true,
+          "@Common.Text": {
+            "=": "name"
+          },
+          "@title": "{i18n>LanguageCode}",
+          "key": true,
+          "type": "sap.common.Locale",
+          "length": 14
+        }
+      }
+    },
+    "sap.common.Countries.texts": {
+      "kind": "entity",
+      "@odata.draft.enabled": false,
+      "includes": [
+        "sap.common.TextsAspect"
+      ],
+      "elements": {
+        "locale": {
+          "@title": "{i18n>LanguageCode}",
+          "key": true,
+          "type": "sap.common.Locale",
+          "length": 14
+        },
+        "name": {
+          "@title": "{i18n>Name}",
+          "localized": null,
+          "type": "cds.String",
+          "length": 255
+        },
+        "descr": {
+          "@title": "{i18n>Description}",
+          "localized": null,
+          "type": "cds.String",
+          "length": 1000
+        },
+        "code": {
+          "@odata.containment.ignore": true,
+          "@title": "{i18n>CountryCode}",
+          "@Common.Text": {
+            "=": "name"
+          },
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        }
+      }
+    },
+    "sap.common.Currencies.texts": {
+      "kind": "entity",
+      "@odata.draft.enabled": false,
+      "includes": [
+        "sap.common.TextsAspect"
+      ],
+      "elements": {
+        "locale": {
+          "@title": "{i18n>LanguageCode}",
+          "key": true,
+          "type": "sap.common.Locale",
+          "length": 14
+        },
+        "name": {
+          "@title": "{i18n>Name}",
+          "localized": null,
+          "type": "cds.String",
+          "length": 255
+        },
+        "descr": {
+          "@title": "{i18n>Description}",
+          "localized": null,
+          "type": "cds.String",
+          "length": 1000
+        },
+        "code": {
+          "@odata.containment.ignore": true,
+          "@title": "{i18n>CurrencyCode}",
+          "@Common.Text": {
+            "=": "name"
+          },
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        }
+      }
+    }
+  },
+  "meta": {
+    "creator": "CDS Compiler v3.9.2",
+    "flavor": "inferred"
+  },
+  "$version": "2.0"
+}

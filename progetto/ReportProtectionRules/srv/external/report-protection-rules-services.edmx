@@ -1,0 +1,399 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+<edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+</edmx:Reference>
+<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+<edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+</edmx:Reference>
+<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+</edmx:Reference>
+<edmx:DataServices m:DataServiceVersion="2.0">
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="reportProtectionRulesServices">
+<EntityContainer Name="EntityContainer" m:IsDefaultEntityContainer="true">
+<EntitySet Name="PROTECTIONRULES_LOWLEVEL" EntityType="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL"/>
+<EntitySet Name="PROTECTIONRULES_HIGHLEVEL" EntityType="reportProtectionRulesServices.PROTECTIONRULES_HIGHLEVEL"/>
+</EntityContainer>
+<EntityType Name="PROTECTIONRULES_LOWLEVEL">
+<Key>
+<PropertyRef Name="FAMILY_ID"/>
+<PropertyRef Name="ARTICLE_ID"/>
+<PropertyRef Name="FAMILY"/>
+<PropertyRef Name="ARTICLE_IMG"/>
+<PropertyRef Name="SEASON_YEAR"/>
+<PropertyRef Name="PRODUCT_GROUP"/>
+<PropertyRef Name="STORE_POINT"/>
+<PropertyRef Name="ARTICLE_DESCR"/>
+<PropertyRef Name="SEASON"/>
+<PropertyRef Name="GENDER"/>
+<PropertyRef Name="STORE_POINT_ID"/>
+<PropertyRef Name="SALES_CHANNEL"/>
+<PropertyRef Name="ID_REGOLA"/>
+<PropertyRef Name="BRAND"/>
+<PropertyRef Name="SALES_CHANNEL_ID"/>
+<PropertyRef Name="BRAND_ID"/>
+</Key>
+<Property Name="FAMILY_ID" Type="Edm.String" MaxLength="3" Nullable="false"/>
+<Property Name="ARTICLE_ID" Type="Edm.String" MaxLength="40" Nullable="false"/>
+<Property Name="FAMILY" Type="Edm.String" MaxLength="30" Nullable="false"/>
+<Property Name="VALORE_STOCK_PROTETTO" Type="Edm.Decimal" Precision="13"/>
+<Property Name="RETAIL_PRICE" Type="Edm.Decimal" Precision="11"/>
+<Property Name="ARTICLE_IMG" Type="Edm.String" MaxLength="120" Nullable="false"/>
+<Property Name="QUANTITA_STOCK" Type="Edm.Decimal" Precision="13"/>
+<Property Name="SEASON_YEAR" Type="Edm.String" MaxLength="4" Nullable="false"/>
+<Property Name="PRODUCT_GROUP" Type="Edm.String" MaxLength="9" Nullable="false"/>
+<Property Name="VALIDO_DA" Type="Edm.DateTime" sap:display-format="Date"/>
+<Property Name="WHOLESALE" Type="Edm.Decimal" Precision="11"/>
+<Property Name="STORE_POINT" Type="Edm.String" MaxLength="30" Nullable="false"/>
+<Property Name="ARTICLE_DESCR" Type="Edm.String" MaxLength="40" Nullable="false"/>
+<Property Name="SEASON" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="GENDER" Type="Edm.String" MaxLength="18" Nullable="false"/>
+<Property Name="STORE_POINT_ID" Type="Edm.String" MaxLength="4" Nullable="false"/>
+<Property Name="VALIDO_A" Type="Edm.DateTime" sap:display-format="Date"/>
+<Property Name="SALES_CHANNEL" Type="Edm.String" MaxLength="40" Nullable="false"/>
+<Property Name="QUANTITA_PROTETTA" Type="Edm.Decimal" Precision="13"/>
+<Property Name="ID_REGOLA" Type="Edm.String" MaxLength="36" Nullable="false"/>
+<Property Name="BRAND" Type="Edm.String" MaxLength="30" Nullable="false"/>
+<Property Name="SALES_CHANNEL_ID" Type="Edm.String" MaxLength="5" Nullable="false"/>
+<Property Name="BRAND_ID" Type="Edm.String" MaxLength="4" Nullable="false"/>
+</EntityType>
+<EntityType Name="PROTECTIONRULES_HIGHLEVEL">
+<Key>
+<PropertyRef Name="ARTICLE_ID"/>
+<PropertyRef Name="SALES_CHANNEL"/>
+<PropertyRef Name="SEASON_YEAR"/>
+<PropertyRef Name="STORE_POINT"/>
+<PropertyRef Name="ID_REGOLA"/>
+<PropertyRef Name="FAMILY_ID"/>
+<PropertyRef Name="SEASON"/>
+<PropertyRef Name="STORE_POINT_ID"/>
+<PropertyRef Name="FAMILY"/>
+<PropertyRef Name="BRAND"/>
+<PropertyRef Name="BRAND_ID"/>
+<PropertyRef Name="SALES_CHANNEL_ID"/>
+</Key>
+<Property Name="ARTICLE_ID" Type="Edm.String" MaxLength="40" Nullable="false"/>
+<Property Name="SALES_CHANNEL" Type="Edm.String" MaxLength="40" Nullable="false"/>
+<Property Name="SEASON_YEAR" Type="Edm.String" MaxLength="4" Nullable="false"/>
+<Property Name="WHOLESALE" Type="Edm.Decimal" Precision="11"/>
+<Property Name="STORE_POINT" Type="Edm.String" MaxLength="30" Nullable="false"/>
+<Property Name="VALIDO_DA" Type="Edm.DateTime" sap:display-format="Date"/>
+<Property Name="ID_REGOLA" Type="Edm.String" MaxLength="36" Nullable="false"/>
+<Property Name="FAMILY_ID" Type="Edm.String" MaxLength="3" Nullable="false"/>
+<Property Name="SEASON" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="QUANTITA_PROTETTA" Type="Edm.Decimal" Precision="13"/>
+<Property Name="STORE_POINT_ID" Type="Edm.String" MaxLength="4" Nullable="false"/>
+<Property Name="VALIDO_A" Type="Edm.DateTime" sap:display-format="Date"/>
+<Property Name="FAMILY" Type="Edm.String" MaxLength="30" Nullable="false"/>
+<Property Name="BRAND" Type="Edm.String" MaxLength="30" Nullable="false"/>
+<Property Name="BRAND_ID" Type="Edm.String" MaxLength="4" Nullable="false"/>
+<Property Name="SALES_CHANNEL_ID" Type="Edm.String" MaxLength="5" Nullable="false"/>
+</EntityType>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL">
+<Annotation Term="UI.SelectionFields">
+<Collection>
+<PropertyPath>BRAND</PropertyPath>
+<PropertyPath>FAMILY</PropertyPath>
+<PropertyPath>SEASON</PropertyPath>
+<PropertyPath>STORE_POINT</PropertyPath>
+<PropertyPath>SALES_CHANNEL</PropertyPath>
+<PropertyPath>ID_REGOLA</PropertyPath>
+<PropertyPath>VALIDO_DA</PropertyPath>
+<PropertyPath>VALIDO_A</PropertyPath>
+<PropertyPath>GENDER</PropertyPath>
+<PropertyPath>SEASON</PropertyPath>
+<PropertyPath>PRODUCT_GROUP</PropertyPath>
+<PropertyPath>ARTICLE_ID</PropertyPath>
+<PropertyPath>ARTICLE_DESCR</PropertyPath>
+</Collection>
+</Annotation>
+<Annotation Term="UI.LineItem">
+<Collection>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="ID_REGOLA"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+<PropertyValue Property="Label" String="ID Regola"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="VALIDO_DA"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+<PropertyValue Property="Label" String="Valido Da"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="VALIDO_A"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+<PropertyValue Property="Label" String="Valido a"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="ARTICLE_ID"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+<PropertyValue Property="Label" String="ID Articolo"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="ARTICLE_IMG"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+<PropertyValue Property="Label" String="Immagine Articolo"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="ARTICLE_DESCR"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+<PropertyValue Property="Label" String="Articolo"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="BRAND"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+<PropertyValue Property="Label" String="Brand"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="FAMILY"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+<PropertyValue Property="Label" String="Family"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="SEASON"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+<PropertyValue Property="Label" String="Season"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="GENDER"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+<PropertyValue Property="Label" String="Gender"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="PRODUCT_GROUP"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+<PropertyValue Property="Label" String="Product Group"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="STORE_POINT"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+<PropertyValue Property="Label" String="StockPoint"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="SALES_CHANNEL"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+<PropertyValue Property="Label" String="Sales Channel"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="RETAIL_PRICE"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+<PropertyValue Property="Label" String="Retail Price"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="QUANTITA_STOCK"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+<PropertyValue Property="Label" String="Quantità in Stock"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="WHOLESALE"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+<PropertyValue Property="Label" String="Prezzo Wholesale"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="QUANTITA_PROTETTA"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+<PropertyValue Property="Label" String="Quantità Protetta"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="VALORE_STOCK_PROTETTO"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+<PropertyValue Property="Label" String="Valore Stock Protetto"/>
+</Record>
+</Collection>
+</Annotation>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/FAMILY_ID">
+<Annotation Term="Common.Label" String="FAMILY_ID: FAMILY_ID"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/ARTICLE_ID">
+<Annotation Term="Common.Label" String="ARTICLE_ID: ARTICLE_ID"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/FAMILY">
+<Annotation Term="Common.Label" String="FAMILY: FAMILY"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/VALORE_STOCK_PROTETTO">
+<Annotation Term="Common.Label" String="VALORE_STOCK_PROTETTO: VALORE_STOCK_PROTETTO"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/RETAIL_PRICE">
+<Annotation Term="Common.Label" String="RETAIL_PRICE: RETAIL_PRICE"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/ARTICLE_IMG">
+<Annotation Term="Common.Label" String="ARTICLE_IMG: ARTICLE_IMG"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/QUANTITA_STOCK">
+<Annotation Term="Common.Label" String="QUANTITA_STOCK: QUANTITA_STOCK"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/SEASON_YEAR">
+<Annotation Term="Common.Label" String="SEASON_YEAR: SEASON_YEAR"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/PRODUCT_GROUP">
+<Annotation Term="Common.Label" String="PRODUCT_GROUP: PRODUCT_GROUP"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/VALIDO_DA">
+<Annotation Term="Common.Label" String="VALIDO_DA: VALIDO_DA"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/WHOLESALE">
+<Annotation Term="Common.Label" String="WHOLESALE: WHOLESALE"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/STORE_POINT">
+<Annotation Term="Common.Label" String="STORE_POINT: STORE_POINT"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/ARTICLE_DESCR">
+<Annotation Term="Common.Label" String="ARTICLE_DESCR: ARTICLE_DESCR"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/SEASON">
+<Annotation Term="Common.Label" String="SEASON: SEASON"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/GENDER">
+<Annotation Term="Common.Label" String="GENDER: GENDER"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/STORE_POINT_ID">
+<Annotation Term="Common.Label" String="STORE_POINT_ID: STORE_POINT_ID"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/VALIDO_A">
+<Annotation Term="Common.Label" String="VALIDO_A: VALIDO_A"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/SALES_CHANNEL">
+<Annotation Term="Common.Label" String="SALES_CHANNEL: SALES_CHANNEL"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/QUANTITA_PROTETTA">
+<Annotation Term="Common.Label" String="QUANTITA_PROTETTA: QUANTITA_PROTETTA"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/ID_REGOLA">
+<Annotation Term="Common.Label" String="ID_REGOLA: ID_REGOLA"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/BRAND">
+<Annotation Term="Common.Label" String="BRAND: BRAND"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/SALES_CHANNEL_ID">
+<Annotation Term="Common.Label" String="SALES_CHANNEL_ID: SALES_CHANNEL_ID"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_LOWLEVEL/BRAND_ID">
+<Annotation Term="Common.Label" String="BRAND_ID: BRAND_ID"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_HIGHLEVEL">
+<Annotation Term="UI.SelectionFields">
+<Collection>
+<PropertyPath>BRAND</PropertyPath>
+<PropertyPath>FAMILY</PropertyPath>
+<PropertyPath>SEASON</PropertyPath>
+<PropertyPath>STORE_POINT</PropertyPath>
+<PropertyPath>SALES_CHANNEL</PropertyPath>
+<PropertyPath>ID_REGOLA</PropertyPath>
+<PropertyPath>VALIDO_DA</PropertyPath>
+<PropertyPath>VALIDO_A</PropertyPath>
+<PropertyPath>SEASON</PropertyPath>
+<PropertyPath>ARTICLE_ID</PropertyPath>
+</Collection>
+</Annotation>
+<Annotation Term="UI.LineItem">
+<Collection>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="ID_REGOLA"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+<PropertyValue Property="Label" String="ID Regola"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="VALIDO_DA"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+<PropertyValue Property="Label" String="Valido Da"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="VALIDO_A"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+<PropertyValue Property="Label" String="Valido a"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="ARTICLE_ID"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+<PropertyValue Property="Label" String="ID Articolo"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="BRAND"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+<PropertyValue Property="Label" String="Brand"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="FAMILY"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+<PropertyValue Property="Label" String="Family"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="SEASON"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+<PropertyValue Property="Label" String="Season"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="STORE_POINT"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+<PropertyValue Property="Label" String="StockPoint"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="SALES_CHANNEL"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+<PropertyValue Property="Label" String="Sales Channel"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="WHOLESALE"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+<PropertyValue Property="Label" String="Prezzo Wholesale"/>
+</Record>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="QUANTITA_PROTETTA"/>
+<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+<PropertyValue Property="Label" String="Quantità Protetta"/>
+</Record>
+</Collection>
+</Annotation>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_HIGHLEVEL/ARTICLE_ID">
+<Annotation Term="Common.Label" String="ARTICLE_ID: ARTICLE_ID"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_HIGHLEVEL/SALES_CHANNEL">
+<Annotation Term="Common.Label" String="SALES_CHANNEL: SALES_CHANNEL"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_HIGHLEVEL/SEASON_YEAR">
+<Annotation Term="Common.Label" String="SEASON_YEAR: SEASON_YEAR"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_HIGHLEVEL/WHOLESALE">
+<Annotation Term="Common.Label" String="WHOLESALE: WHOLESALE"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_HIGHLEVEL/STORE_POINT">
+<Annotation Term="Common.Label" String="STORE_POINT: STORE_POINT"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_HIGHLEVEL/VALIDO_DA">
+<Annotation Term="Common.Label" String="VALIDO_DA: VALIDO_DA"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_HIGHLEVEL/ID_REGOLA">
+<Annotation Term="Common.Label" String="ID_REGOLA: ID_REGOLA"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_HIGHLEVEL/FAMILY_ID">
+<Annotation Term="Common.Label" String="FAMILY_ID: FAMILY_ID"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_HIGHLEVEL/SEASON">
+<Annotation Term="Common.Label" String="SEASON: SEASON"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_HIGHLEVEL/QUANTITA_PROTETTA">
+<Annotation Term="Common.Label" String="QUANTITA_PROTETTA: QUANTITA_PROTETTA"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_HIGHLEVEL/STORE_POINT_ID">
+<Annotation Term="Common.Label" String="STORE_POINT_ID: STORE_POINT_ID"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_HIGHLEVEL/VALIDO_A">
+<Annotation Term="Common.Label" String="VALIDO_A: VALIDO_A"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_HIGHLEVEL/FAMILY">
+<Annotation Term="Common.Label" String="FAMILY: FAMILY"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_HIGHLEVEL/BRAND">
+<Annotation Term="Common.Label" String="BRAND: BRAND"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_HIGHLEVEL/BRAND_ID">
+<Annotation Term="Common.Label" String="BRAND_ID: BRAND_ID"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="reportProtectionRulesServices.PROTECTIONRULES_HIGHLEVEL/SALES_CHANNEL_ID">
+<Annotation Term="Common.Label" String="SALES_CHANNEL_ID: SALES_CHANNEL_ID"/>
+</Annotations>
+</Schema>
+</edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,134 @@
+{
+  "VT_T001": {
+    "target": {
+      "object": "VT_T001",
+      "schema": "DS4"
+    }
+  },
+  "VT_MARA": {
+    "target": {
+      "object": "VT_MARA",
+      "schema": "DS4"
+    }
+  },
+  "VT_MAKT": {
+    "target": {
+      "object": "VT_MAKT",
+      "schema": "DS4"
+    }
+  },
+  "VT_KNA1": {
+    "target": {
+      "object": "VT_KNA1",
+      "schema": "DS4"
+    }
+  },
+  "VT_WRF_BRANDS_T": {
+    "target": {
+      "object": "VT_WRF_BRANDS_T",
+      "schema": "DS4"
+    }
+  },
+  "VT_T023T": {
+    "target": {
+      "object": "VT_T023T",
+      "schema": "DS4"
+    }
+  },
+  "VT_T024X": {
+    "target": {
+      "object": "VT_T024X",
+      "schema": "DS4"
+    }
+  },
+  "VT_A118": {
+    "target": {
+      "object": "VT_A118",
+      "schema": "DS4"
+    }
+  },
+  "VT_A918": {
+    "target": {
+      "object": "VT_A918",
+      "schema": "DS4"
+    }
+  },
+  "VT_KONP": {
+    "target": {
+      "object": "VT_KONP",
+      "schema": "DS4"
+    }
+  },
+  "VT_A919": {
+    "target": {
+      "object": "VT_A919",
+      "schema": "DS4"
+    }
+  },
+  "VT_A920": {
+    "target": {
+      "object": "VT_A920",
+      "schema": "DS4"
+    }
+  },
+  "VT_VBKD": {
+    "target": {
+      "object": "VT_VBKD",
+      "schema": "DS4"
+    }
+  },
+  "VT_VBAP": {
+    "target": {
+      "object": "VT_VBAP",
+      "schema": "DS4"
+    }
+  },
+  "VT_LIPS": {
+    "target": {
+      "object": "VT_LIPS",
+      "schema": "DS4"
+    }
+  },
+  "VT_TCURR": {
+    "target": {
+      "object": "VT_TCURR",
+      "schema": "DS4"
+    }
+  },
+  "VT_VBAK": {
+    "target": {
+      "object": "VT_VBAK",
+      "schema": "DS4"
+    }
+  },
+  "VT_TVAKT": {
+    "target": {
+      "object": "VT_TVAKT",
+      "schema": "DS4"
+    }
+  },
+  "VT_VBPA": {
+    "target": {
+      "object": "VT_VBPA",
+      "schema": "DS4"
+    }
+  },
+  "VT_LFA1": {
+    "target": {
+      "object": "VT_LFA1",
+      "schema": "DS4"
+    }
+  },
+  "VT_T005T": {
+    "target": {
+      "object": "VT_T005T",
+      "schema": "DS4"
+    }
+  },
+  "VT_REPORT_VENDUTO_S4": {
+    "target": {
+      "object": "VT_REPORT_VENDUTO_S4",
+      "schema": "DS4"
+    }
+  }
+}

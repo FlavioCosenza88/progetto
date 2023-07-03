@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" xmlns:Variable="http://www.sap.com/ndb/BiModelVariable.ecore" id="CV_RETAIL_SALES" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_RETAIL_SALES"/>
+<localVariables>
+  <variable id="IP_DATE_FROM" parameter="true">
+    <descriptions defaultDescription="Date From"/>
+    <variableProperties datatype="DATE" mandatory="true">
+      <valueDomain type="empty"/>
+      <selection multiLine="false" type="SingleValue"/>
+    </variableProperties>
+  </variable>
+  <variable id="IP_DATE_TO" parameter="true">
+    <descriptions defaultDescription="Date To"/>
+    <variableProperties datatype="DATE" mandatory="true">
+      <valueDomain type="empty"/>
+      <selection multiLine="false" type="SingleValue"/>
+    </variableProperties>
+  </variable>
+</localVariables>
+<variableMappings/>
+<dataSources/>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:TableFunctionView" id="TableFunction_1" tableFunctionName="TF_RETAIL_SALES">
+    <viewAttributes/>
+    <calculatedViewAttributes/>
+    <variableMapping xsi:type="Variable:VariableMapping">
+      <targetVariable name="IP_DATE_FROM"/>
+      <localVariable>IP_DATE_FROM</localVariable>
+    </variableMapping>
+    <variableMapping xsi:type="Variable:VariableMapping">
+      <targetVariable name="IP_DATE_TO"/>
+      <localVariable>IP_DATE_TO</localVariable>
+    </variableMapping>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="COMPANYID"/>
+      <viewAttribute id="COMPANY"/>
+      <viewAttribute id="DOCUMENTDATE"/>
+      <viewAttribute id="DOCUMENTTYPE"/>
+      <viewAttribute id="DOCUMENTENTRY"/>
+      <viewAttribute id="STOREID"/>
+      <viewAttribute id="STORE"/>
+      <viewAttribute id="REFERENCE_MATERIAL_ID"/>
+      <viewAttribute id="REFERENCE_MATERIAL"/>
+      <viewAttribute id="MATERIAL_ID"/>
+    
+      <viewAttribute id="MATERIAL"/>
+      <viewAttribute id="SKU_SEASON"/>
+      <viewAttribute id="BRAND_ID"/>
+      <viewAttribute id="BRAND"/>
+      <viewAttribute id="FAMILY_ID"/>
+      <viewAttribute id="FAMILY"/>
+      <viewAttribute id="GENDER"/>
+      <viewAttribute id="IMAGE_URL"/>
+      <viewAttribute id="PIECES_SOLD"/>
+      <viewAttribute id="WHOLESALE_PRICE"/>
+      <viewAttribute id="UM_WHOLESALE_PRICE"/>
+      <viewAttribute id="RETAIL_FULL_PRICE"/>
+      <viewAttribute id="SELL_OUT_PRICE"/>
+    
+      <viewAttribute id="BUSINESSPARTNERID"/>
+      <viewAttribute id="BUSINESSPARTNER"/>
+      <viewAttribute id="BUSINESSPARTNEREMAIL"/>
+      <viewAttribute id="DOCUMENTPOSSALESPERSONID"/>
+      <viewAttribute id="CURRENCY"/>
+    
+      <viewAttribute id="DOCUMENTDATESTRING"/>
+    
+      <viewAttribute id="DOCUMENTPOSSALESPERSON"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="DISCOUNT_PERCENTAGE" datatype="DECIMAL" length="11" scale="2" expressionLanguage="SQL">
+        <formula>CASE
+    WHEN &quot;RETAIL_FULL_PRICE&quot; = 0 then 0 
+	ELSE ((&quot;RETAIL_FULL_PRICE&quot; - &quot;SELL_OUT_PRICE&quot;)/&quot;RETAIL_FULL_PRICE&quot;)*100
+END
+
+</formula>
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="DISCOUNT_APPLIED" datatype="DECIMAL" length="11" scale="2" expressionLanguage="SQL">
+    
+        <formula>&quot;RETAIL_FULL_PRICE&quot; - &quot;SELL_OUT_PRICE&quot;</formula>
+    
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="TableFunction_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATERIAL_ID" source="DOCUMENTPOSITEMCODE"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKU_SEASON" source="DOCUMENTPOSSKUSEASON"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIECES_SOLD" source="DOCUMENTPOSQUANTITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RETAIL_FULL_PRICE" source="DOCUMENTPOSPAYMENTGROSSAMOUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SELL_OUT_PRICE" source="DOCUMENTPOSPAYMENTGROSSAFTERHEADERDISCOUNT"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENCY" source="PAYMENTSCURRENCY"/>
+    </input>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="COMPANYID" order="1" descriptionColumnName="COMPANY" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMPANY ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="COMPANYID"/>
+    </attribute>
+    <attribute id="COMPANY" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMPANY"/>
+      <keyMapping columnObjectName="Projection_1" columnName="COMPANY"/>
+    </attribute>
+    <attribute id="DOCUMENTDATE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DOCUMENT DATE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DOCUMENTDATE"/>
+    </attribute>
+    <attribute id="DOCUMENTTYPE" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DOCUMENT TYPE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DOCUMENTTYPE"/>
+    </attribute>
+    <attribute id="DOCUMENTENTRY" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DOCUMENT ENTRY"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DOCUMENTENTRY"/>
+    </attribute>
+    <attribute id="STOREID" order="6" descriptionColumnName="STORE" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STORE ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="STOREID"/>
+    </attribute>
+    <attribute id="STORE" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STORE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="STORE"/>
+    </attribute>
+    <attribute id="REFERENCE_MATERIAL_ID" order="8" descriptionColumnName="REFERENCE_MATERIAL" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="REFERENCE MATERIAL_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="REFERENCE_MATERIAL_ID"/>
+    </attribute>
+    <attribute id="REFERENCE_MATERIAL" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="REFERENCE MATERIAL"/>
+      <keyMapping columnObjectName="Projection_1" columnName="REFERENCE_MATERIAL"/>
+    </attribute>
+    <attribute id="MATERIAL_ID" order="10" descriptionColumnName="MATERIAL" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATERIAL ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MATERIAL_ID"/>
+    </attribute>
+    <attribute id="MATERIAL" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATERIAL"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MATERIAL"/>
+    </attribute>
+    <attribute id="SKU_SEASON" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SEASON"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SKU_SEASON"/>
+    </attribute>
+    <attribute id="BRAND_ID" order="13" descriptionColumnName="BRAND" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BRAND ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BRAND_ID"/>
+    </attribute>
+    <attribute id="BRAND" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BRAND"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BRAND"/>
+    </attribute>
+    <attribute id="FAMILY_ID" order="15" descriptionColumnName="FAMILY" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FAMILY ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="FAMILY_ID"/>
+    </attribute>
+    <attribute id="FAMILY" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FAMILY"/>
+      <keyMapping columnObjectName="Projection_1" columnName="FAMILY"/>
+    </attribute>
+    <attribute id="GENDER" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GENDER"/>
+      <keyMapping columnObjectName="Projection_1" columnName="GENDER"/>
+    </attribute>
+    <attribute id="IMAGE_URL" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IMAGE URL"/>
+      <keyMapping columnObjectName="Projection_1" columnName="IMAGE_URL"/>
+    </attribute>
+    <attribute id="BUSINESSPARTNERID" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUSINESS PARTNER ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BUSINESSPARTNERID"/>
+    </attribute>
+    <attribute id="BUSINESSPARTNER" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUSINESS PARTNER"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BUSINESSPARTNER"/>
+    </attribute>
+    <attribute id="BUSINESSPARTNEREMAIL" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUSINESS PARTNER EMAIL"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BUSINESSPARTNEREMAIL"/>
+    </attribute>
+    <attribute id="DOCUMENTPOSSALESPERSONID" order="22" displayAttribute="false" attributeHierarchyActive="false" descriptionColumnName="DOCUMENTPOSSALESPERSON">
+      <descriptions defaultDescription="DOCUMENT SALES PERSON ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DOCUMENTPOSSALESPERSONID"/>
+    </attribute>
+    <attribute id="UM_WHOLESALE_PRICE" order="25" displayAttribute="false" attributeHierarchyActive="false" semanticType="currencyCode">
+      <descriptions defaultDescription="UM WHOLESALE PRICE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="UM_WHOLESALE_PRICE"/>
+    </attribute>
+  
+    <attribute id="CURRENCY" order="30" semanticType="currencyCode" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENCY"/>
+  
+      <keyMapping columnObjectName="Projection_1" columnName="CURRENCY"/>
+  
+    </attribute>
+    <attribute id="DOCUMENTPOSSALESPERSON" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DOCUMENT SALES PERSON"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DOCUMENTPOSSALESPERSON"/>
+    </attribute>
+  
+    <attribute id="DOCUMENTDATESTRING" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DOCUMENTDATESTRING"/>
+  
+      <keyMapping columnObjectName="Projection_1" columnName="DOCUMENTDATESTRING"/>
+  
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="PIECES_SOLD" order="23" semanticType="quantity" aggregationType="sum" measureType="quantity" restrictionExpressionLanguage="SQL" engineAggregation="count">
+      <descriptions defaultDescription="PIECES SOLD"/>
+      <fixedUnit>PZ</fixedUnit>
+      <measureMapping columnObjectName="Projection_1" columnName="PIECES_SOLD"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WHOLESALE_PRICE" order="24" semanticType="amount" aggregationType="sum" measureType="amount" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="WHOLESALE PRICE"/>
+      <unitCurrencyAttribute attributeName="UM_WHOLESALE_PRICE"/>
+      <measureMapping columnObjectName="Projection_1" columnName="WHOLESALE_PRICE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="RETAIL_FULL_PRICE" order="26" semanticType="amount" aggregationType="sum" measureType="amount" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="RETAIL FULL PRICE"/>
+      <unitCurrencyAttribute attributeName="CURRENCY"/>
+      <measureMapping columnObjectName="Projection_1" columnName="RETAIL_FULL_PRICE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="SELL_OUT_PRICE" order="27" semanticType="amount" aggregationType="sum" measureType="amount" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="SELL OUT PRICE"/>
+      <unitCurrencyAttribute attributeName="CURRENCY"/>
+      <measureMapping columnObjectName="Projection_1" columnName="SELL_OUT_PRICE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="DISCOUNT_APPLIED" order="28" semanticType="amount" aggregationType="sum" measureType="amount" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="DISCOUNT_APPLIED"/>
+      <unitCurrencyAttribute attributeName="CURRENCY"/>
+      <measureMapping columnObjectName="Projection_1" columnName="DISCOUNT_APPLIED"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="DISCOUNT_PERCENTAGE" order="29" semanticType="quantity" aggregationType="sum" measureType="quantity" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="DISCOUNT PERCENTAGE"/>
+      <fixedUnit>%</fixedUnit>
+      <measureMapping columnObjectName="Projection_1" columnName="DISCOUNT_PERCENTAGE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="100" y="105"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="TableFunction_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="265"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="188"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

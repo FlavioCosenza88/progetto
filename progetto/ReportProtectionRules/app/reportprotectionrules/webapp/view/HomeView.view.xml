@@ -1,0 +1,169 @@
+<mvc:View controllerName="ReportProtectionRules.reportprotectionrules.controller.HomeView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns:core="sap.ui.core"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:smartfilterbar="sap.ui.comp.smartfilterbar"
+    xmlns="sap.m">
+	<Page id="page" title="Modes">
+    	<IconTabBar
+		id="idIconTabBarInlineMode"
+		headerMode="Inline"
+		expanded="{device>/isNoPhone}"
+		class="sapUiResponsiveContentPadding">
+		<items>
+			<IconTabFilter
+				text="Protection Rules Low Level"
+				key="PROTECTIONRULES_LOWLEVEL"
+				>
+				<smartfilterbar:SmartFilterBar id="smartFilterPROTECTIONRULES_LOWLEVEL"  useToolbar="false"  entitySet="PROTECTIONRULES_LOWLEVEL" >
+                </smartfilterbar:SmartFilterBar>
+                <smartTable:SmartTable 
+                id="LineItemsSmartTablePROTECTIONRULES_LOWLEVEL"
+                entitySet="PROTECTIONRULES_LOWLEVEL" 
+                tableType="ResponsiveTable" 
+                smartFilterId="smartFilterPROTECTIONRULES_LOWLEVEL" 
+                useVariantManagement="false" 
+                useTablePersonalisation="true" 
+                header="Line Items" 
+                showRowCount="true" 
+                enableAutoBinding="true" 
+                class="sapUiResponsiveContentPadding" 
+                demandPopin="true" 
+                enableAutoColumnWidth="false" 
+                beforeRebindTable="onBeforeRebindTablePROTECTIONRULES_LOWLEVEL"
+                editTogglable="true">
+	             <smartTable:items>
+                    <Table id="modesAvailableTable" growing="true">
+                        <columns>
+                            <Column hAlign="Center" importance="High">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "ARTICLE_IMG", "columnIndex": 2, "leadingProperty": "ARTICLE_IMG", "sortProperty": "ARTICLE_IMG", "displayBehaviour": "descriptionOnly"}' />
+                                </customData>
+                                <Text text="Imag" />
+                            </Column>
+                             <Column hAlign="Center" importance="High">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "QUANTITA_PROTETTA", "columnIndex": 6, "leadingProperty": "QUANTITA_PROTETTA", "sortProperty": "QUANTITA_PROTETTA", "displayBehaviour": "descriptionOnly"}' />
+                                </customData>
+                                <Text text="Quantità Protetta" />
+                            </Column>
+                             <Column hAlign="Center" importance="High">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "QUANTITA_STOCK", "columnIndex": 5, "leadingProperty": "QUANTITA_STOCK", "sortProperty": "QUANTITA_STOCK", "displayBehaviour": "descriptionOnly"}' />
+                                </customData>
+                                <Text text="Quantità Stock" />
+                            </Column>
+                             <Column hAlign="Center" importance="High">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "WHOLESALE", "columnIndex": 11, "leadingProperty": "WHOLESALE", "sortProperty": "WHOLESALE", "displayBehaviour": "descriptionOnly"}' />
+                                </customData>
+                                <Text text="Prezzo Wholesale" />
+                            </Column>
+                            <Column hAlign="Center" importance="High">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "RETAIL_PRICE", "columnIndex": 12, "leadingProperty": "RETAIL_PRICE", "sortProperty": "RETAIL_PRICE", "displayBehaviour": "descriptionOnly"}' />
+                                </customData>
+                                <Text text="Retail Price" />
+                            </Column>
+                            <Column hAlign="Center" importance="High">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "VALORE_STOCK_PROTETTO", "columnIndex": 13, "leadingProperty": "VALORE_STOCK_PROTETTO", "sortProperty": "VALORE_STOCK_PROTETTO", "displayBehaviour": "descriptionOnly"}' />
+                                </customData>
+                                <Text text="Valore Stock Protetto" />
+                            </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Image src="{path:'ARTICLE_IMG'}" width="auto" height="auto" />
+                                    </cells>
+                                    <cells>
+                                        <Label text="{path:'QUANTITA_STOCK'} {path:'UM_QUANTITA'}" width="auto"  />
+                                    </cells>
+                                    
+                                    <cells>
+                                        <Label text="{path:'QUANTITA_PROTETTA'} {path:'UM_QUANTITA'}" width="auto"  />
+                                    </cells>
+                                    <cells>
+                                        <Label text="{path:'WHOLESALE'} {path:'UM_WHOLESALE'}" width="auto"  />
+                                    </cells>
+                                    <cells>
+                                        <Label text="{path:'RETAIL_PRICE'} {path:'UM_RETAIL_PRICE'}" width="auto"  />
+                                    </cells>
+                                    <cells>
+                                        <Label text="{path:'VALORE_STOCK_PROTETTO'} {path:'UM_WHOLESALE'}" width="auto"  />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </smartTable:items>
+				</smartTable:SmartTable>
+            <OverflowToolbar>
+               <Button icon="sap-icon://excel-attachment" enabled="true" id="EsportaPROTECTIONRULES_LOWLEVEL" press="onExportCurrentPROTECTIONRULES_LOWLEVEL" text="Esporta Excel" visible="true" />  
+            </OverflowToolbar>
+			</IconTabFilter>
+			<IconTabFilter
+				text="Protection Rules High Level"
+				key="PROTECTIONRULES_HIGHLEVEL"
+				>
+				<smartfilterbar:SmartFilterBar id="smartFilterPROTECTIONRULES_HIGHLEVEL"  entitySet="PROTECTIONRULES_HIGHLEVEL" >
+                </smartfilterbar:SmartFilterBar>
+                <smartTable:SmartTable 
+                id="LineItemsSmartTablePROTECTIONRULES_HIGHLEVEL"
+                entitySet="PROTECTIONRULES_HIGHLEVEL" 
+                tableType="ResponsiveTable" 
+                smartFilterId="smartFilterPROTECTIONRULES_HIGHLEVEL" 
+                useVariantManagement="false" 
+                useTablePersonalisation="true" 
+                header="Line Items" 
+                showRowCount="true" 
+                enableAutoBinding="true" 
+                class="sapUiResponsiveContentPadding" 
+                demandPopin="true" 
+                enableAutoColumnWidth="false" 
+                editTogglable="true" 
+                beforeRebindTable="onBeforeRebindTablePROTECTIONRULES_HIGHLEVEL">
+                  <smartTable:items>
+                    <Table id="idTablePROTECTIONRULES_HIGHLEVEL" growing="true">
+                        <columns>
+                            <Column hAlign="Center" importance="High">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "QUANTITA_ON_HAND", "columnIndex": 8, "leadingProperty": "QUANTITA_ON_HAND", "sortProperty": "QUANTITA_ON_HAND", "displayBehaviour": "descriptionOnly"}' />
+                                </customData>
+                                <Text text="Quantità on hand" />
+                            </Column>
+                             <Column hAlign="Center" importance="High">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "VALORE_STOCK_PROTETTO", "columnIndex": 9, "leadingProperty": "VALORE_STOCK_PROTETTO", "sortProperty": "VALORE_STOCK_PROTETTO", "displayBehaviour": "descriptionOnly"}' />
+                                </customData>
+                                <Text text="Valore stock protetto" />
+                            </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Label text="{path:'QUANTITA_ON_HAND'} {path:'UM_QUANTITA'}" width="auto"  />
+                                    </cells>
+                                    <cells>
+                                        <Label text="{path:'VALORE_STOCK_PROTETTO'} {path:'UM_WHOLESALE'}" width="auto"  />
+                                    </cells>
+                                    </ColumnListItem>
+                            </items>
+                        </Table>
+                    </smartTable:items>
+	            </smartTable:SmartTable>
+				 <OverflowToolbar>
+               <Button icon="sap-icon://excel-attachment" enabled="true" id="EsportaPROTECTIONRULES_HIGHLEVEL" press="onExportCurrentPROTECTIONRULES_HIGHLEVEL" text="Esporta Excel" visible="true" />  
+            </OverflowToolbar>
+			</IconTabFilter>
+		</items>
+	</IconTabBar>
+   
+   </Page>
+    <Dialog id="helloDialog" title="Seleziona il periodo d'analisi" contentWidth= "500px" contentHeight= "70px">
+         <DateRangeSelection id="dateRange" />
+         <beginButton>
+            <Button text="Ok" press=".closeDialogListRegistrazione" />
+         </beginButton>
+      </Dialog>
+</mvc:View>

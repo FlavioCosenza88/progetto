@@ -1,0 +1,461 @@
+{
+  "definitions": {
+    "ExportSellThroughService": {
+      "@source": "srv/export-sellThrough-srv.cds",
+      "kind": "service"
+    },
+    "ExportSellThroughService.format_excel": {
+      "kind": "action",
+      "params": {
+        "lineItems": {
+          "items": {
+            "type": "ExportSellThroughService.LineItem"
+          }
+        }
+      },
+      "returns": {
+        "type": "cds.String"
+      }
+    },
+    "ExportSellThroughService.getCSRFToken": {
+      "kind": "function",
+      "returns": {
+        "type": "cds.String"
+      }
+    },
+    "ExportSellThroughService.LineItem": {
+      "kind": "type",
+      "elements": {
+        "SEASON_ACQUISTO": {
+          "type": "cds.String"
+        },
+        "SEASON_VENDITA_S1": {
+          "type": "cds.String"
+        },
+        "SEASON_VENDITA_S2": {
+          "type": "cds.String"
+        },
+        "BRAND": {
+          "type": "cds.String"
+        },
+        "GENDER": {
+          "type": "cds.String"
+        },
+        "SUBGENDER": {
+          "type": "cds.String"
+        },
+        "FAMILY_GROUP": {
+          "type": "cds.String"
+        },
+        "PRODUCT_GROUP": {
+          "type": "cds.String"
+        },
+        "SKUS": {
+          "type": "cds.String"
+        },
+        "SKU_DESCRIPTION": {
+          "type": "cds.String"
+        },
+        "IMAGE_URL": {
+          "type": "cds.String"
+        },
+        "VALUE_ORDERED_WHOLESALE_UN": {
+          "type": "cds.Decimal"
+        },
+        "VALUTA_VALUE_ORDERED_WHOLESALE_UN": {
+          "type": "cds.String"
+        },
+        "TOT_QTY_ORDERED": {
+          "type": "cds.Integer"
+        },
+        "QTY_ORDERED_WHOLESALE": {
+          "type": "cds.Integer"
+        },
+        "CC_TOT_VALUE_ORDERED": {
+          "type": "cds.Decimal"
+        },
+        "CC_QTY_ORDERED_NO_WHOLESALE": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_ORDERED_WHOLESALE": {
+          "type": "cds.Decimal"
+        },
+        "CC_VALUE_ORDERED_NO_WHOLESALE": {
+          "type": "cds.Decimal"
+        },
+        "TOT_QTY_RECEIVED": {
+          "type": "cds.Integer"
+        },
+        "CC_TOT_VALUE_RECEIVED": {
+          "type": "cds.Decimal"
+        },
+        "QTY_RECEIVED_WHOLESALE": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_RECEIVED_WHOLESALE": {
+          "type": "cds.Decimal"
+        },
+        "CC_QTY_RECEIVED_NO_WHOLESALE": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_RECEIVED_NO_WHOLESALE": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_WHOLESALE": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_WHOLESALE": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_FARFETCH_S1": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_FARFETCH_S1": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_MODES_COM_S1": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_MODES_COM_S1": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_CONCIERGE_S1": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_CONCIERGE_S1": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_MARKETPLACE_S1": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_MARKETPLACE_S1": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_LISTE_S1": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_LISTE_S1": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_RETAIL_S1": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_RETAIL_S1": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_FARFETCH_S2": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_FARFETCH_S2": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_MODES_COM_S2": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_MODES_COM_S2": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_CONCIERGE_S2": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_CONCIERGE_S2": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_MARKETPLACE_S2": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_MARKETPLACE_S2": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_LISTE_S2": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_LISTE_S2": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_RETAIL_S2": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_RETAIL_S2": {
+          "type": "cds.Decimal"
+        },
+        "CC_TOT_QTY_UM_S1": {
+          "type": "cds.Integer"
+        },
+        "CC_TOT_QTY_UM_S2": {
+          "type": "cds.Integer"
+        },
+        "CC_TOT_QTY_UM": {
+          "type": "cds.Integer"
+        },
+        "CC_TOT_VALUE_UM_S1": {
+          "type": "cds.Decimal"
+        },
+        "CC_TOT_VALUE_UM_S2": {
+          "type": "cds.Decimal"
+        },
+        "CC_TOT_VALUE_UM": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_QTY_ORDERED_WH": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_QTY_RECEIVED_WH": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_VALUE_ORDERED_WH": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_VALUE_RECEIVED_WH": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_QTY_ORDERED_NO_WH_S1": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_QTY_RECEIVED_NO_WH_S1": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_VALUE_ORDERED_NO_WH_S1": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_VALUE_RECEIVED_NO_WH_S1": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_QTY_ORDERED_NO_WH_S2": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_QTY_RECEIVED_NO_WH_S2": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_VALUE_ORDERED_NO_WH_S2": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_VALUE_RECEIVED_NO_WH_S2": {
+          "type": "cds.Decimal"
+        }
+      }
+    },
+    "ExportSellThroughAggregatoService": {
+      "@source": "srv/export-sellThroughAggregato-srv.cds",
+      "kind": "service"
+    },
+    "ExportSellThroughAggregatoService.format_excelAggregato": {
+      "kind": "action",
+      "params": {
+        "lineItems": {
+          "items": {
+            "type": "ExportSellThroughAggregatoService.LineItem"
+          }
+        }
+      },
+      "returns": {
+        "type": "cds.String"
+      }
+    },
+    "ExportSellThroughAggregatoService.getCSRFToken": {
+      "kind": "function",
+      "returns": {
+        "type": "cds.String"
+      }
+    },
+    "ExportSellThroughAggregatoService.LineItem": {
+      "kind": "type",
+      "elements": {
+        "SEASON_ACQUISTO": {
+          "type": "cds.String"
+        },
+        "SEASON_VENDITA_S1": {
+          "type": "cds.String"
+        },
+        "SEASON_VENDITA_S2": {
+          "type": "cds.String"
+        },
+        "BRAND": {
+          "type": "cds.String"
+        },
+        "GENDER": {
+          "type": "cds.String"
+        },
+        "FAMILY_GROUP": {
+          "type": "cds.String"
+        },
+        "VALUTA_VALUE_ORDERED_WHOLESALE_UN": {
+          "type": "cds.String"
+        },
+        "TOT_QTY_ORDERED": {
+          "type": "cds.Integer"
+        },
+        "QTY_ORDERED_WHOLESALE": {
+          "type": "cds.Integer"
+        },
+        "CC_TOT_VALUE_ORDERED": {
+          "type": "cds.Decimal"
+        },
+        "CC_QTY_ORDERED_NO_WHOLESALE": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_ORDERED_WHOLESALE": {
+          "type": "cds.Decimal"
+        },
+        "CC_VALUE_ORDERED_NO_WHOLESALE": {
+          "type": "cds.Decimal"
+        },
+        "TOT_QTY_RECEIVED": {
+          "type": "cds.Integer"
+        },
+        "CC_TOT_VALUE_RECEIVED": {
+          "type": "cds.Decimal"
+        },
+        "QTY_RECEIVED_WHOLESALE": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_RECEIVED_WHOLESALE": {
+          "type": "cds.Decimal"
+        },
+        "CC_QTY_RECEIVED_NO_WHOLESALE": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_RECEIVED_NO_WHOLESALE": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_WHOLESALE": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_WHOLESALE": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_FARFETCH_S1": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_FARFETCH_S1": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_MODES_COM_S1": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_MODES_COM_S1": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_CONCIERGE_S1": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_CONCIERGE_S1": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_MARKETPLACE_S1": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_MARKETPLACE_S1": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_LISTE_S1": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_LISTE_S1": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_RETAIL_S1": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_RETAIL_S1": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_FARFETCH_S2": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_FARFETCH_S2": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_MODES_COM_S2": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_MODES_COM_S2": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_CONCIERGE_S2": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_CONCIERGE_S2": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_MARKETPLACE_S2": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_MARKETPLACE_S2": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_LISTE_S2": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_LISTE_S2": {
+          "type": "cds.Decimal"
+        },
+        "QTY_UM_RETAIL_S2": {
+          "type": "cds.Integer"
+        },
+        "CC_VALUE_UM_RETAIL_S2": {
+          "type": "cds.Decimal"
+        },
+        "CC_TOT_QTY_UM_S1": {
+          "type": "cds.Integer"
+        },
+        "CC_TOT_QTY_UM_S2": {
+          "type": "cds.Integer"
+        },
+        "CC_TOT_QTY_UM": {
+          "type": "cds.Integer"
+        },
+        "CC_TOT_VALUE_UM_S1": {
+          "type": "cds.Decimal"
+        },
+        "CC_TOT_VALUE_UM_S2": {
+          "type": "cds.Decimal"
+        },
+        "CC_TOT_VALUE_UM": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_QTY_ORDERED_WH": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_QTY_RECEIVED_WH": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_VALUE_ORDERED_WH": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_VALUE_RECEIVED_WH": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_QTY_ORDERED_NO_WH_S1": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_QTY_RECEIVED_NO_WH_S1": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_VALUE_ORDERED_NO_WH_S1": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_VALUE_RECEIVED_NO_WH_S1": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_QTY_ORDERED_NO_WH_S2": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_QTY_RECEIVED_NO_WH_S2": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_VALUE_ORDERED_NO_WH_S2": {
+          "type": "cds.Decimal"
+        },
+        "CC_SELLTHROUGH_VALUE_RECEIVED_NO_WH_S2": {
+          "type": "cds.Decimal"
+        }
+      }
+    }
+  },
+  "meta": {
+    "creator": "CDS Compiler v3.9.4",
+    "flavor": "inferred"
+  },
+  "$version": "2.0"
+}

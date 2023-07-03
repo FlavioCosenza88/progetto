@@ -1,0 +1,90 @@
+_schema-version: "3.1"
+ID: VendutoPerCanale
+description: A simple CAP project.
+version: 1.0.0
+modules:
+- name: VendutoPerCanale-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: VendutoPerCanale-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - VendutoPerCanalevendutopercanale.zip
+      name: VendutoPerCanalevendutopercanale
+      target-path: resources/
+- name: VendutoPerCanalevendutopercanale
+  type: html5
+  path: app/vendutopercanale
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: VendutoPerCanale-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: VendutoPerCanale-destination-service
+    parameters:
+      content-target: true
+  - name: VendutoPerCanale-repo-host
+    parameters:
+      service-key:
+        name: VendutoPerCanale-repo-host-key
+  - name: uaa_VendutoPerCanale
+    parameters:
+      service-key:
+        name: uaa_VendutoPerCanale-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: veduto_per_canali_services_VendutoPerCanale_repo_host
+          ServiceInstanceName: VendutoPerCanale-html5-srv
+          ServiceKeyName: VendutoPerCanale-repo-host-key
+          sap.cloud.service: veduto-per-canali-services
+        - Authentication: OAuth2UserTokenExchange
+          Name: veduto_per_canali_services_uaa_VendutoPerCanale
+          ServiceInstanceName: VendutoPerCanale-xsuaa-service
+          ServiceKeyName: uaa_VendutoPerCanale-key
+          sap.cloud.service: veduto-per-canali-services
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+resources:
+- name: VendutoPerCanale-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: VendutoPerCanale-html5-srv
+    service-plan: app-host
+- name: VendutoPerCanale-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      version: 1.0.0
+    service: destination
+    service-name: VendutoPerCanale-destination-service
+    service-plan: lite
+- name: uaa_VendutoPerCanale
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: VendutoPerCanale-xsuaa-service
+    service-plan: application
+parameters:
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+  - builder: custom
+    commands:
+    - npx -p @sap/cds-dk cds build --production

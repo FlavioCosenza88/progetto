@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_REPORT_VENDUTO_PER_CANALE" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_VENDUTO_PER_CANALE"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="VT_REPORT_VENDUTO_S4">
+    <resourceUri>VT_REPORT_VENDUTO_S4</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VENDUTO_S4">
+    <viewAttributes>
+      <viewAttribute id="POSTING_DATE"/>
+      <viewAttribute id="COMPANY_ID"/>
+      <viewAttribute id="PROFIT_CENTER_CODE"/>
+      <viewAttribute id="OUTBOUND_DELIVERY_NUMBER"/>
+      <viewAttribute id="OUTBOUND_DELIVERY_ITEM"/>
+      <viewAttribute id="PLANT_CODE"/>
+      <viewAttribute id="MATERIAL"/>
+      <viewAttribute id="SEASON"/>
+      <viewAttribute id="SIZE"/>
+      <viewAttribute id="COLLECTION"/>
+      <viewAttribute id="PIECES_SOLD"/>
+      <viewAttribute id="SAP_ORDER_NUMBER"/>
+      <viewAttribute id="SAP_ORDER_ITEM"/>
+      <viewAttribute id="SALE_ORDER_TYPE_CODE"/>
+      <viewAttribute id="SALE_ORDER_TYPE"/>
+      <viewAttribute id="ORIGINAL_ORDER_NUMBER"/>
+      <viewAttribute id="ORIGINAL_ORDER_ITEM"/>
+      <viewAttribute id="REFERENCE_MATERIAL"/>
+      <viewAttribute id="MATERIAL_DESCRIPTION"/>
+      <viewAttribute id="BRAND"/>
+      <viewAttribute id="FAMILY"/>
+      <viewAttribute id="GENDER"/>
+      <viewAttribute id="SUBGENDER"/>
+      <viewAttribute id="PRODUCT_GROUP_CODE"/>
+      <viewAttribute id="PRODUCT_GROUP"/>
+      <viewAttribute id="DESCRIZIONE_COLOR"/>
+      <viewAttribute id="PROFIT_CENTER"/>
+      <viewAttribute id="PLANT"/>
+      <viewAttribute id="DESTINATARIO_CODE"/>
+      <viewAttribute id="DESTINATARIO"/>
+      <viewAttribute id="PAESE_DESTINAZIONE_CODE"/>
+      <viewAttribute id="PAESE_DESTINAZIONE"/>
+      <viewAttribute id="AGENTE_CODE"/>
+      <viewAttribute id="AGENTE"/>
+      <viewAttribute id="COMMITTENTE_CODE"/>
+      <viewAttribute id="COMMITTENTE"/>
+      <viewAttribute id="ORIGINAL_ORDER_TYPE"/>
+      <viewAttribute id="VBELN"/>
+      <viewAttribute id="KNUMV"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="WHOLESALE_PRICE_DA_ORDINE"/>
+      <viewAttribute id="VALUTA_WHOLESALE_PRICE_DA_ORDINE"/>
+      <viewAttribute id="RETAIL_NET_PRICE"/>
+      <viewAttribute id="VALUTA_RETAIL_NET_PRICE"/>
+      <viewAttribute id="MARKDOWN_MARKUP_APPLIED"/>
+      <viewAttribute id="MARKDOWN_MARKUP_PERCENTAGE_APPLIED"/>
+      <viewAttribute id="TASSO_DI_CAMBIO"/>
+      <viewAttribute id="RETAIL_FULL_PRICE_LISTINO"/>
+      <viewAttribute id="UM_RETAIL_FULL_PRICE_LISTINO"/>
+      <viewAttribute id="WHOLESALE_PRICE_LISTINO"/>
+      <viewAttribute id="VALUTA_WHOLESALE_PRICE_LISTINO"/>
+      <viewAttribute id="SELL_OUT_PRICE_UNITARIO"/>
+      <viewAttribute id="VALUTA_SELL_OUT_PRICE_UNITARIO"/>
+      <viewAttribute id="SELL_OUT_PRICE_TOTALE"/>
+      <viewAttribute id="TOT_COGS"/>
+      <viewAttribute id="TOT_GROSS_MARGIN_EUR"/>
+      <viewAttribute id="TOT_GROSS_MARGIN_PERC"/>
+    
+      <viewAttribute id="COMPANY"/>
+    
+      <viewAttribute id="VALUTA"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="SISTEMA_SORGENTE" datatype="NVARCHAR" length="5" expressionLanguage="SQL">
+        <formula>'S4'</formula>
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="RETAIL_NET_PRICE_UN" datatype="DECIMAL" length="13" scale="2" expressionLanguage="SQL">
+    
+        <formula>&quot;RETAIL_NET_PRICE&quot;/&quot;PIECES_SOLD&quot;</formula>
+    
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="CC_VALUTA_MARK" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+    
+        <formula>IFNULL( &quot;VALUTA_WHOLESALE_PRICE_DA_ORDINE&quot; ,&quot;VALUTA_RETAIL_NET_PRICE&quot;)</formula>
+    
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="VT_REPORT_VENDUTO_S4"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:TableFunctionView" id="VENDUTO_CCO" tableFunctionName="TF_REPORT_VENDUTO_CCO">
+    <viewAttributes/>
+    <calculatedViewAttributes/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="WHOLESALE_PRICE_LISTINO"/>
+      <viewAttribute id="PRODUCT_GROUP"/>
+      <viewAttribute id="MATERIAL_DESCRIPTION"/>
+      <viewAttribute id="SIZE"/>
+      <viewAttribute id="TOTAL_SELL_OUT_PRICE_EUR"/>
+      <viewAttribute id="VALUTA"/>
+      <viewAttribute id="COMMITTENTE"/>
+      <viewAttribute id="SALE_ORDER_TYPE"/>
+      <viewAttribute id="CASHDESKID"/>
+      <viewAttribute id="SELL_OUT_PRICE_UN"/>
+      <viewAttribute id="STORE"/>
+      <viewAttribute id="UM_RETAIL_PRICE_LISTINO"/>
+      <viewAttribute id="TOT_COGS"/>
+      <viewAttribute id="UM_WHOLESALE_PRICE_LISTINO"/>
+      <viewAttribute id="RETAIL_FULL_PRICE_CCO_UN"/>
+      <viewAttribute id="TOT_GROSS_MARGIN_EUR"/>
+      <viewAttribute id="SEASON"/>
+      <viewAttribute id="TOT_GROSS_MARGIN_PERCENT"/>
+      <viewAttribute id="COLLECTION"/>
+      <viewAttribute id="COMPANYID"/>
+      <viewAttribute id="AGENTE_CODE"/>
+      <viewAttribute id="POSTING_DATE"/>
+      <viewAttribute id="RETAIL_FULL_PRICE_CCO"/>
+      <viewAttribute id="DESTINATARIO"/>
+      <viewAttribute id="MARK_PERCENTAGE_APPLIED"/>
+      <viewAttribute id="SALE_ORDER_TYPE_CODE"/>
+      <viewAttribute id="PAESE_DESTINAZIONE"/>
+      <viewAttribute id="COMMITTENTE_CODE"/>
+      <viewAttribute id="PLANT_CODE"/>
+      <viewAttribute id="DESTINATARIO_CODE"/>
+      <viewAttribute id="AGENTE"/>
+      <viewAttribute id="MATERIAL"/>
+      <viewAttribute id="IMPORTO_VBAP"/>
+      <viewAttribute id="OUTBOUND_DELIVERY_ITEM"/>
+      <viewAttribute id="SELL_OUT_PRICE"/>
+      <viewAttribute id="GENDER"/>
+      <viewAttribute id="DOCUMENTENTRY"/>
+      <viewAttribute id="SAP_ORDER_NUMBER"/>
+      <viewAttribute id="RETAIL_FULL_PRICE_LISTINO"/>
+      <viewAttribute id="SUBGENDER"/>
+      <viewAttribute id="OUTBOUND_DELIVERY_NUMBER"/>
+      <viewAttribute id="WHOLESALE_PRICE_DA_ORDINE"/>
+      <viewAttribute id="PAESE_DESTINAZIONE_CODE"/>
+      <viewAttribute id="FAMILY"/>
+      <viewAttribute id="SAP_ORDER_ITEM"/>
+      <viewAttribute id="DOCUMENTPOSNR"/>
+      <viewAttribute id="MARK_APPLIED_UN"/>
+      <viewAttribute id="ORIGINAL_ORDER_TYPE"/>
+      <viewAttribute id="ORIGINAL_ORDER_NUMBER"/>
+      <viewAttribute id="DESCRIZIONE_COLOR"/>
+      <viewAttribute id="BRAND"/>
+      <viewAttribute id="REFERENCE_MATERIAL"/>
+      <viewAttribute id="ORIGINAL_ORDER_ITEM"/>
+      <viewAttribute id="COMPANY"/>
+      <viewAttribute id="MARK_APPLIED"/>
+      <viewAttribute id="PIECES_SOLD"/>
+    
+      <viewAttribute id="TASSO_DI_CAMBIO"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="SISTEMA_SORGENTE" datatype="NVARCHAR" length="5" expressionLanguage="SQL">
+        <formula>'CCO'</formula>
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="CC_VALUTA" datatype="NVARCHAR" length="5" expressionLanguage="SQL">
+    
+        <formula>CASE WHEN &quot;VALUTA&quot; = '€' THEN 'EUR' ELSE &quot;VALUTA&quot; END</formula>
+    
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="VENDUTO_CCO"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_1">
+    <viewAttributes>
+      <viewAttribute id="WHOLESALE_PRICE_LISTINO" aggregationType="sum"/>
+      <viewAttribute id="PRODUCT_GROUP"/>
+      <viewAttribute id="MATERIAL_DESCRIPTION"/>
+      <viewAttribute id="SIZE"/>
+      <viewAttribute id="TOTAL_SELL_OUT_PRICE_EUR" aggregationType="sum"/>
+      <viewAttribute id="COMMITTENTE"/>
+      <viewAttribute id="SALE_ORDER_TYPE"/>
+      <viewAttribute id="CASHDESKID"/>
+      <viewAttribute id="SELL_OUT_PRICE_UN" aggregationType="sum"/>
+      <viewAttribute id="STORE"/>
+      <viewAttribute id="VALUTA_RETAIL_FULL_PRICE"/>
+      <viewAttribute id="TOT_COGS" aggregationType="sum"/>
+      <viewAttribute datatype="NVARCHAR" length="5" id="UM_WHOLESALE_PRICE_LISTINO"/>
+      <viewAttribute id="RETAIL_NET_PRICE_UN" aggregationType="sum"/>
+      <viewAttribute id="TOT_GROSS_MARGIN_EUR" aggregationType="sum"/>
+      <viewAttribute id="SEASON"/>
+      <viewAttribute id="TOT_GROSS_MARGIN_PERCENT" aggregationType="sum"/>
+      <viewAttribute id="COLLECTION"/>
+      <viewAttribute id="COMPANYID"/>
+      <viewAttribute id="AGENTE_CODE"/>
+      <viewAttribute id="POSTING_DATE" aggregationType="min"/>
+      <viewAttribute id="DESTINATARIO"/>
+      <viewAttribute id="MARK_PERCENTAGE_APPLIED" aggregationType="sum"/>
+      <viewAttribute id="SALE_ORDER_TYPE_CODE"/>
+      <viewAttribute id="PAESE_DESTINAZIONE"/>
+      <viewAttribute id="COMMITTENTE_CODE"/>
+      <viewAttribute id="PLANT_CODE"/>
+      <viewAttribute id="DESTINATARIO_CODE"/>
+      <viewAttribute id="AGENTE"/>
+      <viewAttribute id="MATERIAL"/>
+      <viewAttribute id="IMPORTO_VBAP" aggregationType="sum"/>
+      <viewAttribute id="OUTBOUND_DELIVERY_ITEM"/>
+      <viewAttribute id="GENDER"/>
+      <viewAttribute id="DOCUMENTENTRY"/>
+      <viewAttribute id="SAP_ORDER_NUMBER"/>
+      <viewAttribute id="RETAIL_FULL_PRICE_UN" aggregationType="sum"/>
+      <viewAttribute id="SUBGENDER"/>
+      <viewAttribute id="OUTBOUND_DELIVERY_NUMBER"/>
+      <viewAttribute id="PAESE_DESTINAZIONE_CODE"/>
+      <viewAttribute id="FAMILY"/>
+      <viewAttribute id="SAP_ORDER_ITEM"/>
+      <viewAttribute id="DOCUMENTPOSNR"/>
+      <viewAttribute id="MARK_APPLIED_UN" aggregationType="sum"/>
+      <viewAttribute id="ORIGINAL_ORDER_TYPE"/>
+      <viewAttribute id="ORIGINAL_ORDER_NUMBER"/>
+      <viewAttribute id="DESCRIZIONE_COLOR"/>
+      <viewAttribute id="BRAND"/>
+      <viewAttribute id="REFERENCE_MATERIAL"/>
+      <viewAttribute id="ORIGINAL_ORDER_ITEM"/>
+      <viewAttribute id="COMPANY"/>
+      <viewAttribute id="PROFIT_CENTER_CODE"/>
+      <viewAttribute id="PROFIT_CENTER"/>
+      <viewAttribute id="PRODUCT_GROUP_CODE"/>
+      <viewAttribute id="KNUMV"/>
+      <viewAttribute id="VALUTA_WHOLESALE_PRICE_DA_ORDINE"/>
+      <viewAttribute id="VALUTA_RETAIL_NET_PRICE"/>
+      <viewAttribute id="VALUTA_SELL_OUT_PRICE_UNITARIO"/>
+      <viewAttribute id="SISTEMA_SORGENTE"/>
+      <viewAttribute id="WHOLESALE_PRICE_DA_ORDINE" aggregationType="sum"/>
+      <viewAttribute id="PIECES_SOLD" aggregationType="sum"/>
+    
+      <viewAttribute id="TASSO_DI_CAMBIO" aggregationType="sum"/>
+    
+      <viewAttribute id="CC_VALUTA_MARK"/>
+    
+      <viewAttribute id="VALUTA"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VENDUTO_S4" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="WHOLESALE_PRICE_LISTINO" source="WHOLESALE_PRICE_LISTINO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_GROUP" source="PRODUCT_GROUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATERIAL_DESCRIPTION" source="MATERIAL_DESCRIPTION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SIZE" source="SIZE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOTAL_SELL_OUT_PRICE_EUR" source="SELL_OUT_PRICE_TOTALE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMMITTENTE" source="COMMITTENTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SALE_ORDER_TYPE" source="SALE_ORDER_TYPE"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="CASHDESKID" null="true" value=""/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SELL_OUT_PRICE_UN" source="SELL_OUT_PRICE_UNITARIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORE" source="PLANT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VALUTA_RETAIL_FULL_PRICE" source="UM_RETAIL_FULL_PRICE_LISTINO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOT_COGS" source="TOT_COGS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UM_WHOLESALE_PRICE_LISTINO" source="VALUTA_WHOLESALE_PRICE_LISTINO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RETAIL_NET_PRICE_UN" source="RETAIL_NET_PRICE_UN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOT_GROSS_MARGIN_EUR" source="TOT_GROSS_MARGIN_EUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SEASON" source="SEASON"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOT_GROSS_MARGIN_PERCENT" source="TOT_GROSS_MARGIN_PERC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COLLECTION" source="COLLECTION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMPANYID" source="COMPANY_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AGENTE_CODE" source="AGENTE_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSTING_DATE" source="POSTING_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DESTINATARIO" source="DESTINATARIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MARK_PERCENTAGE_APPLIED" source="MARKDOWN_MARKUP_PERCENTAGE_APPLIED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SALE_ORDER_TYPE_CODE" source="SALE_ORDER_TYPE_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAESE_DESTINAZIONE" source="PAESE_DESTINAZIONE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMMITTENTE_CODE" source="COMMITTENTE_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_CODE" source="PLANT_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DESTINATARIO_CODE" source="DESTINATARIO_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AGENTE" source="AGENTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATERIAL" source="MATERIAL"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="IMPORTO_VBAP" null="true" value=""/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OUTBOUND_DELIVERY_ITEM" source="OUTBOUND_DELIVERY_ITEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GENDER" source="GENDER"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="DOCUMENTENTRY" null="true" value=""/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAP_ORDER_NUMBER" source="SAP_ORDER_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RETAIL_FULL_PRICE_UN" source="RETAIL_FULL_PRICE_LISTINO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBGENDER" source="SUBGENDER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OUTBOUND_DELIVERY_NUMBER" source="OUTBOUND_DELIVERY_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAESE_DESTINAZIONE_CODE" source="PAESE_DESTINAZIONE_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FAMILY" source="FAMILY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAP_ORDER_ITEM" source="SAP_ORDER_ITEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DOCUMENTPOSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MARK_APPLIED_UN" source="MARKDOWN_MARKUP_APPLIED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORIGINAL_ORDER_TYPE" source="ORIGINAL_ORDER_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORIGINAL_ORDER_NUMBER" source="ORIGINAL_ORDER_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DESCRIZIONE_COLOR" source="DESCRIZIONE_COLOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRAND" source="BRAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REFERENCE_MATERIAL" source="REFERENCE_MATERIAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORIGINAL_ORDER_ITEM" source="ORIGINAL_ORDER_ITEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMPANY" source="COMPANY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROFIT_CENTER_CODE" source="PROFIT_CENTER_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROFIT_CENTER" source="PROFIT_CENTER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_GROUP_CODE" source="PRODUCT_GROUP_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KNUMV" source="KNUMV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VALUTA_WHOLESALE_PRICE_DA_ORDINE" source="VALUTA_WHOLESALE_PRICE_DA_ORDINE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VALUTA_RETAIL_NET_PRICE" source="VALUTA_RETAIL_NET_PRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VALUTA_SELL_OUT_PRICE_UNITARIO" source="VALUTA_SELL_OUT_PRICE_UNITARIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SISTEMA_SORGENTE" source="SISTEMA_SORGENTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WHOLESALE_PRICE_DA_ORDINE" source="WHOLESALE_PRICE_DA_ORDINE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIECES_SOLD" source="PIECES_SOLD"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="TASSO_DI_CAMBIO" source="TASSO_DI_CAMBIO"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_VALUTA_MARK" source="CC_VALUTA_MARK"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="VALUTA" source="VALUTA"/>
+    </input>
+    <input node="Projection_1" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="WHOLESALE_PRICE_LISTINO" source="WHOLESALE_PRICE_LISTINO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_GROUP" source="PRODUCT_GROUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATERIAL_DESCRIPTION" source="MATERIAL_DESCRIPTION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SIZE" source="SIZE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOTAL_SELL_OUT_PRICE_EUR" source="TOTAL_SELL_OUT_PRICE_EUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMMITTENTE" source="COMMITTENTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SALE_ORDER_TYPE" source="SALE_ORDER_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CASHDESKID" source="CASHDESKID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SELL_OUT_PRICE_UN" source="SELL_OUT_PRICE_UN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORE" source="STORE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VALUTA_RETAIL_FULL_PRICE" source="UM_RETAIL_PRICE_LISTINO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOT_COGS" source="TOT_COGS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UM_WHOLESALE_PRICE_LISTINO" source="UM_WHOLESALE_PRICE_LISTINO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RETAIL_NET_PRICE_UN" source="RETAIL_FULL_PRICE_CCO_UN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOT_GROSS_MARGIN_EUR" source="TOT_GROSS_MARGIN_EUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SEASON" source="SEASON"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOT_GROSS_MARGIN_PERCENT" source="TOT_GROSS_MARGIN_PERCENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COLLECTION" source="COLLECTION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMPANYID" source="COMPANYID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AGENTE_CODE" source="AGENTE_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSTING_DATE" source="POSTING_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DESTINATARIO" source="DESTINATARIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MARK_PERCENTAGE_APPLIED" source="MARK_PERCENTAGE_APPLIED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SALE_ORDER_TYPE_CODE" source="SALE_ORDER_TYPE_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAESE_DESTINAZIONE" source="PAESE_DESTINAZIONE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMMITTENTE_CODE" source="COMMITTENTE_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_CODE" source="PLANT_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DESTINATARIO_CODE" source="DESTINATARIO_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AGENTE" source="AGENTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATERIAL" source="MATERIAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IMPORTO_VBAP" source="IMPORTO_VBAP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OUTBOUND_DELIVERY_ITEM" source="OUTBOUND_DELIVERY_ITEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GENDER" source="GENDER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DOCUMENTENTRY" source="DOCUMENTENTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAP_ORDER_NUMBER" source="SAP_ORDER_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RETAIL_FULL_PRICE_UN" source="RETAIL_FULL_PRICE_LISTINO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBGENDER" source="SUBGENDER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OUTBOUND_DELIVERY_NUMBER" source="OUTBOUND_DELIVERY_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAESE_DESTINAZIONE_CODE" source="PAESE_DESTINAZIONE_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FAMILY" source="FAMILY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAP_ORDER_ITEM" source="SAP_ORDER_ITEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DOCUMENTPOSNR" source="DOCUMENTPOSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MARK_APPLIED_UN" source="MARK_APPLIED_UN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORIGINAL_ORDER_TYPE" source="ORIGINAL_ORDER_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORIGINAL_ORDER_NUMBER" source="ORIGINAL_ORDER_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DESCRIZIONE_COLOR" source="DESCRIZIONE_COLOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRAND" source="BRAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REFERENCE_MATERIAL" source="REFERENCE_MATERIAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORIGINAL_ORDER_ITEM" source="ORIGINAL_ORDER_ITEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMPANY" source="COMPANY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROFIT_CENTER_CODE" source="PLANT_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROFIT_CENTER" source="STORE"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="PRODUCT_GROUP_CODE" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="KNUMV" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="VALUTA_WHOLESALE_PRICE_DA_ORDINE" null="true" value=""/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VALUTA_RETAIL_NET_PRICE" source="VALUTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VALUTA_SELL_OUT_PRICE_UNITARIO" source="VALUTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SISTEMA_SORGENTE" source="SISTEMA_SORGENTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WHOLESALE_PRICE_DA_ORDINE" source="WHOLESALE_PRICE_DA_ORDINE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIECES_SOLD" source="PIECES_SOLD"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="TASSO_DI_CAMBIO" source="TASSO_DI_CAMBIO"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_VALUTA_MARK" source="VALUTA"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="VALUTA" source="CC_VALUTA"/>
+    </input>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Union_1">
+  <attributes>
+    <attribute id="SISTEMA_SORGENTE" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SISTEMA_SORGENTE"/>
+      <keyMapping columnObjectName="Union_1" columnName="SISTEMA_SORGENTE"/>
+    </attribute>
+    <attribute id="COMPANYID" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMPANYID"/>
+      <keyMapping columnObjectName="Union_1" columnName="COMPANYID"/>
+    </attribute>
+  
+    <attribute id="COMPANY" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMPANY"/>
+  
+      <keyMapping columnObjectName="Union_1" columnName="COMPANY"/>
+  
+    </attribute>
+    <attribute id="PROFIT_CENTER_CODE" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROFIT_CENTER_CODE"/>
+      <keyMapping columnObjectName="Union_1" columnName="PROFIT_CENTER_CODE"/>
+    </attribute>
+    <attribute id="PROFIT_CENTER" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROFIT_CENTER"/>
+      <keyMapping columnObjectName="Union_1" columnName="PROFIT_CENTER"/>
+    </attribute>
+    <attribute id="SAP_ORDER_NUMBER" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SAP_ORDER_NUMBER"/>
+      <keyMapping columnObjectName="Union_1" columnName="SAP_ORDER_NUMBER"/>
+    </attribute>
+    <attribute id="SAP_ORDER_ITEM" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SAP_ORDER_ITEM"/>
+      <keyMapping columnObjectName="Union_1" columnName="SAP_ORDER_ITEM"/>
+    </attribute>
+    <attribute id="SALE_ORDER_TYPE_CODE" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SALE_ORDER_TYPE_CODE"/>
+      <keyMapping columnObjectName="Union_1" columnName="SALE_ORDER_TYPE_CODE"/>
+    </attribute>
+    <attribute id="SALE_ORDER_TYPE" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SALE_ORDER_TYPE"/>
+      <keyMapping columnObjectName="Union_1" columnName="SALE_ORDER_TYPE"/>
+    </attribute>
+    <attribute id="OUTBOUND_DELIVERY_NUMBER" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="OUTBOUND_DELIVERY_NUMBER"/>
+      <keyMapping columnObjectName="Union_1" columnName="OUTBOUND_DELIVERY_NUMBER"/>
+    </attribute>
+    <attribute id="OUTBOUND_DELIVERY_ITEM" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="OUTBOUND_DELIVERY_ITEM"/>
+      <keyMapping columnObjectName="Union_1" columnName="OUTBOUND_DELIVERY_ITEM"/>
+    </attribute>
+    <attribute id="ORIGINAL_ORDER_NUMBER" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ORIGINAL_ORDER_NUMBER"/>
+      <keyMapping columnObjectName="Union_1" columnName="ORIGINAL_ORDER_NUMBER"/>
+    </attribute>
+    <attribute id="ORIGINAL_ORDER_ITEM" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ORIGINAL_ORDER_ITEM"/>
+      <keyMapping columnObjectName="Union_1" columnName="ORIGINAL_ORDER_ITEM"/>
+    </attribute>
+    <attribute id="ORIGINAL_ORDER_TYPE" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ORIGINAL_ORDER_TYPE"/>
+      <keyMapping columnObjectName="Union_1" columnName="ORIGINAL_ORDER_TYPE"/>
+    </attribute>
+    <attribute id="PLANT_CODE" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PLANT_CODE"/>
+      <keyMapping columnObjectName="Union_1" columnName="PLANT_CODE"/>
+    </attribute>
+    <attribute id="STORE" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PLANT"/>
+      <keyMapping columnObjectName="Union_1" columnName="STORE"/>
+    </attribute>
+    <attribute id="COMMITTENTE_CODE" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMMITTENTE_CODE"/>
+      <keyMapping columnObjectName="Union_1" columnName="COMMITTENTE_CODE"/>
+    </attribute>
+    <attribute id="COMMITTENTE" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMMITTENTE"/>
+      <keyMapping columnObjectName="Union_1" columnName="COMMITTENTE"/>
+    </attribute>
+    <attribute id="AGENTE_CODE" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AGENTE_CODE"/>
+      <keyMapping columnObjectName="Union_1" columnName="AGENTE_CODE"/>
+    </attribute>
+    <attribute id="AGENTE" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AGENTE"/>
+      <keyMapping columnObjectName="Union_1" columnName="AGENTE"/>
+    </attribute>
+    <attribute id="DESTINATARIO_CODE" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DESTINATARIO_CODE"/>
+      <keyMapping columnObjectName="Union_1" columnName="DESTINATARIO_CODE"/>
+    </attribute>
+    <attribute id="DESTINATARIO" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DESTINATARIO"/>
+      <keyMapping columnObjectName="Union_1" columnName="DESTINATARIO"/>
+    </attribute>
+    <attribute id="PAESE_DESTINAZIONE_CODE" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PAESE_DESTINAZIONE_CODE"/>
+      <keyMapping columnObjectName="Union_1" columnName="PAESE_DESTINAZIONE_CODE"/>
+    </attribute>
+    <attribute id="PAESE_DESTINAZIONE" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PAESE_DESTINAZIONE"/>
+      <keyMapping columnObjectName="Union_1" columnName="PAESE_DESTINAZIONE"/>
+    </attribute>
+    <attribute id="REFERENCE_MATERIAL" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="REFERENCE_MATERIAL"/>
+      <keyMapping columnObjectName="Union_1" columnName="REFERENCE_MATERIAL"/>
+    </attribute>
+    <attribute id="MATERIAL" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATERIAL"/>
+      <keyMapping columnObjectName="Union_1" columnName="MATERIAL"/>
+    </attribute>
+    <attribute id="MATERIAL_DESCRIPTION" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATERIAL_DESCRIPTION"/>
+      <keyMapping columnObjectName="Union_1" columnName="MATERIAL_DESCRIPTION"/>
+    </attribute>
+    <attribute id="SEASON" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SEASON"/>
+      <keyMapping columnObjectName="Union_1" columnName="SEASON"/>
+    </attribute>
+    <attribute id="BRAND" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BRAND"/>
+      <keyMapping columnObjectName="Union_1" columnName="BRAND"/>
+    </attribute>
+    <attribute id="FAMILY" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FAMILY"/>
+      <keyMapping columnObjectName="Union_1" columnName="FAMILY"/>
+    </attribute>
+    <attribute id="GENDER" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GENDER"/>
+      <keyMapping columnObjectName="Union_1" columnName="GENDER"/>
+    </attribute>
+    <attribute id="SUBGENDER" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SUBGENDER"/>
+      <keyMapping columnObjectName="Union_1" columnName="SUBGENDER"/>
+    </attribute>
+    <attribute id="PRODUCT_GROUP" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRODUCT_GROUP"/>
+      <keyMapping columnObjectName="Union_1" columnName="PRODUCT_GROUP"/>
+    </attribute>
+    <attribute id="DESCRIZIONE_COLOR" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DESCRIZIONE_COLOR"/>
+      <keyMapping columnObjectName="Union_1" columnName="DESCRIZIONE_COLOR"/>
+    </attribute>
+    <attribute id="SIZE" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SIZE"/>
+      <keyMapping columnObjectName="Union_1" columnName="SIZE"/>
+    </attribute>
+    <attribute id="COLLECTION" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COLLECTION"/>
+      <keyMapping columnObjectName="Union_1" columnName="COLLECTION"/>
+    </attribute>
+    <attribute id="VALUTA_RETAIL_NET_PRICE" order="43" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="VALUTA_RETAIL_NET_PRICE"/>
+      <keyMapping columnObjectName="Union_1" columnName="VALUTA_RETAIL_NET_PRICE"/>
+    </attribute>
+    <attribute id="VALUTA" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VALUTA"/>
+      <keyMapping columnObjectName="Union_1" columnName="VALUTA"/>
+    </attribute>
+    <attribute id="VALUTA_WHOLESALE_PRICE_DA_ORDINE" hidden="true" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VALUTA_WHOLESALE_PRICE_DA_ORDINE"/>
+      <keyMapping columnObjectName="Union_1" columnName="VALUTA_WHOLESALE_PRICE_DA_ORDINE"/>
+    </attribute>
+    <attribute id="VALUTA_SELL_OUT_PRICE_UNITARIO" hidden="true" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VALUTA_SELL_OUT_PRICE_UNITARIO"/>
+      <keyMapping columnObjectName="Union_1" columnName="VALUTA_SELL_OUT_PRICE_UNITARIO"/>
+    </attribute>
+    <attribute id="UM_WHOLESALE_PRICE_LISTINO" hidden="true" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="UM_WHOLESALE_PRICE_LISTINO"/>
+      <keyMapping columnObjectName="Union_1" columnName="UM_WHOLESALE_PRICE_LISTINO"/>
+    </attribute>
+    <attribute id="VALUTA_RETAIL_FULL_PRICE" hidden="true" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VALUTA_RETAIL_FULL_PRICE"/>
+      <keyMapping columnObjectName="Union_1" columnName="VALUTA_RETAIL_FULL_PRICE"/>
+    </attribute>
+  
+    <attribute id="CC_VALUTA_MARK" hidden="true" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_VALUTA_MARK"/>
+  
+      <keyMapping columnObjectName="Union_1" columnName="CC_VALUTA_MARK"/>
+  
+    </attribute>
+  
+    <attribute id="CASHDESKID" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CASHDESKID"/>
+  
+      <keyMapping columnObjectName="Union_1" columnName="CASHDESKID"/>
+  
+    </attribute>
+    <attribute id="DOCUMENTENTRY" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DOCUMENTENTRY"/>
+      <keyMapping columnObjectName="Union_1" columnName="DOCUMENTENTRY"/>
+    </attribute>
+    <attribute id="DOCUMENTPOSNR" order="60" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DOCUMENTPOSNR"/>
+      <keyMapping columnObjectName="Union_1" columnName="DOCUMENTPOSNR"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="POSTING_DATE" order="2" aggregationType="min" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="POSTING_DATE"/>
+      <measureMapping columnObjectName="Union_1" columnName="POSTING_DATE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="PIECES_SOLD" order="38" aggregationType="sum" measureType="quantity" restrictionExpressionLanguage="SQL" semanticType="quantity">
+      <descriptions defaultDescription="PIECES_SOLD"/>
+      <fixedUnit>PZ</fixedUnit>
+      <measureMapping columnObjectName="Union_1" columnName="PIECES_SOLD"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WHOLESALE_PRICE_DA_ORDINE" order="39" aggregationType="sum" measureType="amount" restrictionExpressionLanguage="SQL" semanticType="amount">
+      <descriptions defaultDescription="WHOLESALE_PRICE_DA_ORDINE"/>
+      <unitCurrencyAttribute attributeName="VALUTA_WHOLESALE_PRICE_DA_ORDINE"/>
+      <measureMapping columnObjectName="Union_1" columnName="WHOLESALE_PRICE_DA_ORDINE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  
+    <measure id="WHOLESALE_PRICE_LISTINO" order="40" aggregationType="sum" measureType="amount" restrictionExpressionLanguage="SQL" semanticType="amount">
+      <descriptions defaultDescription="WHOLESALE_PRICE_LISTINO"/>
+  
+      <unitCurrencyAttribute attributeName="UM_WHOLESALE_PRICE_LISTINO"/>
+      <measureMapping columnObjectName="Union_1" columnName="WHOLESALE_PRICE_LISTINO"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="RETAIL_NET_PRICE_UN" order="41" semanticType="amount" aggregationType="sum" measureType="amount" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="RETAIL_NET_PRICE_UN"/>
+      <unitCurrencyAttribute attributeName="VALUTA_RETAIL_NET_PRICE"/>
+      <measureMapping columnObjectName="Union_1" columnName="RETAIL_NET_PRICE_UN"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="RETAIL_FULL_PRICE_UN" order="42" semanticType="amount" aggregationType="sum" measureType="amount" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="RETAIL_FULL_PRICE_UN"/>
+      <unitCurrencyAttribute attributeName="VALUTA_RETAIL_FULL_PRICE"/>
+      <measureMapping columnObjectName="Union_1" columnName="RETAIL_FULL_PRICE_UN"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="MARK_APPLIED" order="45" aggregationType="sum" measureType="amount" restrictionExpressionLanguage="SQL" semanticType="amount">
+      <descriptions defaultDescription="MARK-DOWN/MARK-UP APPLIED"/>
+      <unitCurrencyAttribute attributeName="CC_VALUTA_MARK"/>
+      <measureMapping columnObjectName="Union_1" columnName="MARK_APPLIED_UN"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="MARK_PERCENTAGE_APPLIED" order="46" aggregationType="sum" measureType="amount" restrictionExpressionLanguage="SQL" semanticType="amount">
+      <descriptions defaultDescription="MARK-UP/MARK-DOWN PERCENTAGE APPLIED"/>
+      <fixedCurrency>%</fixedCurrency>
+      <measureMapping columnObjectName="Union_1" columnName="MARK_PERCENTAGE_APPLIED"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="SELL_OUT_PRICE_UN" order="47" aggregationType="sum" measureType="amount" restrictionExpressionLanguage="SQL" semanticType="amount">
+      <descriptions defaultDescription="SELL_OUT_PRICE_UN"/>
+      <unitCurrencyAttribute attributeName="VALUTA_SELL_OUT_PRICE_UNITARIO"/>
+      <measureMapping columnObjectName="Union_1" columnName="SELL_OUT_PRICE_UN"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="TASSO_DI_CAMBIO" order="48" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="TASSO_DI_CAMBIO"/>
+      <measureMapping columnObjectName="Union_1" columnName="TASSO_DI_CAMBIO"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="TOTAL_SELL_OUT_PRICE_EUR" order="49" semanticType="amount" aggregationType="sum" measureType="amount" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="TOTAL_SELL_OUT_PRICE_EUR"/>
+      <fixedCurrency>€</fixedCurrency>
+      <measureMapping columnObjectName="Union_1" columnName="TOTAL_SELL_OUT_PRICE_EUR"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="TOT_COGS" order="50" aggregationType="sum" measureType="amount" restrictionExpressionLanguage="SQL" semanticType="amount">
+      <descriptions defaultDescription="TOT_COGS_EUR"/>
+      <unitCurrencyAttribute attributeName="UM_WHOLESALE_PRICE_LISTINO"/>
+      <measureMapping columnObjectName="Union_1" columnName="TOT_COGS"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="TOT_GROSS_MARGIN_PERCENT" order="51" aggregationType="sum" measureType="quantity" restrictionExpressionLanguage="SQL" semanticType="quantity">
+      <descriptions defaultDescription="TOT_GROSS_MARGIN_PERCENT"/>
+      <fixedUnit>%</fixedUnit>
+      <measureMapping columnObjectName="Union_1" columnName="TOT_GROSS_MARGIN_PERCENT"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="TOT_GROSS_MARGIN_EUR" order="52" aggregationType="sum" measureType="amount" restrictionExpressionLanguage="SQL" semanticType="amount">
+      <descriptions defaultDescription="TOT_GROSS_MARGIN_EUR"/>
+      <fixedCurrency>€</fixedCurrency>
+      <measureMapping columnObjectName="Union_1" columnName="TOT_GROSS_MARGIN_EUR"/>
+      <exceptionAggregationMetadata/>
+    </measure></baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="213" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VENDUTO_S4" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="301" y="356"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VENDUTO_CCO" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="461"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="356"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    
+  
+    <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="213" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

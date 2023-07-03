@@ -1,0 +1,10 @@
+{
+  "cds": {
+    "requires": {
+      "report_protection_rules_services": {
+        "kind": "odata-v2",
+        "model": "srv/external/report-protection-rules-services"
+      }
+    }
+  }
+}

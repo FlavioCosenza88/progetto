@@ -1,0 +1,41 @@
+{
+    "DB_ACCESS": {
+      "object_owner": {
+        "global_object_privileges" : [
+          {
+            "name" : "DS4",
+            "type" : "REMOTE SOURCE",
+            "privileges" : ["CREATE VIRTUAL TABLE",
+                            "CREATE VIRTUAL FUNCTION",
+                            "CREATE REMOTE SUBSCRIPTION",
+                            "PROCESS REMOTE SUBSCRIPTION EXCEPTION",
+                            "ALTER",
+                            "DROP" ]
+          }
+        ],
+        "schema_privileges": [
+          { "schema": "DS4",
+            "privileges_with_grant_option": ["SELECT", "SELECT METADATA"]
+          }
+        ]
+      },
+      "application_user": {
+        "global_object_privileges": [{
+          "name" : "DS4",
+          "type" : "REMOTE SOURCE",
+          "privileges" : ["CREATE VIRTUAL TABLE",
+                          "CREATE VIRTUAL FUNCTION",
+                          "CREATE REMOTE SUBSCRIPTION",
+                          "PROCESS REMOTE SUBSCRIPTION EXCEPTION",
+                          "ALTER",
+                          "DROP" ]
+        }
+      ],
+      "schema_privileges": [
+        { "schema": "DS4",
+          "privileges_with_grant_option": ["SELECT", "SELECT METADATA"]
+        }
+      ]
+      }
+    }
+  }

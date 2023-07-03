@@ -1,0 +1,103 @@
+{
+	"VCAP_SERVICES": {
+		"xsuaa": [
+			{
+				"label": "xsuaa",
+				"provider": null,
+				"plan": "application",
+				"name": "protection-rules-auth-service",
+				"tags": [
+					"xsuaa"
+				],
+				"instance_guid": "6c97a523-0ddd-457a-b0b6-4bd351fa83aa",
+				"instance_name": "protection-rules-auth-service",
+				"binding_guid": "37234465-d144-4c60-9526-002554e934c0",
+				"binding_name": null,
+				"credentials": {
+					"tenantmode": "dedicated",
+					"sburl": "https://internal-xsuaa.authentication.eu10.hana.ondemand.com",
+					"subaccountid": "c457c773-b975-43f3-a0af-1df72ea31a6b",
+					"credential-type": "instance-secret",
+					"clientid": "sb-modesPr_protectionruleui!t146828",
+					"xsappname": "modesPr_protectionruleui!t146828",
+					"clientsecret": "zDEoo7QGoMuwPwdBRis3g6kIK6A=",
+					"url": "https://modes-dev-6q05ihyl.authentication.eu10.hana.ondemand.com",
+					"uaadomain": "authentication.eu10.hana.ondemand.com",
+					"verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsXJ11pPJKOEq1MynPX3k\nCSVYXDu7Am9azZ9tgOunS8ANQuUdQEJDVWLFnnPTsyPTg/VvSoC3Thkd2QsEBv9f\nTKiZYSYgQdZVKVTJe7Ju8vl7p6aFvhrdvuBRNXzEeu74gV5beltov9cwjxmXm9OC\n7/aTay9Hxk9XVZJnMiGsbMQQl+s0BnYcIrQLSI5S5NaEux53EKAU5fJ4Q7lUH5bo\nmBQ20B3sVLXsS/P1LcIx+Mx06f2OAnaSsiPdtf5Z+xQ2TnjdikhPKG0bo7a/Zhh5\nffI8G0pa88Ws2050l+jo9rgYQ4Vq93iso9tiY+V3FzXYvBf2FQCcUof2/Lrj8Jer\nFQIDAQAB\n-----END PUBLIC KEY-----",
+					"apiurl": "https://api.authentication.eu10.hana.ondemand.com",
+					"identityzone": "modes-dev-6q05ihyl",
+					"identityzoneid": "c457c773-b975-43f3-a0af-1df72ea31a6b",
+					"tenantid": "c457c773-b975-43f3-a0af-1df72ea31a6b",
+					"zoneid": "c457c773-b975-43f3-a0af-1df72ea31a6b"
+				},
+				"syslog_drain_url": null,
+				"volume_mounts": []
+			}
+		],
+		"destination": [
+			{
+				"label": "destination",
+				"provider": null,
+				"plan": "lite",
+				"name": "protection-rules-destination-service",
+				"tags": [
+					"destination",
+					"conn",
+					"connsvc"
+				],
+				"instance_guid": "1895c330-5f7b-4bc8-93bc-94fb95a06650",
+				"instance_name": "protection-rules-destination-service",
+				"binding_guid": "b76e1ec0-591e-4f43-8468-e96b543c1fc9",
+				"binding_name": null,
+				"credentials": {
+					"tenantmode": "dedicated",
+					"clientid": "sb-clone1895c3305f7b4bc893bc94fb95a06650!b146828|destination-xsappname!b404",
+					"credential-type": "binding-secret",
+					"xsappname": "clone1895c3305f7b4bc893bc94fb95a06650!b146828|destination-xsappname!b404",
+					"clientsecret": "b76e1ec0-591e-4f43-8468-e96b543c1fc9$OCONDN0oQQ1dF91sHoVPN6vV8ej_KHSngz6wNawxi10=",
+					"uri": "https://destination-configuration.cfapps.eu10.hana.ondemand.com",
+					"url": "https://modes-dev-6q05ihyl.authentication.eu10.hana.ondemand.com",
+					"uaadomain": "authentication.eu10.hana.ondemand.com",
+					"instanceid": "1895c330-5f7b-4bc8-93bc-94fb95a06650",
+					"verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsXJ11pPJKOEq1MynPX3k\nCSVYXDu7Am9azZ9tgOunS8ANQuUdQEJDVWLFnnPTsyPTg/VvSoC3Thkd2QsEBv9f\nTKiZYSYgQdZVKVTJe7Ju8vl7p6aFvhrdvuBRNXzEeu74gV5beltov9cwjxmXm9OC\n7/aTay9Hxk9XVZJnMiGsbMQQl+s0BnYcIrQLSI5S5NaEux53EKAU5fJ4Q7lUH5bo\nmBQ20B3sVLXsS/P1LcIx+Mx06f2OAnaSsiPdtf5Z+xQ2TnjdikhPKG0bo7a/Zhh5\nffI8G0pa88Ws2050l+jo9rgYQ4Vq93iso9tiY+V3FzXYvBf2FQCcUof2/Lrj8Jer\nFQIDAQAB\n-----END PUBLIC KEY-----",
+					"identityzone": "modes-dev-6q05ihyl",
+					"tenantid": "c457c773-b975-43f3-a0af-1df72ea31a6b"
+				},
+				"syslog_drain_url": null,
+				"volume_mounts": []
+			}
+		],
+		"hana": [
+			{
+				"label": "hana",
+				"provider": null,
+				"plan": "hdi-shared",
+				"name": "protection-rules-db",
+				"tags": [
+					"hana",
+					"database",
+					"relational"
+				],
+				"instance_guid": "a2843a4a-3774-4ba3-8af2-8e4666440fe0",
+				"instance_name": "protection-rules-db",
+				"binding_guid": "9bbf9944-fc95-41a7-865b-73f9bb10f98f",
+				"binding_name": null,
+				"credentials": {
+					"database_id": "8b7862ba-73eb-49ee-b7b4-b213e4221ac4",
+					"host": "8b7862ba-73eb-49ee-b7b4-b213e4221ac4.hna0.prod-eu10.hanacloud.ondemand.com",
+					"port": "443",
+					"driver": "com.sap.db.jdbc.Driver",
+					"url": "jdbc:sap://8b7862ba-73eb-49ee-b7b4-b213e4221ac4.hna0.prod-eu10.hanacloud.ondemand.com:443?encrypt=true&validateCertificate=true&currentschema=CA7D2EEEFE1B4D2FB9AB1A21692F9F80",
+					"schema": "CA7D2EEEFE1B4D2FB9AB1A21692F9F80",
+					"hdi_user": "CA7D2EEEFE1B4D2FB9AB1A21692F9F80_6ODKR0VOHNI8SYJIM77USSONA_DT",
+					"hdi_password": "Ud4yhR1FV5Di4cx9kJ1-5JrlKWYdtdhvSGl4H6FwUqmI9oT2.LebPsO-iL-nVI3oBMeSg5ITGMPYx2hzflEA6kSiOjKaIfRIYz9z2m7lAJwu.Z0OzxZUbgAA6KNHw-Xw",
+					"user": "CA7D2EEEFE1B4D2FB9AB1A21692F9F80_6ODKR0VOHNI8SYJIM77USSONA_RT",
+					"password": "It4_2xKyqgYPWH.sAuETJ6bEtYuhP_YavUruwrh_Slqqdg1Nsrwoec9.ma5wHx71X6YYuZJbzDyrjETT3Q5brGb8-ly8PMlpU36pVURjGyq6E9ic-35y49yHF4bij0D0",
+					"certificate": "-----BEGIN CERTIFICATE-----\nMIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBh\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD\nQTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVT\nMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5j\nb20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG\n9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4jvhEXLeqKTTo1eqUKKPC3eQyaKl7hLOllsB\nCSDMAZOnTjC3U/dDxGkAV53ijSLdhwZAAIEJzs4bg7/fzTtxRuLWZscFs3YnFo97\nnh6Vfe63SKMI2tavegw5BmV/Sl0fvBf4q77uKNd0f3p4mVmFaG5cIzJLv07A6Fpt\n43C/dxC//AH2hdmoRBBYMql1GNXRor5H4idq9Joz+EkIYIvUX7Q6hL+hqkpMfT7P\nT19sdl6gSzeRntwi5m3OFBqOasv+zbMUZBfHWymeMr/y7vrTC0LUq7dBMtoM1O/4\ngdW7jVg/tRvoSSiicNoxBN33shbyTApOB6jtSj1etX+jkMOvJwIDAQABo2MwYTAO\nBgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUA95QNVbR\nTLtm8KPiGxvDl7I90VUwHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUw\nDQYJKoZIhvcNAQEFBQADggEBAMucN6pIExIK+t1EnE9SsPTfrgT1eXkIoyQY/Esr\nhMAtudXH/vTBH1jLuG2cenTnmCmrEbXjcKChzUyImZOMkXDiqw8cvpOp/2PV5Adg\n06O/nVsJ8dWO41P0jmP6P6fbtGbfYmbW0W5BjfIttep3Sp+dWOIrWcBAI+0tKIJF\nPnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0ls\nYSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQk\nCAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=\n-----END CERTIFICATE-----"
+				},
+				"syslog_drain_url": null,
+				"volume_mounts": []
+			}
+		]
+	}
+}

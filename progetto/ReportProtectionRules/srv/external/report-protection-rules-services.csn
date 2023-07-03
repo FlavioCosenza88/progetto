@@ -1,0 +1,246 @@
+{
+  "meta": {
+    "creator": "cds-dk 6.7.2"
+  },
+  "$version": "2.0",
+  "definitions": {
+    "report_protection_rules_services": {
+      "kind": "service",
+      "@cds.external": true,
+      "@m.IsDefaultEntityContainer": "true"
+    },
+    "report_protection_rules_services.PROTECTIONRULES_LOWLEVEL": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "elements": {
+        "FAMILY_ID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3,
+          "notNull": true
+        },
+        "ARTICLE_ID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true
+        },
+        "FAMILY": {
+          "key": true,
+          "type": "cds.String",
+          "length": 30,
+          "notNull": true
+        },
+        "ARTICLE_IMG": {
+          "key": true,
+          "type": "cds.String",
+          "length": 120,
+          "notNull": true
+        },
+        "SEASON_YEAR": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4,
+          "notNull": true
+        },
+        "PRODUCT_GROUP": {
+          "key": true,
+          "type": "cds.String",
+          "length": 9,
+          "notNull": true
+        },
+        "STORE_POINT": {
+          "key": true,
+          "type": "cds.String",
+          "length": 30,
+          "notNull": true
+        },
+        "ARTICLE_DESCR": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true
+        },
+        "SEASON": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10,
+          "notNull": true
+        },
+        "GENDER": {
+          "key": true,
+          "type": "cds.String",
+          "length": 18,
+          "notNull": true
+        },
+        "STORE_POINT_ID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4,
+          "notNull": true
+        },
+        "SALES_CHANNEL": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true
+        },
+        "ID_REGOLA": {
+          "key": true,
+          "type": "cds.String",
+          "length": 36,
+          "notNull": true
+        },
+        "BRAND": {
+          "key": true,
+          "type": "cds.String",
+          "length": 30,
+          "notNull": true
+        },
+        "SALES_CHANNEL_ID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 5,
+          "notNull": true
+        },
+        "BRAND_ID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4,
+          "notNull": true
+        },
+        "VALORE_STOCK_PROTETTO": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 0
+        },
+        "RETAIL_PRICE": {
+          "type": "cds.Decimal",
+          "precision": 11,
+          "scale": 0
+        },
+        "QUANTITA_STOCK": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 0
+        },
+        "VALIDO_DA": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date"
+        },
+        "WHOLESALE": {
+          "type": "cds.Decimal",
+          "precision": 11,
+          "scale": 0
+        },
+        "VALIDO_A": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date"
+        },
+        "QUANTITA_PROTETTA": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 0
+        }
+      }
+    },
+    "report_protection_rules_services.PROTECTIONRULES_HIGHLEVEL": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "elements": {
+        "ARTICLE_ID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true
+        },
+        "SALES_CHANNEL": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true
+        },
+        "SEASON_YEAR": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4,
+          "notNull": true
+        },
+        "STORE_POINT": {
+          "key": true,
+          "type": "cds.String",
+          "length": 30,
+          "notNull": true
+        },
+        "ID_REGOLA": {
+          "key": true,
+          "type": "cds.String",
+          "length": 36,
+          "notNull": true
+        },
+        "FAMILY_ID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3,
+          "notNull": true
+        },
+        "SEASON": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10,
+          "notNull": true
+        },
+        "STORE_POINT_ID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4,
+          "notNull": true
+        },
+        "FAMILY": {
+          "key": true,
+          "type": "cds.String",
+          "length": 30,
+          "notNull": true
+        },
+        "BRAND": {
+          "key": true,
+          "type": "cds.String",
+          "length": 30,
+          "notNull": true
+        },
+        "BRAND_ID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4,
+          "notNull": true
+        },
+        "SALES_CHANNEL_ID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 5,
+          "notNull": true
+        },
+        "WHOLESALE": {
+          "type": "cds.Decimal",
+          "precision": 11,
+          "scale": 0
+        },
+        "VALIDO_DA": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date"
+        },
+        "QUANTITA_PROTETTA": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 0
+        },
+        "VALIDO_A": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date"
+        }
+      }
+    }
+  }
+}

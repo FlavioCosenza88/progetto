@@ -1,0 +1,134 @@
+_schema-version: "3.1"
+ID: SellThrough
+description: A simple CAP project.
+version: 1.0.0
+modules:
+- name: SellThrough-srv
+  type: nodejs
+  path: gen/srv
+  requires:
+  - name: SellThrough-db
+  provides:
+  - name: srv-api
+    properties:
+      srv-url: ${default-url}
+  parameters:
+    buildpack: nodejs_buildpack
+  build-parameters:
+    builder: npm-ci
+- name: SellThrough-db-deployer
+  type: hdb
+  path: gen/db
+  requires:
+  - name: SellThrough-db
+  parameters:
+    buildpack: nodejs_buildpack
+- name: SellThrough-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: SellThrough-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - SellThroughsellthrough.zip
+      name: SellThroughsellthrough
+      target-path: resources/
+- name: SellThroughsellthrough
+  type: html5
+  path: app/sellthrough
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: SellThrough-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: SellThrough-destination-service
+    parameters:
+      content-target: true
+  - name: SellThrough-repo-host
+    parameters:
+      service-key:
+        name: SellThrough-repo-host-key
+  - name: uaa_SellThrough
+    parameters:
+      service-key:
+        name: uaa_SellThrough-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: reportSellThrogh_SellThrough_repo_host
+          ServiceInstanceName: SellThrough-html5-srv
+          ServiceKeyName: SellThrough-repo-host-key
+          sap.cloud.service: reportSellThrogh
+        - Authentication: OAuth2UserTokenExchange
+          Name: reportSellThrogh_uaa_SellThrough
+          ServiceInstanceName: SellThrough-xsuaa-service
+          ServiceKeyName: uaa_SellThrough-key
+          sap.cloud.service: reportSellThrogh
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+resources:
+- name: SellThrough-db
+  type: com.sap.xs.hdi-container
+  parameters:
+    service: hana
+    service-plan: hdi-shared
+- name: SellThrough-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: SellThrough-html5-srv
+    service-plan: app-host
+- name: SellThrough-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      version: 1.0.0
+      init_data:
+          instance:
+            destinations:
+              - Authentication: NoAuthentication
+                Name: ui5
+                ProxyType: Internet
+                Type: HTTP
+                URL: https://ui5.sap.com
+              - Authentication: NoAuthentication
+                Name: srv-api
+                ProxyType: Internet
+                Type: HTTP
+                URL: ~{srv-api/srv-url}
+                HTML5.DynamicDestination: true
+                HTML5.ForwardAuthToken: true
+                HTML5.Timeout: 300000
+            existing_destinations_policy: update
+    service: destination
+    service-name: SellThrough-destination-service
+    service-plan: lite
+  requires:
+    - name: srv-api
+- name: uaa_SellThrough
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: SellThrough-xsuaa-service
+    service-plan: application
+parameters:
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+  - builder: custom
+    commands:
+    - npx -p @sap/cds-dk cds build --production

@@ -1,0 +1,52 @@
+{
+  "welcomeFile": "/index.html",
+  "authenticationMethod": "route",
+  "routes": [
+     {
+      "source": "^/v2/export-sell-through/(.*)$",
+      "target": "/v2/export-sell-through/$1",
+      "destination": "srv-api",
+      "authenticationType": "xsuaa",
+      "csrfProtection": false
+    },
+    {
+      "source": "^/v2/export-sell-through-aggregato/(.*)$",
+      "target": "/v2/export-sell-through-aggregato/$1",
+      "destination": "srv-api",
+      "authenticationType": "xsuaa",
+      "csrfProtection": false
+    },
+    {
+      "source": "^/v2/(.*)$",
+      "target": "/v2/$1",
+      "destination": "veduto-per-canali-services",
+      "authenticationType": "none",
+      "csrfProtection": false
+    },
+    {
+      "source": "^/v4/(.*)$",
+      "target": "$1",
+      "destination": "veduto-per-canali-services",
+      "authenticationType": "none",
+      "csrfProtection": false
+    },
+    {
+      "source": "^/resources/(.*)$",
+      "target": "/resources/$1",
+      "authenticationType": "none",
+      "destination": "ui5"
+    },
+    {
+      "source": "^/test-resources/(.*)$",
+      "target": "/test-resources/$1",
+      "authenticationType": "none",
+      "destination": "ui5"
+    },
+    {
+      "source": "^(.*)$",
+      "target": "$1",
+      "service": "html5-apps-repo-rt",
+      "authenticationType": "xsuaa"
+    }
+  ]
+}

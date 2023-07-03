@@ -1,0 +1,31 @@
+{
+  "definitions": {
+    "ExportPDFService": {
+      "@source": "srv/export-pdf.cds",
+      "kind": "service",
+      "@protocol": "rest"
+    },
+    "ExportPDFService.object": {
+      "kind": "type",
+      "@open": true,
+      "elements": {}
+    },
+    "ExportPDFService.format_PDF": {
+      "kind": "action",
+      "params": {
+        "results": {
+          "@open": true,
+          "type": "ExportPDFService.object"
+        }
+      },
+      "returns": {
+        "type": "cds.String"
+      }
+    }
+  },
+  "meta": {
+    "creator": "CDS Compiler v3.9.2",
+    "flavor": "inferred"
+  },
+  "$version": "2.0"
+}

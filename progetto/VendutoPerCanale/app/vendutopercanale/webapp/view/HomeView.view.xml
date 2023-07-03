@@ -1,0 +1,218 @@
+<mvc:View controllerName="VendutoPerCanale.vendutopercanale.controller.HomeView"
+xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+xmlns:core="sap.ui.core"
+xmlns:smartTable="sap.ui.comp.smarttable"
+xmlns:smartfilterbar="sap.ui.comp.smartfilterbar"
+xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <smartfilterbar:SmartFilterBar id="smartFilterVendutoPerCanale"  useToolbar="false"  entitySet="VendutoPerCanale" >
+        </smartfilterbar:SmartFilterBar>
+        <smartTable:SmartTable 
+            id="LineItemsSmartTableVendutoPerCanale"
+            entitySet="VendutoPerCanale" 
+            tableType="ResponsiveTable" 
+            smartFilterId="smartFilterVendutoPerCanale" 
+            useVariantManagement="false" 
+            useTablePersonalisation="true" 
+            header="Line Items" 
+            showRowCount="true" 
+            enableAutoBinding="true" 
+            class="sapUiResponsiveContentPadding" 
+            demandPopin="true" 
+            enableAutoColumnWidth="false" 
+            editTogglable="true" >
+            <smartTable:items>
+                <Table id="idTableVendutoPerCanale" growing="true">
+                    <columns>
+                     <Column hAlign="Center" importance="High">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "DOCUMENTENTRY", "columnIndex": 10, "leadingProperty": "DOCUMENTENTRY", "sortProperty": "DOCUMENTENTRY", "displayBehaviour": "descriptionOnly"}' />
+                            </customData>
+                            <Text text="DOCUMENT ENTRY" />
+                        </Column>
+                        <Column hAlign="Center" importance="High">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "PIECES_SOLD", "columnIndex": 39, "leadingProperty": "PIECES_SOLD", "sortProperty": "PIECES_SOLD", "displayBehaviour": "descriptionOnly"}' />
+                            </customData>
+                            <Text text="PIECES SOLD" />
+                        </Column>
+                        <Column hAlign="Center" importance="High">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "WHOLESALE_PRICE_DA_ORDINE", "columnIndex": 40, "leadingProperty": "WHOLESALE_PRICE_DA_ORDINE", "sortProperty": "WHOLESALE_PRICE_DA_ORDINE", "displayBehaviour": "descriptionOnly"}' />
+                            </customData>
+                            <Text text="WHOLESALE PRICE DA ORDINE" />
+                        </Column>
+                        <Column hAlign="Center" importance="High">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "VALUTA_WHOLESALE_PRICE_DA_ORDINE", "columnIndex": 41, "leadingProperty": "VALUTA_WHOLESALE_PRICE_DA_ORDINE", "sortProperty": "VALUTA_WHOLESALE_PRICE_DA_ORDINE", "displayBehaviour": "descriptionOnly"}' />
+                            </customData>
+                            <Text text="VALUTA WHOLESALE PRICE ORDINE" />
+                        </Column>
+                        <Column hAlign="Center" importance="High">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "WHOLESALE_PRICE_LISTINO", "columnIndex": 42, "leadingProperty": "WHOLESALE_PRICE_LISTINO", "sortProperty": "WHOLESALE_PRICE_LISTINO", "displayBehaviour": "descriptionOnly"}' />
+                            </customData>
+                            <Text text="WHOLESALE PRICE LISTINO" />
+                        </Column>
+                         <Column hAlign="Center" importance="High">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "UM_WHOLESALE_PRICE_LISTINO", "columnIndex": 43, "leadingProperty": "UM_WHOLESALE_PRICE_LISTINO", "sortProperty": "UM_WHOLESALE_PRICE_LISTINO", "displayBehaviour": "descriptionOnly"}' />
+                            </customData>
+                            <Text text="VALUTA WHOLESALE PRICE LISTINO" />
+                        </Column>
+                        <Column hAlign="Center" importance="High">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "RETAIL_NET_PRICE_UN", "columnIndex": 44, "leadingProperty": "RETAIL_NET_PRICE_UN", "sortProperty": "RETAIL_NET_PRICE_UN", "displayBehaviour": "descriptionOnly"}' />
+                            </customData>
+                            <Text text="RETAIL NET PRICE UN" />
+                        </Column>
+                        <Column hAlign="Center" importance="High">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "VALUTA_RETAIL_NET_PRICE", "columnIndex": 45, "leadingProperty": "VALUTA_RETAIL_NET_PRICE", "sortProperty": "VALUTA_RETAIL_NET_PRICE", "displayBehaviour": "descriptionOnly"}' />
+                            </customData>
+                            <Text text="VALUTA RETAIL NET PRICE " />
+                        </Column>
+                        <Column hAlign="Center" importance="High">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "RETAIL_FULL_PRICE_UN", "columnIndex": 46, "leadingProperty": "RETAIL_FULL_PRICE_UN", "sortProperty": "RETAIL_FULL_PRICE_UN", "displayBehaviour": "descriptionOnly"}' />
+                            </customData>
+                            <Text text="RETAIL FULL PRICE UN" />
+                        </Column>
+                         <Column hAlign="Center" importance="High">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "VALUTA_RETAIL_FULL_PRICE", "columnIndex": 47, "leadingProperty": "VALUTA_RETAIL_FULL_PRICE", "sortProperty": "VALUTA_RETAIL_FULL_PRICE", "displayBehaviour": "descriptionOnly"}' />
+                            </customData>
+                            <Text text="VALUTA RETAIL FULL PRICE" />
+                        </Column>
+                        <Column hAlign="Center" importance="High">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "MARK_APPLIED", "columnIndex": 48, "leadingProperty": "MARK_APPLIED", "sortProperty": "MARK_APPLIED", "displayBehaviour": "descriptionOnly"}' />
+                            </customData>
+                            <Text text="MARK-DOWN/MARK-UP APPLIED" />
+                        </Column>
+                        <Column hAlign="Center" importance="High">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "CC_VALUTA_MARK", "columnIndex": 49, "leadingProperty": "CC_VALUTA_MARK", "sortProperty": "CC_VALUTA_MARK", "displayBehaviour": "descriptionOnly"}' />
+                            </customData>
+                            <Text text="VALUTA MARK-DOWN/MARK-UP APPLIED" />
+                        </Column>
+                        <Column hAlign="Center" importance="High">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "MARK_PERCENTAGE_APPLIED", "columnIndex": 50, "leadingProperty": "MARK_PERCENTAGE_APPLIED", "sortProperty": "MARK_PERCENTAGE_APPLIED", "displayBehaviour": "descriptionOnly"}' />
+                            </customData>
+                            <Text text="MARK-UP/MARK-DOWN PERCENTAGE APPLIED" />
+                        </Column>
+                        <Column hAlign="Center" importance="High">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "SELL_OUT_PRICE_UN", "columnIndex": 51, "leadingProperty": "SELL_OUT_PRICE_UN", "sortProperty": "SELL_OUT_PRICE_UN", "displayBehaviour": "descriptionOnly"}' />
+                            </customData>
+                            <Text text="SELL OUT PRICE UN" />
+                        </Column>
+                        <Column hAlign="Center" importance="High">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "VALUTA_SELL_OUT_PRICE_UNITARIO", "columnIndex": 52, "leadingProperty": "VALUTA_SELL_OUT_PRICE_UNITARIO", "sortProperty": "VALUTA_SELL_OUT_PRICE_UNITARIO", "displayBehaviour": "descriptionOnly"}' />
+                            </customData>
+                            <Text text="VALUTA SELL OUT PRICE" />
+                        </Column>
+                        <Column hAlign="Center" importance="High">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "TOTAL_SELL_OUT_PRICE_EUR", "columnIndex": 54, "leadingProperty": "TOTAL_SELL_OUT_PRICE_EUR", "sortProperty": "TOTAL_SELL_OUT_PRICE_EUR", "displayBehaviour": "descriptionOnly"}' />
+                            </customData>
+                            <Text text="TOTAL SELL OUT PRICE EUR" />
+                        </Column>
+                        <Column hAlign="Center" importance="High">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "TOT_COGS", "columnIndex": 55, "leadingProperty": "TOT_COGS", "sortProperty": "TOT_COGS", "displayBehaviour": "descriptionOnly"}' />
+                            </customData>
+                            <Text text="TOT COGS EUR" />
+                        </Column>
+                        <Column hAlign="Center" importance="High">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "TOT_GROSS_MARGIN_EUR", "columnIndex": 56, "leadingProperty": "TOT_GROSS_MARGIN_EUR", "sortProperty": "TOT_GROSS_MARGIN_EUR", "displayBehaviour": "descriptionOnly"}' />
+                            </customData>
+                            <Text text="TOT GROSS MARGIN EUR" />
+                        </Column>
+                        <Column hAlign="Center" importance="High">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "TOT_GROSS_MARGIN_PERCENT", "columnIndex": 57, "leadingProperty": "TOT_GROSS_MARGIN_PERCENT", "sortProperty": "TOT_GROSS_MARGIN_PERCENT", "displayBehaviour": "descriptionOnly"}' />
+                            </customData>
+                            <Text text="TOT GROSS MARGIN PERCENT" />
+                        </Column>
+                        <Column hAlign="Center" importance="High">
+                            <customData>
+                                <core:CustomData key="p13nData" value='\{"columnKey": "TASSO_DI_CAMBIO", "columnIndex": 53, "leadingProperty": "TASSO_DI_CAMBIO", "sortProperty": "TASSO_DI_CAMBIO", "displayBehaviour": "descriptionOnly"}' />
+                            </customData>
+                            <Text text="TASSO DI CAMBIO" />
+                        </Column>
+                        
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                         <cells>
+                                <Label text="{path:'DOCUMENTENTRY'}" width="auto"  />
+                            </cells>
+                            <cells>
+                                <Label text="{path:'PIECES_SOLD'} PZ" width="auto"  />
+                            </cells>
+                            <cells>
+                                <Label text="{path:'WHOLESALE_PRICE_DA_ORDINE'} {path:'VALUTA_WHOLESALE_PRICE_DA_ORDINE'}" width="auto"  />
+                            </cells>
+                             <cells>
+                                <Label text="{path:'VALUTA_WHOLESALE_PRICE_DA_ORDINE'}" width="auto"  />
+                            </cells>
+                            <cells>
+                                <Label text="{path:'WHOLESALE_PRICE_LISTINO'} {path:'UM_WHOLESALE_PRICE_LISTINO'}" width="auto"  />
+                            </cells>
+                            <cells>
+                                <Label text="{path:'UM_WHOLESALE_PRICE_LISTINO'}" width="auto"  />
+                            </cells>
+                            <cells>
+                                <Label text="{path:'RETAIL_NET_PRICE_UN'} {path:'VALUTA_RETAIL_NET_PRICE'}" width="auto"  />
+                            </cells>
+                             <cells>
+                                <Label text="{path:'VALUTA_RETAIL_NET_PRICE'}" width="auto"  />
+                            </cells>
+                            <cells>
+                                <Label text="{path:'RETAIL_FULL_PRICE_UN'} {path:'VALUTA_RETAIL_FULL_PRICE'}" width="auto"  />
+                            </cells>
+                            <cells>
+                                <Label text="{path:'VALUTA_RETAIL_FULL_PRICE'}" width="auto"  />
+                            </cells>
+                            <cells>
+                                <Label text="{path:'MARK_APPLIED'} {path:'CC_VALUTA_MARK'}" width="auto"  />
+                            </cells>
+                            <cells>
+                                <Label text="{path:'CC_VALUTA_MARK'}" width="auto"  />
+                            </cells>
+                            <cells>
+                                <Label text="{path:'MARK_PERCENTAGE_APPLIED'} %" width="auto"  />
+                            </cells>
+                            <cells>
+                                <Label text="{path:'SELL_OUT_PRICE_UN'} {path:'VALUTA_SELL_OUT_PRICE_UNITARIO'}" width="auto"  />
+                            </cells>
+                            <cells>
+                                <Label text="{path:'VALUTA_SELL_OUT_PRICE_UNITARIO'}" width="auto"  />
+                            </cells>
+                            <cells>
+                                <Label text="{path:'TOTAL_SELL_OUT_PRICE_EUR'} €" width="auto"  />
+                            </cells>
+                            <cells>
+                                <Label text="{path:'TOT_COGS'} {path:'UM_WHOLESALE_PRICE_LISTINO'}" width="auto"  />
+                            </cells>
+                          <cells>
+                                <Label text="{path:'TOT_GROSS_MARGIN_EUR'} €" width="auto"  />
+                             </cells>
+                            <cells>
+                                <Label text="{path:'TOT_GROSS_MARGIN_PERCENT'} %" width="auto"  />
+                            </cells>
+                            <cells>
+                                <Label text="{path:'TASSO_DI_CAMBIO'} %" width="auto"  />
+                            </cells>
+                            
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </smartTable:items>
+	    </smartTable:SmartTable>
+    </Page>
+</mvc:View>

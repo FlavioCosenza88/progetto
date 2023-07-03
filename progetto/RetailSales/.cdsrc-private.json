@@ -1,0 +1,36 @@
+{
+  "requires": {
+    "[hybrid]": {
+      "auth": {
+        "binding": {
+          "type": "cf",
+          "apiEndpoint": "https://api.cf.eu10-004.hana.ondemand.com",
+          "org": "MODES S.P.A._modes-dev-6q05ihyl",
+          "space": "MODES DEV",
+          "instance": "RetailSales-xsuaa-service",
+          "key": "uaa_RetailSales-key",
+          "resolved": false
+        },
+        "kind": "xsuaa",
+        "vcap": {
+          "name": "auth"
+        }
+      },
+      "db": {
+        "binding": {
+          "type": "cf",
+          "apiEndpoint": "https://api.cf.eu10-004.hana.ondemand.com",
+          "org": "MODES S.P.A._modes-dev-6q05ihyl",
+          "space": "MODES DEV",
+          "instance": "RetailSales-db",
+          "key": "SharedDevKey",
+          "resolved": false
+        },
+        "kind": "hana-cloud",
+        "vcap": {
+          "name": "db"
+        }
+      }
+    }
+  }
+}
